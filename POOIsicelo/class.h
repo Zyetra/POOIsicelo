@@ -103,25 +103,17 @@ class MAdresse :public Adresse {
 class Commande {
 	private:
 		std::string Reference;
-		std::string Date_Livraison;
-		std::string Date_Envoi;
+		std::string Livraison;
+		std::string Envoi;
 		Article** Tab_Commande;
 		int taille;
 		int index;
-		int Nombre;
-		int* Tab_Nombre;
 		int Nbr_Paiement;
 		int IDpersonnel;
 
 	public:
 		Commande(int taille);
-		~Commande();
-		void addArticle(Article* obj, int Nombre);
-		void addReference();
-		void getArticle();
-		void editCommande(std::string Reference);
-
-
+		void AddArticle();
 		
 };
 
