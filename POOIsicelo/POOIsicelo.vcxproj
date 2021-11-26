@@ -120,14 +120,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="GestionClient.cpp" />
     <ClCompile Include="Method.cpp" />
-    <ClCompile Include="MyForm.cpp" />
+    <ClCompile Include="Isicelo.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="class.h" />
-    <ClInclude Include="MyForm.h">
+    <ClInclude Include="GestionClient.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Isicelo.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="GestionClient.resx">
+      <DependentUpon>GestionClient.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Isicelo.resx">
+      <DependentUpon>Isicelo.h</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
