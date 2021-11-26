@@ -17,10 +17,10 @@ class Article {
 };
 
 class MArticle :public Article {
-private:
-	std::string ASQL;
+	private:
+		std::string ASQL;
 
-public:
+	public:
 };
 
 class Stats {
@@ -36,36 +36,43 @@ class Personne {
 		std::string Prenom;
 
 	public:
-
+		void getNom() {}
+		void getPrenom() {}
 };
 
-class Personnel:public Personne {
-private:
-	std::string Nom_Superieur;
-	std::string Prenom_Superieur;
-	std::string Embauche;
-	int IDadresse;
+class Personnel :public Personne {
+	private:
+		std::string Nom_Superieur;
+		std::string Prenom_Superieur;
+		std::string Embauche;
+		int IDadresse;
 
-public:
+	public:
+		void getSuperieur() {};
+		void getEmbauche() {};
+		void getAdresse() {};
 
 };
 
 class MPersonnel :public Personnel {
-private:
-	std::string PSQL;
+	private:
+		std::string PSQL;
 
-public:
+	public:
 };
 
-class Client:public Personne {
-private:
-	std::string Naissance;
-	std::string Premier_Achat;
-	int Num_Client;
-	int IDadresse;
+class Client :public Personne {
+	private:
+		std::string Naissance;
+		std::string Premier_Achat;
+		int Num_Client;
+		int IDadresse;
 
-public:
-
+	public:
+		void getNumClient();
+		void getNaissance();
+		void get1Achat() {};
+		void getAdresse() {};
 };
 
 class MClient :public Client {
@@ -87,10 +94,10 @@ class Adresse {
 };
 
 class MAdresse :public Adresse {
-private:
-	std::string ADSQL;
+	private:
+		std::string ADSQL;
 
-public:
+	public:
 };
 
 class Commande {
@@ -98,18 +105,23 @@ class Commande {
 		std::string Reference;
 		std::string Livraison;
 		std::string Envoi;
+		Article** Tab_Commande;
+		int taille;
+		int index;
 		int Nbr_Paiement;
-		Article Tab_Commande[88889];
 		int IDpersonnel;
 
 	public:
+		Commande(int taille);
+		void AddArticle();
+		
 };
 
 class MCommande :public Commande {
-private:
-	std::string CoSQL;
+	private:
+		std::string CoSQL;
 
-public:
+	public:
 };
 
 class Facture {
@@ -125,8 +137,8 @@ class Facture {
 };
 
 class MFacture :public Facture {
-private:
-	std::string FSQL;
+	private:
+		std::string FSQL;
 
-public:
+	public:
 };

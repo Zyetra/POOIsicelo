@@ -4,3 +4,6 @@
 
 using namespace std;
 
+Commande::Commande(int taille) {
+
+}
