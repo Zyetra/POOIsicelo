@@ -12,10 +12,10 @@ namespace POOIsicelo {
 	/// <summary>
 	/// Description résumée de Form1
 	/// </summary>
-	public ref class Form1 : public System::Windows::Forms::Form
+	public ref class GestionClient : public System::Windows::Forms::Form
 	{
 	public:
-		Form1(void)
+		GestionClient(void)
 		{
 			InitializeComponent();
 			//
@@ -27,7 +27,7 @@ namespace POOIsicelo {
 		/// <summary>
 		/// Nettoyage des ressources utilisées.
 		/// </summary>
-		~Form1()
+		~GestionClient()
 		{
 			if (components)
 			{
@@ -57,19 +57,19 @@ namespace POOIsicelo {
 			// 
 			// buttonRetour
 			// 
-			this->buttonRetour->Location = System::Drawing::Point(86, 103);
+			this->buttonRetour->Location = System::Drawing::Point(12, 440);
 			this->buttonRetour->Name = L"buttonRetour";
 			this->buttonRetour->Size = System::Drawing::Size(102, 48);
 			this->buttonRetour->TabIndex = 0;
 			this->buttonRetour->Text = L"Retour";
 			this->buttonRetour->UseVisualStyleBackColor = true;
-			this->buttonRetour->Click += gcnew System::EventHandler(this, &Form1::buttonRetour_Click);
+			this->buttonRetour->Click += gcnew System::EventHandler(this, &GestionClient::buttonRetour_Click);
 			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(282, 253);
+			this->ClientSize = System::Drawing::Size(1000, 500);
 			this->Controls->Add(this->buttonRetour);
 			this->Name = L"Form1";
 			this->Text = L"Form1";
