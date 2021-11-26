@@ -10,12 +10,12 @@ namespace POOIsicelo {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Description résumée de MyForm
+	/// Description résumée de GestionArticles
 	/// </summary>
-	public ref class MyForm : public System::Windows::Forms::Form
+	public ref class GestionArticles : public System::Windows::Forms::Form
 	{
 	public:
-		MyForm(void)
+		GestionArticles(void)
 		{
 			InitializeComponent();
 			//
@@ -27,7 +27,7 @@ namespace POOIsicelo {
 		/// <summary>
 		/// Nettoyage des ressources utilisées.
 		/// </summary>
-		~MyForm()
+		~GestionArticles()
 		{
 			if (components)
 			{
@@ -49,8 +49,8 @@ namespace POOIsicelo {
 		void InitializeComponent(void)
 		{
 			this->components = gcnew System::ComponentModel::Container();
-			this->Size = System::Drawing::Size(300,300);
-			this->Text = L"MyForm";
+			this->Size = System::Drawing::Size(1000,500);
+			this->Text = L"GestionArticles";
 			this->Padding = System::Windows::Forms::Padding(0);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 		}
