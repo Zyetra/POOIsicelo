@@ -14,7 +14,7 @@ Commande::Commande(int taille) {
 
 Commande::~Commande() {
 	delete* Tab_Commande;
-	delete* Tab_Nombre;
+	delete Tab_Nombre;
 }
 
 void Commande::addArticle(Article* obj, int Nombre) {
