@@ -34,3 +34,13 @@ void Commande::getArticle() {
 void Commande::editCommande(string Reference) {
 
 }
+
+
+
+Client::Client(std::string Name, std::string FirstName, std::string BornDate, std::string AchatDate) {
+	Num_Client++;
+	Nom = Name;
+	Prenom = FirstName;
+	Naissance = BornDate;
+	Premier_Achat = AchatDate;
+}

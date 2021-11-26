@@ -2,7 +2,7 @@
 #include <string>
 
 class Article {
-	private:
+	protected:	
 		int Quantite;
 		float PrixHT;
 		float Seuil_Reapp;
@@ -17,31 +17,31 @@ class Article {
 };
 
 class MArticle :public Article {
-	private:
+	protected:
 		std::string ASQL;
 
 	public:
 };
 
 class Stats {
-	private:
+	protected:
 
 	public:
 
 };
 
 class Personne {
-	private:
+	protected:
 		std::string Nom;
 		std::string Prenom;
 
 	public:
-		void getNom() {}
+		std::string getNom() {}
 		void getPrenom() {}
 };
 
 class Personnel :public Personne {
-	private:
+	protected:
 		std::string Nom_Superieur;
 		std::string Prenom_Superieur;
 		std::string Embauche;
@@ -55,35 +55,34 @@ class Personnel :public Personne {
 };
 
 class MPersonnel :public Personnel {
-	private:
+	protected:
 		std::string PSQL;
 
 	public:
 };
 
 class Client :public Personne {
-	private:
+	protected:
 		std::string Naissance;
 		std::string Premier_Achat;
-		int Num_Client;
+		int Num_Client = 0;
 		int IDadresse;
 
+
 	public:
-		void getNumClient();
-		void getNaissance();
-		void get1Achat() {};
-		void getAdresse() {};
+		Client::Client(std::string Name, std::string FirstName, std::string BornDate, std::string AchatDate);
+
 };
 
 class MClient :public Client {
-	private:
+	protected:
 		std::string CSQL;
 
 	public:
 };
 
 class Adresse {
-	private:
+	protected:
 		std::string Numero;
 		std::string Rue;
 		std::string Ville;
@@ -94,14 +93,14 @@ class Adresse {
 };
 
 class MAdresse :public Adresse {
-	private:
+	protected:
 		std::string ADSQL;
 
 	public:
 };
 
 class Commande {
-	private:
+	protected:
 		std::string Reference;
 		std::string Date_Livraison;
 		std::string Date_Envoi;
@@ -126,14 +125,14 @@ class Commande {
 };
 
 class MCommande :public Commande {
-	private:
+	protected:
 		std::string CoSQL;
 
 	public:
 };
 
 class Facture {
-	private:
+	protected:
 		std::string Nom_Societe;
 		std::string Nom_Client;
 		std::string Code_Client;
@@ -145,7 +144,7 @@ class Facture {
 };
 
 class MFacture :public Facture {
-	private:
+	protected:
 		std::string FSQL;
 
 	public:
