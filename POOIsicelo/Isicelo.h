@@ -1,5 +1,9 @@
 #pragma once
 #include "GestionClient.h"
+#include "GestionPersonel.h"
+#include "GestionArticles.h"
+#include "Commandes.h"
+#include "Statistiques.h"
 
 namespace POOIsicelo {
 
@@ -40,6 +44,7 @@ namespace POOIsicelo {
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::Button^ button4;
 	private: System::Windows::Forms::Button^ button5;
+	private: System::Windows::Forms::Button^ Stop;
 	protected:
 
 	private:
@@ -60,11 +65,12 @@ namespace POOIsicelo {
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->button5 = (gcnew System::Windows::Forms::Button());
+			this->Stop = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(433, 140);
+			this->button1->Location = System::Drawing::Point(433, 105);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(152, 47);
 			this->button1->TabIndex = 0;
@@ -74,45 +80,60 @@ namespace POOIsicelo {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(120, 140);
+			this->button2->Location = System::Drawing::Point(120, 105);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(152, 47);
 			this->button2->TabIndex = 1;
 			this->button2->Text = L"Gestion Personel";
 			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &Form::button2_Click);
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(719, 140);
+			this->button3->Location = System::Drawing::Point(725, 105);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(152, 47);
 			this->button3->TabIndex = 2;
 			this->button3->Text = L"Gestion des Articles";
 			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &Form::button3_Click);
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(267, 299);
+			this->button4->Location = System::Drawing::Point(267, 264);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(152, 47);
 			this->button4->TabIndex = 3;
 			this->button4->Text = L"Commandes";
 			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &Form::button4_Click);
 			// 
 			// button5
 			// 
-			this->button5->Location = System::Drawing::Point(578, 299);
+			this->button5->Location = System::Drawing::Point(586, 264);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(152, 47);
 			this->button5->TabIndex = 4;
 			this->button5->Text = L"Statistiques";
 			this->button5->UseVisualStyleBackColor = true;
+			this->button5->Click += gcnew System::EventHandler(this, &Form::button5_Click);
+			// 
+			// Stop
+			// 
+			this->Stop->Location = System::Drawing::Point(433, 397);
+			this->Stop->Name = L"Stop";
+			this->Stop->Size = System::Drawing::Size(152, 47);
+			this->Stop->TabIndex = 5;
+			this->Stop->Text = L"Arrêter l\'application";
+			this->Stop->UseVisualStyleBackColor = true;
+			this->Stop->Click += gcnew System::EventHandler(this, &Form::Stop_Click);
 			// 
 			// Form
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1000, 500);
+			this->Controls->Add(this->Stop);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
@@ -130,5 +151,32 @@ namespace POOIsicelo {
 		APP->ShowDialog();
 		this->Show();
 	}
-	};
+	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Hide();
+		GestionPersonel^ APP = gcnew GestionPersonel();
+		APP->ShowDialog();
+		this->Show();
+	}
+	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Hide();
+		GestionArticles^ APP = gcnew GestionArticles();
+		APP->ShowDialog();
+		this->Show();
+	}
+	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Hide();
+		Commandes^ APP = gcnew Commandes();
+		APP->ShowDialog();
+		this->Show();
+	}
+	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Hide();
+		Statistiques^ APP = gcnew Statistiques();
+		APP->ShowDialog();
+		this->Show();
+	}
+	private: System::Void Stop_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Close();
+	}
+};
 }

@@ -120,16 +120,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Commandes.cpp" />
+    <ClCompile Include="GestionArticles.cpp" />
     <ClCompile Include="GestionClient.cpp" />
+    <ClCompile Include="GestionPersonel.cpp" />
     <ClCompile Include="Method.cpp" />
     <ClCompile Include="Isicelo.cpp" />
+    <ClCompile Include="Statistiques.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="class.h" />
+    <ClInclude Include="Commandes.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="GestionArticles.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="GestionClient.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="GestionPersonel.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Isicelo.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Statistiques.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
