@@ -153,6 +153,9 @@
     <EmbeddedResource Include="GestionClient.resx">
       <DependentUpon>GestionClient.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GestionPersonel.resx">
+      <DependentUpon>GestionPersonel.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Isicelo.resx">
       <DependentUpon>Isicelo.h</DependentUpon>
     </EmbeddedResource>
