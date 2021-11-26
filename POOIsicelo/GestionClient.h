@@ -63,11 +63,11 @@ namespace POOIsicelo {
 
 	private: System::Windows::Forms::Label^ label13;
 	private: System::Windows::Forms::TextBox^ numClient;
-	private: System::Windows::Forms::Label^ label14;
-	private: System::Windows::Forms::TextBox^ typeAdresseDomicile;
-	private: System::Windows::Forms::TextBox^ typeAdresseFacturation;
 
-	private: System::Windows::Forms::Label^ label15;
+
+
+
+
 	private: System::Windows::Forms::TextBox^ codePostalFacturation;
 
 	private: System::Windows::Forms::Label^ label16;
@@ -77,9 +77,9 @@ namespace POOIsicelo {
 	private: System::Windows::Forms::Label^ label18;
 	private: System::Windows::Forms::TextBox^ numFacturation;
 	private: System::Windows::Forms::Label^ label19;
-	private: System::Windows::Forms::TextBox^ typeAdresseLivraison;
 
-	private: System::Windows::Forms::Label^ label20;
+
+
 	private: System::Windows::Forms::TextBox^ codePostalLivraison;
 	private: System::Windows::Forms::Label^ label21;
 	private: System::Windows::Forms::ComboBox^ villeLivraison;
@@ -88,9 +88,6 @@ namespace POOIsicelo {
 	private: System::Windows::Forms::Label^ label23;
 	private: System::Windows::Forms::TextBox^ numLivraison;
 	private: System::Windows::Forms::Label^ label24;
-
-
-
 
 	protected:
 
@@ -137,10 +134,6 @@ namespace POOIsicelo {
 			this->codePostalDomicile = (gcnew System::Windows::Forms::TextBox());
 			this->label13 = (gcnew System::Windows::Forms::Label());
 			this->numClient = (gcnew System::Windows::Forms::TextBox());
-			this->label14 = (gcnew System::Windows::Forms::Label());
-			this->typeAdresseDomicile = (gcnew System::Windows::Forms::TextBox());
-			this->typeAdresseFacturation = (gcnew System::Windows::Forms::TextBox());
-			this->label15 = (gcnew System::Windows::Forms::Label());
 			this->codePostalFacturation = (gcnew System::Windows::Forms::TextBox());
 			this->label16 = (gcnew System::Windows::Forms::Label());
 			this->villeFacturation = (gcnew System::Windows::Forms::ComboBox());
@@ -149,8 +142,6 @@ namespace POOIsicelo {
 			this->label18 = (gcnew System::Windows::Forms::Label());
 			this->numFacturation = (gcnew System::Windows::Forms::TextBox());
 			this->label19 = (gcnew System::Windows::Forms::Label());
-			this->typeAdresseLivraison = (gcnew System::Windows::Forms::TextBox());
-			this->label20 = (gcnew System::Windows::Forms::Label());
 			this->codePostalLivraison = (gcnew System::Windows::Forms::TextBox());
 			this->label21 = (gcnew System::Windows::Forms::Label());
 			this->villeLivraison = (gcnew System::Windows::Forms::ComboBox());
@@ -165,7 +156,7 @@ namespace POOIsicelo {
 			// buttonRetour
 			// 
 			this->buttonRetour->Location = System::Drawing::Point(11, 196);
-			this->buttonRetour->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->buttonRetour->Margin = System::Windows::Forms::Padding(2);
 			this->buttonRetour->Name = L"buttonRetour";
 			this->buttonRetour->Size = System::Drawing::Size(76, 39);
 			this->buttonRetour->TabIndex = 0;
@@ -406,39 +397,6 @@ namespace POOIsicelo {
 			this->numClient->Size = System::Drawing::Size(40, 20);
 			this->numClient->TabIndex = 27;
 			// 
-			// label14
-			// 
-			this->label14->AutoSize = true;
-			this->label14->Location = System::Drawing::Point(300, 221);
-			this->label14->Name = L"label14";
-			this->label14->Size = System::Drawing::Size(77, 13);
-			this->label14->TabIndex = 28;
-			this->label14->Text = L"Type adresse :";
-			this->label14->Click += gcnew System::EventHandler(this, &GestionClient::label14_Click);
-			// 
-			// typeAdresseDomicile
-			// 
-			this->typeAdresseDomicile->Location = System::Drawing::Point(383, 218);
-			this->typeAdresseDomicile->Name = L"typeAdresseDomicile";
-			this->typeAdresseDomicile->Size = System::Drawing::Size(20, 20);
-			this->typeAdresseDomicile->TabIndex = 29;
-			// 
-			// typeAdresseFacturation
-			// 
-			this->typeAdresseFacturation->Location = System::Drawing::Point(533, 218);
-			this->typeAdresseFacturation->Name = L"typeAdresseFacturation";
-			this->typeAdresseFacturation->Size = System::Drawing::Size(20, 20);
-			this->typeAdresseFacturation->TabIndex = 39;
-			// 
-			// label15
-			// 
-			this->label15->AutoSize = true;
-			this->label15->Location = System::Drawing::Point(450, 221);
-			this->label15->Name = L"label15";
-			this->label15->Size = System::Drawing::Size(77, 13);
-			this->label15->TabIndex = 38;
-			this->label15->Text = L"Type adresse :";
-			// 
 			// codePostalFacturation
 			// 
 			this->codePostalFacturation->Location = System::Drawing::Point(453, 193);
@@ -503,22 +461,6 @@ namespace POOIsicelo {
 			this->label19->Size = System::Drawing::Size(50, 13);
 			this->label19->TabIndex = 30;
 			this->label19->Text = L"Numéro :";
-			// 
-			// typeAdresseLivraison
-			// 
-			this->typeAdresseLivraison->Location = System::Drawing::Point(684, 218);
-			this->typeAdresseLivraison->Name = L"typeAdresseLivraison";
-			this->typeAdresseLivraison->Size = System::Drawing::Size(20, 20);
-			this->typeAdresseLivraison->TabIndex = 49;
-			// 
-			// label20
-			// 
-			this->label20->AutoSize = true;
-			this->label20->Location = System::Drawing::Point(601, 221);
-			this->label20->Name = L"label20";
-			this->label20->Size = System::Drawing::Size(77, 13);
-			this->label20->TabIndex = 48;
-			this->label20->Text = L"Type adresse :";
 			// 
 			// codePostalLivraison
 			// 
@@ -590,8 +532,6 @@ namespace POOIsicelo {
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(746, 433);
-			this->Controls->Add(this->typeAdresseLivraison);
-			this->Controls->Add(this->label20);
 			this->Controls->Add(this->codePostalLivraison);
 			this->Controls->Add(this->label21);
 			this->Controls->Add(this->villeLivraison);
@@ -600,8 +540,6 @@ namespace POOIsicelo {
 			this->Controls->Add(this->label23);
 			this->Controls->Add(this->numLivraison);
 			this->Controls->Add(this->label24);
-			this->Controls->Add(this->typeAdresseFacturation);
-			this->Controls->Add(this->label15);
 			this->Controls->Add(this->codePostalFacturation);
 			this->Controls->Add(this->label16);
 			this->Controls->Add(this->villeFacturation);
@@ -610,8 +548,6 @@ namespace POOIsicelo {
 			this->Controls->Add(this->label18);
 			this->Controls->Add(this->numFacturation);
 			this->Controls->Add(this->label19);
-			this->Controls->Add(this->typeAdresseDomicile);
-			this->Controls->Add(this->label14);
 			this->Controls->Add(this->numClient);
 			this->Controls->Add(this->label13);
 			this->Controls->Add(this->codePostalDomicile);
@@ -640,7 +576,7 @@ namespace POOIsicelo {
 			this->Controls->Add(this->delClient);
 			this->Controls->Add(this->addClient);
 			this->Controls->Add(this->buttonRetour);
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"GestionClient";
 			this->Text = L"Form1";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
