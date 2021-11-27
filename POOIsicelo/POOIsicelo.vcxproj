@@ -150,6 +150,9 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Commandes.resx">
+      <DependentUpon>Commandes.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GestionArticles.resx">
       <DependentUpon>GestionArticles.h</DependentUpon>
     </EmbeddedResource>
