@@ -16,9 +16,9 @@ class Article {
 
 };
 
-class MArticle :public Article {
+ref class MArticle {
 	protected:
-		std::string ASQL;
+		System::String^ ASQL;
 
 	public:
 };
@@ -54,12 +54,13 @@ class Personnel :public Personne {
 
 };
 
-class MPersonnel :public Personnel {
+ref class MPersonnel {
 	protected:
-		std::string PSQL;
+		System::String^ PSQL;
 
 	public:
-};
+	};
+
 
 class Client :public Personne {
 	protected:
@@ -74,9 +75,9 @@ class Client :public Personne {
 
 };
 
-class MClient :public Client {
+ref class MClient {
 	protected:
-		std::string CSQL;
+		System::String^ CSQL;
 
 	public:
 };
@@ -92,9 +93,9 @@ class Adresse {
 	public:
 };
 
-class MAdresse :public Adresse {
+ref class MAdresse {
 	protected:
-		std::string ADSQL;
+		System::String^ ADSQL;
 
 	public:
 };
@@ -124,12 +125,33 @@ class Commande {
 		
 };
 
-class MCommande :public Commande {
+ref class MCommande {
+
 	protected:
-		std::string CoSQL;
+		System::String^ CoSql;
+		int IDcommande;
+		int IDpersonnel;
+		int IDclient;
+		int IDpaiement;
+		System::String^ Reference;
+		System::String^ Date_Envoi;
+		System::String^ Date_Livraison;
 
 	public:
+		System::String^ Select(void);
+		System::String^ Insert(void);
+		System::String^ Delete(void);
+		System::String^ Update(void);
+		void setId(int);
+		void setRef(System::String^);
+		void setDateE(System::String^);
+		void setDateL(System::String^);
+		int getId(void);
+		System::String^ getRef(void);
+		System::String^ getDateE(void);
+		System::String^ getDateL(void);
 };
+
 
 class Facture {
 	protected:
@@ -143,9 +165,41 @@ class Facture {
 
 };
 
-class MFacture :public Facture {
+ref class MFacture {
 	protected:
-		std::string FSQL;
+		System::String^ FSQL;
 
 	public:
+};
+
+//Connexion BDD
+
+ref class CLcad
+{
+private:
+	System::String^ sSql;
+	System::String^ sCnx;
+	System::Data::SqlClient::SqlConnection^ oCnx;
+	System::Data::SqlClient::SqlCommand^ oCmd;
+	System::Data::SqlClient::SqlDataAdapter^ oDA;
+	System::Data::DataSet^ oDs;
+public:
+	CLcad(void);
+	System::Data::DataSet^ getRows(System::String^, System::String^);
+	void actionRows(System::String^);
+};
+
+//Gestion de la BDD
+
+ref class CLservices
+{
+private:
+	CLcad^ oCad;
+	MCommande^ oMappTB;
+public:
+	CLservices(void);
+	System::Data::DataSet^ selectionnerToutesLesPersonnes(System::String^);
+	void ajouterUneCommande(System::String^, System::String^);
+	void deleteUneCommande(System::String^);
+	void updateUneCommande(System::String^, System::String^, System::String^);
 };
