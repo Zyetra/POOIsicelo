@@ -10,12 +10,12 @@ namespace POOIsicelo {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Description résumée de GestionPersonel
+	/// Description résumée de GestionPersonnel
 	/// </summary>
-	public ref class GestionPersonel : public System::Windows::Forms::Form
+	public ref class GestionPersonnel : public System::Windows::Forms::Form
 	{
 	public:
-		GestionPersonel(void)
+		GestionPersonnel(void)
 		{
 			InitializeComponent();
 			//
@@ -27,7 +27,7 @@ namespace POOIsicelo {
 		/// <summary>
 		/// Nettoyage des ressources utilisées.
 		/// </summary>
-		~GestionPersonel()
+		~GestionPersonnel()
 		{
 			if (components)
 			{
@@ -164,7 +164,7 @@ namespace POOIsicelo {
 			this->buttonRetour->TabIndex = 6;
 			this->buttonRetour->Text = L"Retour";
 			this->buttonRetour->UseVisualStyleBackColor = true;
-			this->buttonRetour->Click += gcnew System::EventHandler(this, &GestionPersonel::buttonRetour_Click);
+			this->buttonRetour->Click += gcnew System::EventHandler(this, &GestionPersonnel::buttonRetour_Click);
 			// 
 			// infoClient
 			// 
@@ -179,7 +179,7 @@ namespace POOIsicelo {
 			this->infoClient->Size = System::Drawing::Size(185, 274);
 			this->infoClient->TabIndex = 7;
 			this->infoClient->TabStop = false;
-			this->infoClient->Text = L"Informations Client";
+			this->infoClient->Text = L"Informations Personnel";
 			// 
 			// label7
 			// 
@@ -187,9 +187,9 @@ namespace POOIsicelo {
 			this->label7->Location = System::Drawing::Point(7, 139);
 			this->label7->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(126, 16);
+			this->label7->Size = System::Drawing::Size(120, 16);
 			this->label7->TabIndex = 21;
-			this->label7->Text = L"Date de naissance :";
+			this->label7->Text = L"Date d\'embauche :";
 			// 
 			// label5
 			// 
@@ -384,7 +384,7 @@ namespace POOIsicelo {
 			this->dataGridView1->Size = System::Drawing::Size(963, 212);
 			this->dataGridView1->TabIndex = 10;
 			// 
-			// GestionPersonel
+			// GestionPersonnel
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
@@ -399,9 +399,9 @@ namespace POOIsicelo {
 			this->Controls->Add(this->delClient);
 			this->Controls->Add(this->addClient);
 			this->Margin = System::Windows::Forms::Padding(4);
-			this->Name = L"GestionPersonel";
-			this->Text = L"GestionPersonel";
-			this->Load += gcnew System::EventHandler(this, &GestionPersonel::GestionPersonel_Load);
+			this->Name = L"GestionPersonnel";
+			this->Text = L"GestionPersonnel";
+			this->Load += gcnew System::EventHandler(this, &GestionPersonnel::GestionPersonnel_Load);
 			this->infoClient->ResumeLayout(false);
 			this->infoClient->PerformLayout();
 			this->adresseClient->ResumeLayout(false);
@@ -413,7 +413,7 @@ namespace POOIsicelo {
 
 		}
 #pragma endregion
-	private: System::Void GestionPersonel_Load(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void GestionPersonnel_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void buttonRetour_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();

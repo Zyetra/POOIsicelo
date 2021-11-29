@@ -123,7 +123,7 @@
     <ClCompile Include="Commandes.cpp" />
     <ClCompile Include="GestionArticles.cpp" />
     <ClCompile Include="GestionClient.cpp" />
-    <ClCompile Include="GestionPersonel.cpp" />
+    <ClCompile Include="GestionPersonnel.cpp" />
     <ClCompile Include="Method.cpp" />
     <ClCompile Include="Isicelo.cpp" />
     <ClCompile Include="Statistiques.cpp" />
@@ -139,7 +139,7 @@
     <ClInclude Include="GestionClient.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="GestionPersonel.h">
+    <ClInclude Include="GestionPersonnel.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Isicelo.h">
@@ -159,8 +159,8 @@
     <EmbeddedResource Include="GestionClient.resx">
       <DependentUpon>GestionClient.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GestionPersonel.resx">
-      <DependentUpon>GestionPersonel.h</DependentUpon>
+    <EmbeddedResource Include="GestionPersonnel.resx">
+      <DependentUpon>GestionPersonnel.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Isicelo.resx">
       <DependentUpon>Isicelo.h</DependentUpon>

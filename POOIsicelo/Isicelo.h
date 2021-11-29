@@ -1,6 +1,6 @@
 #pragma once
 #include "GestionClient.h"
-#include "GestionPersonel.h"
+#include "GestionPersonnel.h"
 #include "GestionArticles.h"
 #include "Commandes.h"
 #include "Statistiques.h"
@@ -84,7 +84,7 @@ namespace POOIsicelo {
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(152, 47);
 			this->button2->TabIndex = 1;
-			this->button2->Text = L"Gestion Personel";
+			this->button2->Text = L"Gestion Personnel";
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &Form::button2_Click);
 			// 
@@ -153,7 +153,7 @@ namespace POOIsicelo {
 	}
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Hide();
-		GestionPersonel^ APP = gcnew GestionPersonel();
+		GestionPersonnel^ APP = gcnew GestionPersonnel();
 		APP->ShowDialog();
 		this->Show();
 	}

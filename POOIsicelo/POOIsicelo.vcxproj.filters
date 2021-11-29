@@ -24,7 +24,7 @@
     <ClCompile Include="GestionClient.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="GestionPersonel.cpp">
+    <ClCompile Include="GestionPersonnel.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="GestionArticles.cpp">
@@ -47,7 +47,7 @@
     <ClInclude Include="GestionClient.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="GestionPersonel.h">
+    <ClInclude Include="GestionPersonnel.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="GestionArticles.h">
