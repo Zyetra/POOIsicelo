@@ -88,7 +88,7 @@ System::String^ MCommande::getDateL(void) { return this->Date_Livraison; }
 
 CLcad::CLcad(void) {
 
-	this->sCnx = "Data Source=DESKTOP-2D93365\\MSS_BS;Initial Catalog=DB_P6;Persist Security Info=True;User ID=CNX_P6;Password=Random";
+	this->sCnx = "Data Source=tcp:10.162.128.65,49172;Initial Catalog=testeisiclo;Persist Security Info=True;User ID=valentin;Password=2021";
 
 	this->sSql = "Rien";
 
