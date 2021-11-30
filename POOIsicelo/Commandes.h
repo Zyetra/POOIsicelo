@@ -46,31 +46,31 @@ namespace POOIsicelo {
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::TextBox^ articleAdd;
 	private: System::Windows::Forms::Label^ label4;
-	private: System::Windows::Forms::TextBox^ dateLivraison;
+
 	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::TextBox^ dateEmission;
+
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::TextBox^ refCommande;
 	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::TextBox^ datePaiement4;
-	private: System::Windows::Forms::TextBox^ datePaiement3;
-	private: System::Windows::Forms::TextBox^ datePaiement2;
-	private: System::Windows::Forms::TextBox^ datePaiement1;
+
+
+
+
 	private: System::Windows::Forms::Label^ label7;
 	private: System::Windows::Forms::Label^ label6;
 	private: System::Windows::Forms::Label^ label5;
-	private: System::Windows::Forms::Label^ label11;
-	private: System::Windows::Forms::Label^ label10;
-	private: System::Windows::Forms::Label^ label9;
-	private: System::Windows::Forms::Label^ label8;
-	private: System::Windows::Forms::TextBox^ montant4;
-	private: System::Windows::Forms::TextBox^ montant3;
-	private: System::Windows::Forms::TextBox^ montant2;
+
+
+
+
+
+
+
 	private: System::Windows::Forms::TextBox^ montant1;
-	private: System::Windows::Forms::TextBox^ moyen4;
-	private: System::Windows::Forms::TextBox^ moyen3;
-	private: System::Windows::Forms::TextBox^ moyen2;
-	private: System::Windows::Forms::TextBox^ moyen1;
+
+
+
+
 	private: System::Windows::Forms::GroupBox^ groupBox3;
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	private: System::Windows::Forms::TextBox^ numService;
@@ -91,10 +91,24 @@ namespace POOIsicelo {
 	private: System::Windows::Forms::Label^ label20;
 	private: System::Windows::Forms::TextBox^ code;
 	private: System::Windows::Forms::Label^ label19;
-	private: System::Windows::Forms::TextBox^ nomClient;
+	private: System::Windows::Forms::TextBox^ nomClient1;
+
 	private: System::Windows::Forms::Label^ label18;
 	private: System::Windows::Forms::Label^ label21;
 	private: System::Windows::Forms::TextBox^ facturation;
+	private: System::Windows::Forms::DateTimePicker^ dateEmission;
+	private: System::Windows::Forms::DateTimePicker^ dateLivraison;
+	private: System::Windows::Forms::TextBox^ textBox4;
+	private: System::Windows::Forms::Label^ label8;
+	private: System::Windows::Forms::NumericUpDown^ numericUpDown1;
+	private: System::Windows::Forms::DateTimePicker^ datePaiement;
+	private: System::Windows::Forms::GroupBox^ groupBox4;
+	private: System::Windows::Forms::TextBox^ prenomClient;
+	private: System::Windows::Forms::Label^ label10;
+	private: System::Windows::Forms::Label^ label9;
+	private: System::Windows::Forms::TextBox^ nomClient;
+
+
 
 
 
@@ -123,36 +137,28 @@ namespace POOIsicelo {
 			this->dataGridViewCommande = (gcnew System::Windows::Forms::DataGridView());
 			this->dataGridViewArticles = (gcnew System::Windows::Forms::DataGridView());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+			this->dateEmission = (gcnew System::Windows::Forms::DateTimePicker());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->articleAdd = (gcnew System::Windows::Forms::TextBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->dateLivraison = (gcnew System::Windows::Forms::TextBox());
 			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->dateEmission = (gcnew System::Windows::Forms::TextBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->refCommande = (gcnew System::Windows::Forms::TextBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
-			this->label11 = (gcnew System::Windows::Forms::Label());
-			this->label10 = (gcnew System::Windows::Forms::Label());
-			this->label9 = (gcnew System::Windows::Forms::Label());
-			this->label8 = (gcnew System::Windows::Forms::Label());
-			this->montant4 = (gcnew System::Windows::Forms::TextBox());
-			this->montant3 = (gcnew System::Windows::Forms::TextBox());
-			this->montant2 = (gcnew System::Windows::Forms::TextBox());
 			this->montant1 = (gcnew System::Windows::Forms::TextBox());
-			this->moyen4 = (gcnew System::Windows::Forms::TextBox());
-			this->moyen3 = (gcnew System::Windows::Forms::TextBox());
-			this->moyen2 = (gcnew System::Windows::Forms::TextBox());
-			this->moyen1 = (gcnew System::Windows::Forms::TextBox());
-			this->datePaiement4 = (gcnew System::Windows::Forms::TextBox());
-			this->datePaiement3 = (gcnew System::Windows::Forms::TextBox());
-			this->datePaiement2 = (gcnew System::Windows::Forms::TextBox());
-			this->datePaiement1 = (gcnew System::Windows::Forms::TextBox());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->groupBox3 = (gcnew System::Windows::Forms::GroupBox());
+			this->facturation = (gcnew System::Windows::Forms::TextBox());
+			this->label21 = (gcnew System::Windows::Forms::Label());
+			this->livraison = (gcnew System::Windows::Forms::TextBox());
+			this->label20 = (gcnew System::Windows::Forms::Label());
+			this->code = (gcnew System::Windows::Forms::TextBox());
+			this->label19 = (gcnew System::Windows::Forms::Label());
+			this->nomClient1 = (gcnew System::Windows::Forms::TextBox());
+			this->label18 = (gcnew System::Windows::Forms::Label());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->numService = (gcnew System::Windows::Forms::TextBox());
 			this->label17 = (gcnew System::Windows::Forms::Label());
@@ -166,20 +172,24 @@ namespace POOIsicelo {
 			this->label13 = (gcnew System::Windows::Forms::Label());
 			this->nomSociete = (gcnew System::Windows::Forms::TextBox());
 			this->label12 = (gcnew System::Windows::Forms::Label());
-			this->label18 = (gcnew System::Windows::Forms::Label());
+			this->dateLivraison = (gcnew System::Windows::Forms::DateTimePicker());
+			this->datePaiement = (gcnew System::Windows::Forms::DateTimePicker());
+			this->numericUpDown1 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
+			this->groupBox4 = (gcnew System::Windows::Forms::GroupBox());
 			this->nomClient = (gcnew System::Windows::Forms::TextBox());
-			this->label19 = (gcnew System::Windows::Forms::Label());
-			this->code = (gcnew System::Windows::Forms::TextBox());
-			this->label20 = (gcnew System::Windows::Forms::Label());
-			this->livraison = (gcnew System::Windows::Forms::TextBox());
-			this->label21 = (gcnew System::Windows::Forms::Label());
-			this->facturation = (gcnew System::Windows::Forms::TextBox());
+			this->label9 = (gcnew System::Windows::Forms::Label());
+			this->label10 = (gcnew System::Windows::Forms::Label());
+			this->prenomClient = (gcnew System::Windows::Forms::TextBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewCommande))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewArticles))->BeginInit();
 			this->groupBox1->SuspendLayout();
 			this->groupBox2->SuspendLayout();
 			this->groupBox3->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
+			this->groupBox4->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// creerCommande
@@ -188,7 +198,7 @@ namespace POOIsicelo {
 			this->creerCommande->Location = System::Drawing::Point(16, 15);
 			this->creerCommande->Margin = System::Windows::Forms::Padding(4);
 			this->creerCommande->Name = L"creerCommande";
-			this->creerCommande->Size = System::Drawing::Size(186, 28);
+			this->creerCommande->Size = System::Drawing::Size(164, 28);
 			this->creerCommande->TabIndex = 3;
 			this->creerCommande->Text = L"Créer une Commande";
 			this->creerCommande->UseVisualStyleBackColor = true;
@@ -198,7 +208,7 @@ namespace POOIsicelo {
 			this->delCommande->Location = System::Drawing::Point(16, 66);
 			this->delCommande->Margin = System::Windows::Forms::Padding(4);
 			this->delCommande->Name = L"delCommande";
-			this->delCommande->Size = System::Drawing::Size(186, 28);
+			this->delCommande->Size = System::Drawing::Size(164, 28);
 			this->delCommande->TabIndex = 4;
 			this->delCommande->Text = L"Supprimer une Commande";
 			this->delCommande->UseVisualStyleBackColor = true;
@@ -208,7 +218,7 @@ namespace POOIsicelo {
 			this->modArticle->Location = System::Drawing::Point(16, 122);
 			this->modArticle->Margin = System::Windows::Forms::Padding(4);
 			this->modArticle->Name = L"modArticle";
-			this->modArticle->Size = System::Drawing::Size(186, 28);
+			this->modArticle->Size = System::Drawing::Size(164, 28);
 			this->modArticle->TabIndex = 5;
 			this->modArticle->Text = L"Modifier une Commande";
 			this->modArticle->UseVisualStyleBackColor = true;
@@ -218,7 +228,7 @@ namespace POOIsicelo {
 			this->affCommande->Location = System::Drawing::Point(16, 180);
 			this->affCommande->Margin = System::Windows::Forms::Padding(4);
 			this->affCommande->Name = L"affCommande";
-			this->affCommande->Size = System::Drawing::Size(186, 28);
+			this->affCommande->Size = System::Drawing::Size(164, 28);
 			this->affCommande->TabIndex = 6;
 			this->affCommande->Text = L"Afficher une Commande";
 			this->affCommande->UseVisualStyleBackColor = true;
@@ -256,21 +266,29 @@ namespace POOIsicelo {
 			// 
 			// groupBox1
 			// 
+			this->groupBox1->Controls->Add(this->dateLivraison);
+			this->groupBox1->Controls->Add(this->dateEmission);
 			this->groupBox1->Controls->Add(this->button1);
 			this->groupBox1->Controls->Add(this->articleAdd);
 			this->groupBox1->Controls->Add(this->label4);
-			this->groupBox1->Controls->Add(this->dateLivraison);
 			this->groupBox1->Controls->Add(this->label3);
-			this->groupBox1->Controls->Add(this->dateEmission);
 			this->groupBox1->Controls->Add(this->label2);
 			this->groupBox1->Controls->Add(this->refCommande);
 			this->groupBox1->Controls->Add(this->label1);
-			this->groupBox1->Location = System::Drawing::Point(278, 15);
+			this->groupBox1->Location = System::Drawing::Point(446, 15);
 			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Size = System::Drawing::Size(287, 274);
+			this->groupBox1->Size = System::Drawing::Size(275, 274);
 			this->groupBox1->TabIndex = 13;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Commande";
+			// 
+			// dateEmission
+			// 
+			this->dateEmission->Location = System::Drawing::Point(6, 109);
+			this->dateEmission->Name = L"dateEmission";
+			this->dateEmission->Size = System::Drawing::Size(254, 22);
+			this->dateEmission->TabIndex = 25;
+			this->dateEmission->ValueChanged += gcnew System::EventHandler(this, &Commandes::dateTimePicker1_ValueChanged);
 			// 
 			// button1
 			// 
@@ -298,14 +316,6 @@ namespace POOIsicelo {
 			this->label4->TabIndex = 22;
 			this->label4->Text = L"Article à ajouter :";
 			// 
-			// dateLivraison
-			// 
-			this->dateLivraison->Location = System::Drawing::Point(7, 168);
-			this->dateLivraison->Margin = System::Windows::Forms::Padding(4);
-			this->dateLivraison->Name = L"dateLivraison";
-			this->dateLivraison->Size = System::Drawing::Size(158, 22);
-			this->dateLivraison->TabIndex = 21;
-			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
@@ -314,14 +324,6 @@ namespace POOIsicelo {
 			this->label3->Size = System::Drawing::Size(159, 16);
 			this->label3->TabIndex = 20;
 			this->label3->Text = L"Date de livraison prévue :";
-			// 
-			// dateEmission
-			// 
-			this->dateEmission->Location = System::Drawing::Point(7, 110);
-			this->dateEmission->Margin = System::Windows::Forms::Padding(4);
-			this->dateEmission->Name = L"dateEmission";
-			this->dateEmission->Size = System::Drawing::Size(158, 22);
-			this->dateEmission->TabIndex = 19;
 			// 
 			// label2
 			// 
@@ -337,7 +339,7 @@ namespace POOIsicelo {
 			this->refCommande->Location = System::Drawing::Point(7, 51);
 			this->refCommande->Margin = System::Windows::Forms::Padding(4);
 			this->refCommande->Name = L"refCommande";
-			this->refCommande->Size = System::Drawing::Size(158, 22);
+			this->refCommande->Size = System::Drawing::Size(253, 22);
 			this->refCommande->TabIndex = 17;
 			// 
 			// label1
@@ -351,168 +353,33 @@ namespace POOIsicelo {
 			// 
 			// groupBox2
 			// 
-			this->groupBox2->Controls->Add(this->label11);
-			this->groupBox2->Controls->Add(this->label10);
-			this->groupBox2->Controls->Add(this->label9);
+			this->groupBox2->Controls->Add(this->textBox4);
 			this->groupBox2->Controls->Add(this->label8);
-			this->groupBox2->Controls->Add(this->montant4);
-			this->groupBox2->Controls->Add(this->montant3);
-			this->groupBox2->Controls->Add(this->montant2);
+			this->groupBox2->Controls->Add(this->numericUpDown1);
+			this->groupBox2->Controls->Add(this->datePaiement);
 			this->groupBox2->Controls->Add(this->montant1);
-			this->groupBox2->Controls->Add(this->moyen4);
-			this->groupBox2->Controls->Add(this->moyen3);
-			this->groupBox2->Controls->Add(this->moyen2);
-			this->groupBox2->Controls->Add(this->moyen1);
-			this->groupBox2->Controls->Add(this->datePaiement4);
-			this->groupBox2->Controls->Add(this->datePaiement3);
-			this->groupBox2->Controls->Add(this->datePaiement2);
-			this->groupBox2->Controls->Add(this->datePaiement1);
 			this->groupBox2->Controls->Add(this->label7);
 			this->groupBox2->Controls->Add(this->label6);
 			this->groupBox2->Controls->Add(this->label5);
-			this->groupBox2->Location = System::Drawing::Point(729, 15);
+			this->groupBox2->Location = System::Drawing::Point(748, 15);
 			this->groupBox2->Name = L"groupBox2";
-			this->groupBox2->Size = System::Drawing::Size(326, 274);
+			this->groupBox2->Size = System::Drawing::Size(272, 274);
 			this->groupBox2->TabIndex = 14;
 			this->groupBox2->TabStop = false;
 			this->groupBox2->Text = L"Paiement";
 			// 
-			// label11
-			// 
-			this->label11->AutoSize = true;
-			this->label11->Location = System::Drawing::Point(289, 235);
-			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(28, 16);
-			this->label11->TabIndex = 42;
-			this->label11->Text = L"N°4";
-			// 
-			// label10
-			// 
-			this->label10->AutoSize = true;
-			this->label10->Location = System::Drawing::Point(289, 171);
-			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(28, 16);
-			this->label10->TabIndex = 41;
-			this->label10->Text = L"N°3";
-			// 
-			// label9
-			// 
-			this->label9->AutoSize = true;
-			this->label9->Location = System::Drawing::Point(289, 110);
-			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(28, 16);
-			this->label9->TabIndex = 40;
-			this->label9->Text = L"N°2";
-			// 
-			// label8
-			// 
-			this->label8->AutoSize = true;
-			this->label8->Location = System::Drawing::Point(289, 54);
-			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(28, 16);
-			this->label8->TabIndex = 39;
-			this->label8->Text = L"N°1";
-			// 
-			// montant4
-			// 
-			this->montant4->Location = System::Drawing::Point(225, 232);
-			this->montant4->Margin = System::Windows::Forms::Padding(4);
-			this->montant4->Name = L"montant4";
-			this->montant4->Size = System::Drawing::Size(57, 22);
-			this->montant4->TabIndex = 38;
-			// 
-			// montant3
-			// 
-			this->montant3->Location = System::Drawing::Point(225, 168);
-			this->montant3->Margin = System::Windows::Forms::Padding(4);
-			this->montant3->Name = L"montant3";
-			this->montant3->Size = System::Drawing::Size(57, 22);
-			this->montant3->TabIndex = 37;
-			// 
-			// montant2
-			// 
-			this->montant2->Location = System::Drawing::Point(225, 107);
-			this->montant2->Margin = System::Windows::Forms::Padding(4);
-			this->montant2->Name = L"montant2";
-			this->montant2->Size = System::Drawing::Size(57, 22);
-			this->montant2->TabIndex = 36;
-			// 
 			// montant1
 			// 
-			this->montant1->Location = System::Drawing::Point(225, 51);
+			this->montant1->Location = System::Drawing::Point(6, 165);
 			this->montant1->Margin = System::Windows::Forms::Padding(4);
 			this->montant1->Name = L"montant1";
-			this->montant1->Size = System::Drawing::Size(57, 22);
+			this->montant1->Size = System::Drawing::Size(148, 22);
 			this->montant1->TabIndex = 35;
-			// 
-			// moyen4
-			// 
-			this->moyen4->Location = System::Drawing::Point(151, 232);
-			this->moyen4->Margin = System::Windows::Forms::Padding(4);
-			this->moyen4->Name = L"moyen4";
-			this->moyen4->Size = System::Drawing::Size(51, 22);
-			this->moyen4->TabIndex = 34;
-			// 
-			// moyen3
-			// 
-			this->moyen3->Location = System::Drawing::Point(151, 168);
-			this->moyen3->Margin = System::Windows::Forms::Padding(4);
-			this->moyen3->Name = L"moyen3";
-			this->moyen3->Size = System::Drawing::Size(51, 22);
-			this->moyen3->TabIndex = 33;
-			// 
-			// moyen2
-			// 
-			this->moyen2->Location = System::Drawing::Point(151, 107);
-			this->moyen2->Margin = System::Windows::Forms::Padding(4);
-			this->moyen2->Name = L"moyen2";
-			this->moyen2->Size = System::Drawing::Size(51, 22);
-			this->moyen2->TabIndex = 32;
-			// 
-			// moyen1
-			// 
-			this->moyen1->Location = System::Drawing::Point(151, 51);
-			this->moyen1->Margin = System::Windows::Forms::Padding(4);
-			this->moyen1->Name = L"moyen1";
-			this->moyen1->Size = System::Drawing::Size(51, 22);
-			this->moyen1->TabIndex = 31;
-			// 
-			// datePaiement4
-			// 
-			this->datePaiement4->Location = System::Drawing::Point(7, 232);
-			this->datePaiement4->Margin = System::Windows::Forms::Padding(4);
-			this->datePaiement4->Name = L"datePaiement4";
-			this->datePaiement4->Size = System::Drawing::Size(120, 22);
-			this->datePaiement4->TabIndex = 30;
-			// 
-			// datePaiement3
-			// 
-			this->datePaiement3->Location = System::Drawing::Point(7, 168);
-			this->datePaiement3->Margin = System::Windows::Forms::Padding(4);
-			this->datePaiement3->Name = L"datePaiement3";
-			this->datePaiement3->Size = System::Drawing::Size(120, 22);
-			this->datePaiement3->TabIndex = 29;
-			// 
-			// datePaiement2
-			// 
-			this->datePaiement2->Location = System::Drawing::Point(7, 107);
-			this->datePaiement2->Margin = System::Windows::Forms::Padding(4);
-			this->datePaiement2->Name = L"datePaiement2";
-			this->datePaiement2->Size = System::Drawing::Size(120, 22);
-			this->datePaiement2->TabIndex = 28;
-			// 
-			// datePaiement1
-			// 
-			this->datePaiement1->Location = System::Drawing::Point(7, 51);
-			this->datePaiement1->Margin = System::Windows::Forms::Padding(4);
-			this->datePaiement1->Name = L"datePaiement1";
-			this->datePaiement1->Size = System::Drawing::Size(120, 22);
-			this->datePaiement1->TabIndex = 25;
 			// 
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(222, 31);
+			this->label7->Location = System::Drawing::Point(6, 148);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(60, 16);
 			this->label7->TabIndex = 27;
@@ -521,7 +388,7 @@ namespace POOIsicelo {
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(148, 31);
+			this->label6->Location = System::Drawing::Point(6, 90);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(54, 16);
 			this->label6->TabIndex = 26;
@@ -544,7 +411,7 @@ namespace POOIsicelo {
 			this->groupBox3->Controls->Add(this->label20);
 			this->groupBox3->Controls->Add(this->code);
 			this->groupBox3->Controls->Add(this->label19);
-			this->groupBox3->Controls->Add(this->nomClient);
+			this->groupBox3->Controls->Add(this->nomClient1);
 			this->groupBox3->Controls->Add(this->label18);
 			this->groupBox3->Controls->Add(this->pictureBox1);
 			this->groupBox3->Controls->Add(this->numService);
@@ -559,12 +426,80 @@ namespace POOIsicelo {
 			this->groupBox3->Controls->Add(this->label13);
 			this->groupBox3->Controls->Add(this->nomSociete);
 			this->groupBox3->Controls->Add(this->label12);
-			this->groupBox3->Location = System::Drawing::Point(1084, 15);
+			this->groupBox3->Location = System::Drawing::Point(1062, 15);
 			this->groupBox3->Name = L"groupBox3";
 			this->groupBox3->Size = System::Drawing::Size(350, 274);
 			this->groupBox3->TabIndex = 15;
 			this->groupBox3->TabStop = false;
 			this->groupBox3->Text = L"Facture";
+			// 
+			// facturation
+			// 
+			this->facturation->Location = System::Drawing::Point(205, 244);
+			this->facturation->Margin = System::Windows::Forms::Padding(4);
+			this->facturation->Name = L"facturation";
+			this->facturation->Size = System::Drawing::Size(135, 22);
+			this->facturation->TabIndex = 61;
+			// 
+			// label21
+			// 
+			this->label21->AutoSize = true;
+			this->label21->Location = System::Drawing::Point(202, 224);
+			this->label21->Name = L"label21";
+			this->label21->Size = System::Drawing::Size(79, 16);
+			this->label21->TabIndex = 60;
+			this->label21->Text = L"Facturation :";
+			// 
+			// livraison
+			// 
+			this->livraison->Location = System::Drawing::Point(7, 244);
+			this->livraison->Margin = System::Windows::Forms::Padding(4);
+			this->livraison->Name = L"livraison";
+			this->livraison->Size = System::Drawing::Size(166, 22);
+			this->livraison->TabIndex = 59;
+			// 
+			// label20
+			// 
+			this->label20->AutoSize = true;
+			this->label20->Location = System::Drawing::Point(6, 224);
+			this->label20->Name = L"label20";
+			this->label20->Size = System::Drawing::Size(67, 16);
+			this->label20->TabIndex = 58;
+			this->label20->Text = L"Livraison :";
+			// 
+			// code
+			// 
+			this->code->Location = System::Drawing::Point(205, 198);
+			this->code->Margin = System::Windows::Forms::Padding(4);
+			this->code->Name = L"code";
+			this->code->Size = System::Drawing::Size(135, 22);
+			this->code->TabIndex = 57;
+			// 
+			// label19
+			// 
+			this->label19->AutoSize = true;
+			this->label19->Location = System::Drawing::Point(202, 178);
+			this->label19->Name = L"label19";
+			this->label19->Size = System::Drawing::Size(46, 16);
+			this->label19->TabIndex = 56;
+			this->label19->Text = L"Code :";
+			// 
+			// nomClient1
+			// 
+			this->nomClient1->Location = System::Drawing::Point(7, 198);
+			this->nomClient1->Margin = System::Windows::Forms::Padding(4);
+			this->nomClient1->Name = L"nomClient1";
+			this->nomClient1->Size = System::Drawing::Size(166, 22);
+			this->nomClient1->TabIndex = 55;
+			// 
+			// label18
+			// 
+			this->label18->AutoSize = true;
+			this->label18->Location = System::Drawing::Point(6, 178);
+			this->label18->Name = L"label18";
+			this->label18->Size = System::Drawing::Size(94, 16);
+			this->label18->TabIndex = 25;
+			this->label18->Text = L"Nom du client :";
 			// 
 			// pictureBox1
 			// 
@@ -677,79 +612,98 @@ namespace POOIsicelo {
 			this->label12->TabIndex = 43;
 			this->label12->Text = L"Nom de ma société :";
 			// 
-			// label18
+			// dateLivraison
 			// 
-			this->label18->AutoSize = true;
-			this->label18->Location = System::Drawing::Point(6, 178);
-			this->label18->Name = L"label18";
-			this->label18->Size = System::Drawing::Size(94, 16);
-			this->label18->TabIndex = 25;
-			this->label18->Text = L"Nom du client :";
+			this->dateLivraison->Location = System::Drawing::Point(6, 167);
+			this->dateLivraison->Name = L"dateLivraison";
+			this->dateLivraison->Size = System::Drawing::Size(254, 22);
+			this->dateLivraison->TabIndex = 26;
+			// 
+			// datePaiement
+			// 
+			this->datePaiement->Location = System::Drawing::Point(6, 50);
+			this->datePaiement->Name = L"datePaiement";
+			this->datePaiement->Size = System::Drawing::Size(254, 22);
+			this->datePaiement->TabIndex = 27;
+			// 
+			// numericUpDown1
+			// 
+			this->numericUpDown1->Location = System::Drawing::Point(6, 232);
+			this->numericUpDown1->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 4, 0, 0, 0 });
+			this->numericUpDown1->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
+			this->numericUpDown1->Name = L"numericUpDown1";
+			this->numericUpDown1->Size = System::Drawing::Size(148, 22);
+			this->numericUpDown1->TabIndex = 36;
+			this->numericUpDown1->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
+			// 
+			// label8
+			// 
+			this->label8->AutoSize = true;
+			this->label8->Location = System::Drawing::Point(6, 213);
+			this->label8->Name = L"label8";
+			this->label8->Size = System::Drawing::Size(148, 16);
+			this->label8->TabIndex = 37;
+			this->label8->Text = L"Nombre de Paiements :";
+			// 
+			// textBox4
+			// 
+			this->textBox4->Location = System::Drawing::Point(7, 110);
+			this->textBox4->Margin = System::Windows::Forms::Padding(4);
+			this->textBox4->Name = L"textBox4";
+			this->textBox4->Size = System::Drawing::Size(148, 22);
+			this->textBox4->TabIndex = 38;
+			// 
+			// groupBox4
+			// 
+			this->groupBox4->Controls->Add(this->prenomClient);
+			this->groupBox4->Controls->Add(this->label10);
+			this->groupBox4->Controls->Add(this->label9);
+			this->groupBox4->Controls->Add(this->nomClient);
+			this->groupBox4->Location = System::Drawing::Point(214, 15);
+			this->groupBox4->Name = L"groupBox4";
+			this->groupBox4->Size = System::Drawing::Size(213, 274);
+			this->groupBox4->TabIndex = 16;
+			this->groupBox4->TabStop = false;
+			this->groupBox4->Text = L"Informations Client";
 			// 
 			// nomClient
 			// 
-			this->nomClient->Location = System::Drawing::Point(7, 198);
-			this->nomClient->Margin = System::Windows::Forms::Padding(4);
+			this->nomClient->Location = System::Drawing::Point(6, 50);
 			this->nomClient->Name = L"nomClient";
-			this->nomClient->Size = System::Drawing::Size(166, 22);
-			this->nomClient->TabIndex = 55;
+			this->nomClient->Size = System::Drawing::Size(201, 22);
+			this->nomClient->TabIndex = 0;
 			// 
-			// label19
+			// label9
 			// 
-			this->label19->AutoSize = true;
-			this->label19->Location = System::Drawing::Point(202, 178);
-			this->label19->Name = L"label19";
-			this->label19->Size = System::Drawing::Size(46, 16);
-			this->label19->TabIndex = 56;
-			this->label19->Text = L"Code :";
+			this->label9->AutoSize = true;
+			this->label9->Location = System::Drawing::Point(6, 31);
+			this->label9->Name = L"label9";
+			this->label9->Size = System::Drawing::Size(96, 16);
+			this->label9->TabIndex = 27;
+			this->label9->Text = L"Nom du Client :";
 			// 
-			// code
+			// label10
 			// 
-			this->code->Location = System::Drawing::Point(205, 198);
-			this->code->Margin = System::Windows::Forms::Padding(4);
-			this->code->Name = L"code";
-			this->code->Size = System::Drawing::Size(135, 22);
-			this->code->TabIndex = 57;
+			this->label10->AutoSize = true;
+			this->label10->Location = System::Drawing::Point(6, 90);
+			this->label10->Name = L"label10";
+			this->label10->Size = System::Drawing::Size(114, 16);
+			this->label10->TabIndex = 28;
+			this->label10->Text = L"Prénom du Client :";
 			// 
-			// label20
+			// prenomClient
 			// 
-			this->label20->AutoSize = true;
-			this->label20->Location = System::Drawing::Point(6, 224);
-			this->label20->Name = L"label20";
-			this->label20->Size = System::Drawing::Size(67, 16);
-			this->label20->TabIndex = 58;
-			this->label20->Text = L"Livraison :";
-			// 
-			// livraison
-			// 
-			this->livraison->Location = System::Drawing::Point(7, 244);
-			this->livraison->Margin = System::Windows::Forms::Padding(4);
-			this->livraison->Name = L"livraison";
-			this->livraison->Size = System::Drawing::Size(166, 22);
-			this->livraison->TabIndex = 59;
-			// 
-			// label21
-			// 
-			this->label21->AutoSize = true;
-			this->label21->Location = System::Drawing::Point(202, 224);
-			this->label21->Name = L"label21";
-			this->label21->Size = System::Drawing::Size(79, 16);
-			this->label21->TabIndex = 60;
-			this->label21->Text = L"Facturation :";
-			// 
-			// facturation
-			// 
-			this->facturation->Location = System::Drawing::Point(205, 244);
-			this->facturation->Margin = System::Windows::Forms::Padding(4);
-			this->facturation->Name = L"facturation";
-			this->facturation->Size = System::Drawing::Size(135, 22);
-			this->facturation->TabIndex = 61;
+			this->prenomClient->Location = System::Drawing::Point(6, 109);
+			this->prenomClient->Name = L"prenomClient";
+			this->prenomClient->Size = System::Drawing::Size(201, 22);
+			this->prenomClient->TabIndex = 29;
 			// 
 			// Commandes
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1454, 533);
+			this->Controls->Add(this->groupBox4);
 			this->Controls->Add(this->groupBox3);
 			this->Controls->Add(this->groupBox2);
 			this->Controls->Add(this->groupBox1);
@@ -771,12 +725,17 @@ namespace POOIsicelo {
 			this->groupBox3->ResumeLayout(false);
 			this->groupBox3->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->EndInit();
+			this->groupBox4->ResumeLayout(false);
+			this->groupBox4->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
 private: System::Void buttonRetour_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Close();
+}
+private: System::Void dateTimePicker1_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
