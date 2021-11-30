@@ -88,7 +88,7 @@ System::String^ MClient::getDatePremierAchat(void) { return this->datePremierAch
 
 System::String^ MClient::Insert()
 {
-	return "INSERT INTO Client (nom, prenom, date_Naissance_Client, date_Premier_Achat_Client, IDadresse) VALUES('" + this->nom + "','" + this->prenom + "','" + this->dateNaissance + "','" + this->datePremierAchat + "', (SELECT MAX(IDadresse) FROM adresse))";
+	return "INSERT INTO Gestion_des_clients (Nom_Client, Prenom_Client, Date_Naissance_Client, Date_Premier_Achat_Client, IDadresse) VALUES('" + this->nom + "','" + this->prenom + "','" + this->dateNaissance + "','" + this->datePremierAchat + "', (SELECT MAX(IDadresse) FROM adresse)); ";
 }
 
 // FIN CLIENT
@@ -100,8 +100,7 @@ void CLservices::ajouterUneAdresse(System::String^ number, System::String^ stree
 	{
 		System::String^ sql;
 
-		this->oMappAdresse->setNumero(number);
-		this->oMappAdresse->setRue(street);
+
 		this->oMappAdresse->setVille(city);
 		this->oMappAdresse->setCodePostal(postalCode);
 
@@ -109,6 +108,9 @@ void CLservices::ajouterUneAdresse(System::String^ number, System::String^ stree
 		this->oCad->actionRows(sql);
 
 		sql = "";
+
+		this->oMappAdresse->setNumero(number);
+		this->oMappAdresse->setRue(street);
 
 		sql = this->oMappAdresse->InsertAdresse();
 		this->oCad->actionRows(sql);
@@ -125,9 +127,9 @@ void MAdresse::setIdAdresse(int Id)
 {
 	this->idAdresse = Id;
 }
-void MAdresse::setNumero(System::String^ number)
+void MAdresse::setNumero(System::String^ num)
 {
-	this->Numero = number;
+	this->Numero = num;
 }
 void MAdresse::setRue(System::String^ street)
 {
@@ -149,12 +151,12 @@ void MAdresse::setCodePostal(System::String^ PostalCode)
 
 System::String^ MAdresse::InsertVille(void) 
 {
-	return "IF NOT EXISTS (SELECT * FROM ville WHERE nom_ville =" + this->Ville + " AND code_postal=" + this->Code_postal + ") INSERT INTO Ville (nom_ville, code_postal) VALUES (" + this->Ville + "," + this->Code_postal + ")";
+	return "IF NOT EXISTS (SELECT * FROM ville WHERE nom_ville ='" + this->Ville + "' AND code_postal='" + this->Code_postal + "') INSERT INTO ville (nom_ville, code_postal) VALUES ('" + this->Ville + "," + this->Code_postal + "');";
 }
 
 System::String^ MAdresse::InsertAdresse(void)
 {
-	return "INSERT INTO adresse (numero, rue, IDville) VALUES (" + this->Numero + ", " + this->Rue + ", (SELECT IDville FROM ville WHERE nom_ville=" + this->Ville + "))";
+	return "INSERT INTO adresse (numero, rue, IDville) VALUES ('" + this->Numero + "', '" + this->Rue + "', (SELECT IDville FROM ville WHERE nom_ville='" + this->Ville + "'));";
 }
 
 // DEBUT STATISTIQUES
@@ -235,7 +237,7 @@ void MCommande::setPaiement(System::String^ DateP, System::String^ MoyenP, float
 	}
 	else if (NombreP == 2) {
 		this->Date_Paiement1 = DateP;
-		Cache = DatePP.substr(3, 2);
+		Cache = DatePP.substr(5, 2);
 		stringstream intValue(Cache);
 		intValue >> value;
 		value++;
@@ -245,14 +247,14 @@ void MCommande::setPaiement(System::String^ DateP, System::String^ MoyenP, float
 		else {
 			Cache = to_string(value);
 		}
-		DatePP.replace(3, 2, Cache);
+		DatePP.replace(5, 2, Cache);
 		System::String^ Convertion = msclr::interop::marshal_as<System::String^>(DatePP);
 		this->Date_Paiement2 = Convertion;
 		this->Montant_Paiement = MontantP / 2;
 	}
 	else if (NombreP == 3) {
 		this->Date_Paiement1 = DateP;
-		Cache = DatePP.substr(3, 2);
+		Cache = DatePP.substr(5, 2);
 		stringstream intValue(Cache);
 		intValue >> value;
 		value++;
@@ -262,7 +264,7 @@ void MCommande::setPaiement(System::String^ DateP, System::String^ MoyenP, float
 		else {
 			Cache = to_string(value);
 		}
-		DatePP.replace(3, 2, Cache);
+		DatePP.replace(5, 2, Cache);
 		System::String^ Convertion = msclr::interop::marshal_as<System::String^>(DatePP);
 		this->Date_Paiement2 = Convertion;
 		value++;
@@ -272,14 +274,14 @@ void MCommande::setPaiement(System::String^ DateP, System::String^ MoyenP, float
 		else {
 			Cache = to_string(value);
 		}
-		DatePP.replace(3, 2, Cache);
+		DatePP.replace(5, 2, Cache);
 		System::String^ Convertion2 = msclr::interop::marshal_as<System::String^>(DatePP);
 		this->Date_Paiement3 = Convertion2;
 		this->Montant_Paiement = MontantP / 3;
 	}
 	else {
 		this->Date_Paiement1 = DateP;
-		Cache = DatePP.substr(3, 2);
+		Cache = DatePP.substr(5, 2);
 		stringstream intValue(Cache);
 		intValue >> value;
 		value++;
@@ -289,7 +291,7 @@ void MCommande::setPaiement(System::String^ DateP, System::String^ MoyenP, float
 		else {
 			Cache = to_string(value);
 		}
-		DatePP.replace(3, 2, Cache);
+		DatePP.replace(5, 2, Cache);
 		System::String^ Convertion = msclr::interop::marshal_as<System::String^>(DatePP);
 		this->Date_Paiement2 = Convertion;
 		value++;
@@ -299,7 +301,7 @@ void MCommande::setPaiement(System::String^ DateP, System::String^ MoyenP, float
 		else {
 			Cache = to_string(value);
 		}
-		DatePP.replace(3, 2, Cache);
+		DatePP.replace(5, 2, Cache);
 		System::String^ Convertion2 = msclr::interop::marshal_as<System::String^>(DatePP);
 		this->Date_Paiement3 = Convertion2;
 		value++;
@@ -309,7 +311,7 @@ void MCommande::setPaiement(System::String^ DateP, System::String^ MoyenP, float
 		else {
 			Cache = to_string(value);
 		}
-		DatePP.replace(3, 2, Cache);
+		DatePP.replace(5, 2, Cache);
 		System::String^ Convertion3 = msclr::interop::marshal_as<System::String^>(DatePP);
 		this->Date_Paiement4 = Convertion3;
 		this->Montant_Paiement = MontantP / 4;
@@ -363,6 +365,8 @@ CLservices::CLservices(void)
 {
 	this->oCad = gcnew CLcad();
 	this->oMappTB = gcnew MCommande();
+	this->oMappAdresse = gcnew MAdresse();
+	this->oMappClient = gcnew MClient();
 }
 
 System::Data::DataSet^ CLservices::selectionnerToutesLesCommandes(System::String^ dataTableName)

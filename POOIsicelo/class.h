@@ -122,6 +122,7 @@ ref class MAdresse {
 		System::String^ Code_postal;
 
 	public:
+		MAdresse() {};
 		//System::String^ Select(void);
 		System::String^ InsertVille(void);
 		System::String^ InsertAdresse(void);

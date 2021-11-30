@@ -26,6 +26,7 @@ namespace POOIsicelo {
 			//TODO: ajoutez ici le code du constructeur
 			//
 			this->oSvc = gcnew CLservices();
+			this->Adresse1 = gcnew MAdresse();
 		}
 
 	protected:
@@ -53,6 +54,7 @@ namespace POOIsicelo {
 
 
 	private: CLservices^ oSvc;
+	private: MAdresse^ Adresse1;
 
 
 
@@ -426,6 +428,7 @@ private: System::Windows::Forms::Button^ affListeClient;
 			this->villeAdresse->Name = L"villeAdresse";
 			this->villeAdresse->Size = System::Drawing::Size(236, 24);
 			this->villeAdresse->TabIndex = 31;
+			this->villeAdresse->SelectedIndexChanged += gcnew System::EventHandler(this, &GestionClient::villeAdresse_SelectedIndexChanged);
 			// 
 			// label10
 			// 
@@ -514,8 +517,11 @@ private: System::Void label14_Click(System::Object^ sender, System::EventArgs^ e
 }
 private: System::Void addClient_Click(System::Object^ sender, System::EventArgs^ e) {
 
-	this->oSvc->ajouterUneAdresse(this->numAdresse-> Text, this->rueAdresse->Text, this->villeAdresse->Text, this->codePostalDomicile->Text);
+	this->oSvc->ajouterUneAdresse(this->numAdresse->Text, this->rueAdresse->Text, this->villeAdresse->Text, this->codePostalDomicile->Text);
 	this->oSvc->ajouterUnClient(this->nomClient->Text, this->prenomClient->Text, this->dateNaissanceClient->Text, this->datePremierAchat->Text);
+
+}
+private: System::Void villeAdresse_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 
 }
 };
