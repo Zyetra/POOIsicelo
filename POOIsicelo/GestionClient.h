@@ -54,13 +54,13 @@ namespace POOIsicelo {
 	private: System::Windows::Forms::Label^ label2;
 
 
-	private: System::Windows::Forms::DataGridView^ dataGridView1;
+	private: System::Windows::Forms::DataGridView^ dataGridViewClient;
 
 
 
 	private: CLservices^ oSvc;
 	private: MAdresse^ Adresse1;
-
+	private: System::Data::DataSet^ oDs;
 
 
 	private: System::Windows::Forms::TextBox^ datePremierAchat;
@@ -161,7 +161,7 @@ private: System::Windows::Forms::Button^ affListeClient;
 			this->modClient = (gcnew System::Windows::Forms::Button());
 			this->affClient = (gcnew System::Windows::Forms::Button());
 			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->dataGridViewClient = (gcnew System::Windows::Forms::DataGridView());
 			this->datePremierAchat = (gcnew System::Windows::Forms::TextBox());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->label13 = (gcnew System::Windows::Forms::Label());
@@ -183,14 +183,14 @@ private: System::Windows::Forms::Button^ affListeClient;
 			this->label11 = (gcnew System::Windows::Forms::Label());
 			this->rueAdresse = (gcnew System::Windows::Forms::TextBox());
 			this->affListeClient = (gcnew System::Windows::Forms::Button());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewClient))->BeginInit();
 			this->infoClient->SuspendLayout();
 			this->adresseDomicile->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// buttonRetour
 			// 
-			this->buttonRetour->Location = System::Drawing::Point(15, 241);
+			this->buttonRetour->Location = System::Drawing::Point(15, 250);
 			this->buttonRetour->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->buttonRetour->Name = L"buttonRetour";
 			this->buttonRetour->Size = System::Drawing::Size(101, 48);
@@ -213,17 +213,18 @@ private: System::Windows::Forms::Button^ affListeClient;
 			// 
 			// delClient
 			// 
-			this->delClient->Location = System::Drawing::Point(16, 55);
+			this->delClient->Location = System::Drawing::Point(16, 57);
 			this->delClient->Margin = System::Windows::Forms::Padding(4);
 			this->delClient->Name = L"delClient";
 			this->delClient->Size = System::Drawing::Size(147, 28);
 			this->delClient->TabIndex = 2;
 			this->delClient->Text = L"Supprimer un Client";
 			this->delClient->UseVisualStyleBackColor = true;
+			this->delClient->Click += gcnew System::EventHandler(this, &GestionClient::delClient_Click);
 			// 
 			// modClient
 			// 
-			this->modClient->Location = System::Drawing::Point(16, 100);
+			this->modClient->Location = System::Drawing::Point(16, 101);
 			this->modClient->Margin = System::Windows::Forms::Padding(4);
 			this->modClient->Name = L"modClient";
 			this->modClient->Size = System::Drawing::Size(147, 28);
@@ -234,7 +235,7 @@ private: System::Windows::Forms::Button^ affListeClient;
 			// 
 			// affClient
 			// 
-			this->affClient->Location = System::Drawing::Point(16, 145);
+			this->affClient->Location = System::Drawing::Point(16, 147);
 			this->affClient->Margin = System::Windows::Forms::Padding(4);
 			this->affClient->Name = L"affClient";
 			this->affClient->Size = System::Drawing::Size(147, 28);
@@ -252,15 +253,15 @@ private: System::Windows::Forms::Button^ affListeClient;
 			this->label2->Size = System::Drawing::Size(0, 16);
 			this->label2->TabIndex = 6;
 			// 
-			// dataGridView1
+			// dataGridViewClient
 			// 
-			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(16, 305);
-			this->dataGridView1->Margin = System::Windows::Forms::Padding(4);
-			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->RowHeadersWidth = 51;
-			this->dataGridView1->Size = System::Drawing::Size(963, 212);
-			this->dataGridView1->TabIndex = 9;
+			this->dataGridViewClient->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridViewClient->Location = System::Drawing::Point(15, 318);
+			this->dataGridViewClient->Margin = System::Windows::Forms::Padding(4);
+			this->dataGridViewClient->Name = L"dataGridViewClient";
+			this->dataGridViewClient->RowHeadersWidth = 51;
+			this->dataGridViewClient->Size = System::Drawing::Size(1124, 202);
+			this->dataGridViewClient->TabIndex = 0;
 			// 
 			// datePremierAchat
 			// 
@@ -465,23 +466,24 @@ private: System::Windows::Forms::Button^ affListeClient;
 			// 
 			// affListeClient
 			// 
-			this->affListeClient->Location = System::Drawing::Point(16, 190);
+			this->affListeClient->Location = System::Drawing::Point(16, 193);
 			this->affListeClient->Margin = System::Windows::Forms::Padding(4);
 			this->affListeClient->Name = L"affListeClient";
 			this->affListeClient->Size = System::Drawing::Size(147, 45);
 			this->affListeClient->TabIndex = 52;
 			this->affListeClient->Text = L"Afficher la liste des Clients";
 			this->affListeClient->UseVisualStyleBackColor = true;
+			this->affListeClient->Click += gcnew System::EventHandler(this, &GestionClient::affListeClient_Click);
 			// 
 			// GestionClient
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(995, 533);
+			this->ClientSize = System::Drawing::Size(1147, 530);
 			this->Controls->Add(this->affListeClient);
 			this->Controls->Add(this->adresseDomicile);
 			this->Controls->Add(this->infoClient);
-			this->Controls->Add(this->dataGridView1);
+			this->Controls->Add(this->dataGridViewClient);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->affClient);
 			this->Controls->Add(this->modClient);
@@ -491,7 +493,7 @@ private: System::Windows::Forms::Button^ affListeClient;
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"GestionClient";
 			this->Text = L"Form1";
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewClient))->EndInit();
 			this->infoClient->ResumeLayout(false);
 			this->infoClient->PerformLayout();
 			this->adresseDomicile->ResumeLayout(false);
@@ -507,6 +509,10 @@ private: System::Windows::Forms::Button^ affListeClient;
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->dataGridViewClient->Refresh();
+	this->oDs = this->oSvc->selectionnerUnClient("Gestion_des_Clients", this->nomClient->Text, this->prenomClient->Text, this->dateNaissanceClient->Text);
+	this->dataGridViewClient->DataSource = this->oDs;
+	this->dataGridViewClient->DataMember = "Gestion_des_Clients";
 }
 private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
@@ -528,6 +534,15 @@ private: System::Void addClient_Click(System::Object^ sender, System::EventArgs^
 }
 private: System::Void villeAdresse_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 
+}
+private: System::Void affListeClient_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->dataGridViewClient->Refresh();
+	this->oDs = this->oSvc->selectionnerTousLesClients("Gestion_des_Clients");
+	this->dataGridViewClient->DataSource = this->oDs;
+	this->dataGridViewClient->DataMember = "Gestion_des_Clients";
+}
+private: System::Void delClient_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->oSvc->supprimerUnClient(this->nomClient->Text, this->prenomClient->Text, this->dateNaissanceClient->Text, this->numClient->Text);
 }
 };
 }

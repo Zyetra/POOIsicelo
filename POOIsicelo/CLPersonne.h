@@ -56,9 +56,10 @@ protected:
 	int idClient;
 
 public:
-	//System::String^ Select(void);
+	System::String^ SelectAll(void);
+	System::String^ Select();
 	System::String^ Insert();
-	//System::String^ Delete(void);
+	System::String^ Delete(void);
 	//System::String^ Update(void);
 	void setIdClient(int);
 	void setNom(System::String^);

@@ -61,6 +61,9 @@ void CLservices::updateUneCommande(System::String^ Ref, System::String^ DateE, S
 	this->oCad->actionRows(sql);
 }
 
+
+// CLIENT 
+
 void CLservices::ajouterUnClient(System::String^ nom, System::String^ prenom, System::String^ dateNaissance, System::String^ datePremierAchat) {
 
 	{
@@ -75,6 +78,41 @@ void CLservices::ajouterUnClient(System::String^ nom, System::String^ prenom, Sy
 		this->oCad->actionRows(sql);
 	}
 }
+
+System::Data::DataSet^ CLservices::selectionnerTousLesClients(System::String^ dataTableName)
+{
+	System::String^ sql;
+
+	sql = this->oMappClient->SelectAll();
+	return this->oCad->getRows(sql, dataTableName);
+}
+
+System::Data::DataSet^ CLservices::selectionnerUnClient(System::String^ dataTableName, System::String^ nom_client, System::String^ prenom_client, System::String^ date_naissance_client)
+{
+	System::String^ sql;
+	this->oMappClient->setNom(nom_client);
+	this->oMappClient->setPrenom(prenom_client);
+	this->oMappClient->setDateNaissance(date_naissance_client);
+
+	sql = this->oMappClient->Select();
+	return this->oCad->getRows(sql, dataTableName);
+}
+
+void CLservices::supprimerUnClient(System::String^ nom_client, System::String^ prenom_client, System::String^ date_naissance_client, System::String^ num_client)
+{
+	System::String^ sql;
+	
+	this->oMappClient->setIdClient(int::Parse(num_client));
+	this->oMappClient->setNom(nom_client);
+	this->oMappClient->setPrenom(prenom_client);
+	this->oMappClient->setDateNaissance(date_naissance_client);
+
+	sql = this->oMappClient->Delete();
+	this->oCad->actionRows(sql);
+}
+
+
+// ADRESSE
 
 void CLservices::ajouterUneAdresse(System::String^ number, System::String^ street, System::String^ city, System::String^ postalCode) {
 

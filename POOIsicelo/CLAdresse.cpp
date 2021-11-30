@@ -33,9 +33,10 @@ void MAdresse::setCodePostal(System::String^ PostalCode)
 
 // REQUETES SQL ADRESSE
 
+
 System::String^ MAdresse::InsertVille(void)
 {
-	return "IF NOT EXISTS (SELECT * FROM ville WHERE nom_ville ='" + this->Ville + "' AND code_postal='" + this->Code_postal + "') INSERT INTO ville (nom_ville, code_postal) VALUES ('" + this->Ville + "," + this->Code_postal + "');";
+	return "IF NOT EXISTS (SELECT * FROM ville WHERE nom_ville ='" + this->Ville + "' AND code_postal='" + this->Code_postal + "') INSERT INTO ville (nom_ville, code_postal) VALUES ('" + this->Ville + "','" + this->Code_postal + "');";
 }
 
 System::String^ MAdresse::InsertAdresse(void)

@@ -20,4 +20,7 @@ public:
 	void updateUneCommande(System::String^, System::String^, System::String^);
 	void ajouterUnClient(System::String^, System::String^, System::String^, System::String^);
 	void ajouterUneAdresse(System::String^, System::String^, System::String^, System::String^);
+	System::Data::DataSet^ selectionnerTousLesClients(System::String^);
+	System::Data::DataSet^ selectionnerUnClient(System::String^, System::String^, System::String^, System::String^);
+	void supprimerUnClient(System::String^, System::String^, System::String^, System::String^);
 };
