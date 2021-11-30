@@ -151,6 +151,10 @@ void MCommande::setRef(System::String^ Nom, System::String^ Prenom, System::Stri
 	Increment++;
 }
 
+void MCommande::desRef(System::String^ Ref) {
+	this->Reference = Ref;
+}
+
 void MCommande::setDateE(System::String^ DateE)
 {
 	this->Date_Envoi = DateE;
@@ -320,20 +324,20 @@ void CLservices::ajouterUneCommande(System::String^ DateE, System::String^ DateL
 
 	this->oCad->actionRows(sql);
 }
-void CLservices::deleteUneCommande(System::String^ id)
+void CLservices::deleteUneCommande(System::String^ Ref)
 {
 	System::String^ sql;
 
-	this->oMappTB->setId(System::Convert::ToInt64(id));
+	this->oMappTB->desRef(Ref);
 	sql = this->oMappTB->Delete();
 
 	this->oCad->actionRows(sql);
 }
-void CLservices::updateUneCommande(System::String^ id, System::String^ DateE, System::String^ DateL)
+void CLservices::updateUneCommande(System::String^ Ref, System::String^ DateE, System::String^ DateL)
 {
 	System::String^ sql;
 
-	this->oMappTB->setId(System::Convert::ToInt64(id));
+	this->oMappTB->desRef(Ref);
 	this->oMappTB->setDateE(DateE);
 	this->oMappTB->setDateL(DateL);
 	sql = this->oMappTB->Update();

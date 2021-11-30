@@ -167,6 +167,7 @@ ref class MCommande {
 		System::String^ Update(void);
 		void setId(int);
 		void setRef(System::String^, System::String^, System::String^);
+		void desRef(System::String^ Ref);
 		void setDateE(System::String^);
 		void setDateL(System::String^);
 		void setPaiement(System::String^, System::String^, float, int);
