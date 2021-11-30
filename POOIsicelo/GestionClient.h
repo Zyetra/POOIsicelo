@@ -128,6 +128,8 @@ namespace POOIsicelo {
 	private: System::Windows::Forms::ComboBox^ comboBox1;
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::TextBox^ textBox6;
+private: System::Windows::Forms::Button^ affListeClient;
+
 
 	protected:
 
@@ -191,6 +193,7 @@ namespace POOIsicelo {
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
+			this->affListeClient = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->infoClient->SuspendLayout();
 			this->adresseDomicile->SuspendLayout();
@@ -223,7 +226,7 @@ namespace POOIsicelo {
 			// 
 			// delClient
 			// 
-			this->delClient->Location = System::Drawing::Point(16, 66);
+			this->delClient->Location = System::Drawing::Point(16, 55);
 			this->delClient->Margin = System::Windows::Forms::Padding(4);
 			this->delClient->Name = L"delClient";
 			this->delClient->Size = System::Drawing::Size(147, 28);
@@ -233,7 +236,7 @@ namespace POOIsicelo {
 			// 
 			// modClient
 			// 
-			this->modClient->Location = System::Drawing::Point(16, 122);
+			this->modClient->Location = System::Drawing::Point(16, 100);
 			this->modClient->Margin = System::Windows::Forms::Padding(4);
 			this->modClient->Name = L"modClient";
 			this->modClient->Size = System::Drawing::Size(147, 28);
@@ -244,7 +247,7 @@ namespace POOIsicelo {
 			// 
 			// affClient
 			// 
-			this->affClient->Location = System::Drawing::Point(16, 180);
+			this->affClient->Location = System::Drawing::Point(16, 145);
 			this->affClient->Margin = System::Windows::Forms::Padding(4);
 			this->affClient->Name = L"affClient";
 			this->affClient->Size = System::Drawing::Size(147, 28);
@@ -652,11 +655,22 @@ namespace POOIsicelo {
 			this->textBox6->Size = System::Drawing::Size(132, 22);
 			this->textBox6->TabIndex = 37;
 			// 
+			// affListeClient
+			// 
+			this->affListeClient->Location = System::Drawing::Point(16, 190);
+			this->affListeClient->Margin = System::Windows::Forms::Padding(4);
+			this->affListeClient->Name = L"affListeClient";
+			this->affListeClient->Size = System::Drawing::Size(147, 45);
+			this->affListeClient->TabIndex = 52;
+			this->affListeClient->Text = L"Afficher la liste des Clients";
+			this->affListeClient->UseVisualStyleBackColor = true;
+			// 
 			// GestionClient
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(995, 533);
+			this->Controls->Add(this->affListeClient);
 			this->Controls->Add(this->adresseLivraison);
 			this->Controls->Add(this->adresseFacturation);
 			this->Controls->Add(this->adresseDomicile);
