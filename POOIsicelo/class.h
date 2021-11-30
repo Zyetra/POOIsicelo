@@ -27,24 +27,25 @@ class Stats {
 	protected:
 
 	public:
+		System::String^ CalculCA(int, int);
 
 };
 
-class Personne {
+ref class Personne {
 	protected:
-		std::string Nom;
-		std::string Prenom;
+		System::String^ Nom;
+		System::String^ Prenom;
 
 	public:
-		std::string getNom() {}
+		System::String^ getNom() {}
 		void getPrenom() {}
 };
 
-class Personnel :public Personne {
+ref class Personnel :public Personne {
 	protected:
-		std::string Nom_Superieur;
-		std::string Prenom_Superieur;
-		std::string Embauche;
+		System::String^ Nom_Superieur;
+		System::String^ Prenom_Superieur;
+		System::String^ Embauche;
 		int IDadresse;
 
 	public:
@@ -62,24 +63,43 @@ ref class MPersonnel {
 	};
 
 
-class Client :public Personne {
+ref class Client :public Personne {
 	protected:
-		std::string Naissance;
-		std::string Premier_Achat;
+		System::String^ Naissance;
+		System::String^ Premier_Achat;
 		int Num_Client = 0;
 		int IDadresse;
 
 
 	public:
-		Client::Client(std::string Name, std::string FirstName, std::string BornDate, std::string AchatDate);
+		Client(){};
 
 };
 
-ref class MClient {
+ref class MClient{
 	protected:
 		System::String^ CSQL;
+		System::String^ nom;
+		System::String^ prenom;
+		System::String^ dateNaissance;
+		System::String^ datePremierAchat;
+		int idClient;
 
 	public:
+		System::String^ Select(void);
+		System::String^ Insert(void);
+		System::String^ Delete(void);
+		System::String^ Update(void);
+		void setId(int);
+		void setNom(System::String^);
+		void setPrenom(System::String^);
+		void setDateNaissance(System::String^);
+		void setDatePremierAchat(System::String^);
+		int getId(void);
+		System::String^ getNom(void);
+		System::String^ getPrenom(void);
+		System::String^ getNaissance(void);
+		System::String^ getDatePremierAchat(void);
 };
 
 class Adresse {
@@ -196,10 +216,13 @@ ref class CLservices
 private:
 	CLcad^ oCad;
 	MCommande^ oMappTB;
+	MClient^ oMappClient;
 public:
 	CLservices(void);
 	System::Data::DataSet^ selectionnerToutesLesPersonnes(System::String^);
 	void ajouterUneCommande(System::String^, System::String^);
 	void deleteUneCommande(System::String^);
 	void updateUneCommande(System::String^, System::String^, System::String^);
+	void ajouterUnClient(System::String^, System::String^, System::String^, System::String^);
+	void ajouterUneAdresse(System::String^, System::String^, System::String^, System::String^);
 };

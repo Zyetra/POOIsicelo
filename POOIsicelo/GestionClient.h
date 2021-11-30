@@ -1,4 +1,5 @@
 #pragma once
+#include "class.h"
 
 namespace POOIsicelo {
 
@@ -8,6 +9,9 @@ namespace POOIsicelo {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+
+
+
 
 	/// <summary>
 	/// Description résumée de Form1
@@ -21,6 +25,7 @@ namespace POOIsicelo {
 			//
 			//TODO: ajoutez ici le code du constructeur
 			//
+			this->oSvc = gcnew CLservices();
 		}
 
 	protected:
@@ -47,6 +52,7 @@ namespace POOIsicelo {
 
 
 
+	private: CLservices^ oSvc;
 
 
 
@@ -207,17 +213,18 @@ namespace POOIsicelo {
 			// 
 			this->addClient->AccessibleDescription = L"hello";
 			this->addClient->Location = System::Drawing::Point(16, 15);
-			this->addClient->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->addClient->Margin = System::Windows::Forms::Padding(4);
 			this->addClient->Name = L"addClient";
 			this->addClient->Size = System::Drawing::Size(147, 28);
 			this->addClient->TabIndex = 1;
 			this->addClient->Text = L"Ajouter un Client";
 			this->addClient->UseVisualStyleBackColor = true;
+			this->addClient->Click += gcnew System::EventHandler(this, &GestionClient::addClient_Click);
 			// 
 			// delClient
 			// 
 			this->delClient->Location = System::Drawing::Point(16, 66);
-			this->delClient->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->delClient->Margin = System::Windows::Forms::Padding(4);
 			this->delClient->Name = L"delClient";
 			this->delClient->Size = System::Drawing::Size(147, 28);
 			this->delClient->TabIndex = 2;
@@ -227,7 +234,7 @@ namespace POOIsicelo {
 			// modClient
 			// 
 			this->modClient->Location = System::Drawing::Point(16, 122);
-			this->modClient->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->modClient->Margin = System::Windows::Forms::Padding(4);
 			this->modClient->Name = L"modClient";
 			this->modClient->Size = System::Drawing::Size(147, 28);
 			this->modClient->TabIndex = 3;
@@ -238,7 +245,7 @@ namespace POOIsicelo {
 			// affClient
 			// 
 			this->affClient->Location = System::Drawing::Point(16, 180);
-			this->affClient->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->affClient->Margin = System::Windows::Forms::Padding(4);
 			this->affClient->Name = L"affClient";
 			this->affClient->Size = System::Drawing::Size(147, 28);
 			this->affClient->TabIndex = 4;
@@ -259,7 +266,7 @@ namespace POOIsicelo {
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView1->Location = System::Drawing::Point(16, 305);
-			this->dataGridView1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->dataGridView1->Margin = System::Windows::Forms::Padding(4);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->Size = System::Drawing::Size(963, 212);
@@ -268,7 +275,7 @@ namespace POOIsicelo {
 			// datePremierAchat
 			// 
 			this->datePremierAchat->Location = System::Drawing::Point(7, 218);
-			this->datePremierAchat->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->datePremierAchat->Margin = System::Windows::Forms::Padding(4);
 			this->datePremierAchat->Name = L"datePremierAchat";
 			this->datePremierAchat->Size = System::Drawing::Size(132, 22);
 			this->datePremierAchat->TabIndex = 16;
@@ -297,7 +304,7 @@ namespace POOIsicelo {
 			// numClient
 			// 
 			this->numClient->Location = System::Drawing::Point(87, 246);
-			this->numClient->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->numClient->Margin = System::Windows::Forms::Padding(4);
 			this->numClient->Name = L"numClient";
 			this->numClient->Size = System::Drawing::Size(52, 22);
 			this->numClient->TabIndex = 27;
@@ -305,7 +312,7 @@ namespace POOIsicelo {
 			// codePostalFacturation
 			// 
 			this->codePostalFacturation->Location = System::Drawing::Point(7, 216);
-			this->codePostalFacturation->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->codePostalFacturation->Margin = System::Windows::Forms::Padding(4);
 			this->codePostalFacturation->Name = L"codePostalFacturation";
 			this->codePostalFacturation->Size = System::Drawing::Size(132, 22);
 			this->codePostalFacturation->TabIndex = 37;
@@ -324,7 +331,7 @@ namespace POOIsicelo {
 			// 
 			this->villeFacturation->FormattingEnabled = true;
 			this->villeFacturation->Location = System::Drawing::Point(7, 158);
-			this->villeFacturation->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->villeFacturation->Margin = System::Windows::Forms::Padding(4);
 			this->villeFacturation->Name = L"villeFacturation";
 			this->villeFacturation->Size = System::Drawing::Size(160, 24);
 			this->villeFacturation->TabIndex = 35;
@@ -342,7 +349,7 @@ namespace POOIsicelo {
 			// rueFacturation
 			// 
 			this->rueFacturation->Location = System::Drawing::Point(7, 100);
-			this->rueFacturation->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->rueFacturation->Margin = System::Windows::Forms::Padding(4);
 			this->rueFacturation->Name = L"rueFacturation";
 			this->rueFacturation->Size = System::Drawing::Size(132, 22);
 			this->rueFacturation->TabIndex = 33;
@@ -360,7 +367,7 @@ namespace POOIsicelo {
 			// numFacturation
 			// 
 			this->numFacturation->Location = System::Drawing::Point(7, 44);
-			this->numFacturation->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->numFacturation->Margin = System::Windows::Forms::Padding(4);
 			this->numFacturation->Name = L"numFacturation";
 			this->numFacturation->Size = System::Drawing::Size(132, 22);
 			this->numFacturation->TabIndex = 31;
@@ -696,6 +703,11 @@ private: System::Void label8_Click(System::Object^ sender, System::EventArgs^ e)
 private: System::Void label9_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void label14_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void addClient_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	this->oSvc->ajouterUnClient(this->nomClient->Text, this->prenomClient->Text, this->dateNaissanceClient->Text, this->datePremierAchat->Text);
+
 }
 };
 }

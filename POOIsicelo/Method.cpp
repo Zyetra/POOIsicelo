@@ -35,15 +35,79 @@ void Commande::editCommande(string Reference) {
 
 }
 
+// CLIENT
 
 
-Client::Client(std::string Name, std::string FirstName, std::string BornDate, std::string AchatDate) {
-	Num_Client++;
-	Nom = Name;
-	Prenom = FirstName;
-	Naissance = BornDate;
-	Premier_Achat = AchatDate;
+
+void CLservices::ajouterUnClient(System::String^ nom, System::String^ prenom, System::String^ dateNaissance, System::String^ datePremierAchat) {
+
+	{
+		System::String^ sql;
+
+		this->oMappClient->setNom(nom);
+		this->oMappClient->setPrenom(prenom);
+		this->oMappClient->setDateNaissance(dateNaissance);
+		this->oMappClient->setDatePremierAchat(datePremierAchat);
+		sql = this->oMappClient->Insert();
+
+		this->oCad->actionRows(sql);
+	}
 }
+
+void MClient::setId(int Id)
+{
+	this->idClient = Id;
+}
+void MClient::setNom(System::String^ nom)
+{
+	this->nom = nom;
+}
+void MClient::setPrenom(System::String^ prenom)
+{
+	this->prenom = prenom;
+}
+
+void MClient::setDateNaissance(System::String^ dateNaissance) {
+
+	this->dateNaissance = dateNaissance;
+
+}
+
+void MClient::setDatePremierAchat(System::String^ datePremierAchat) {
+
+	this->datePremierAchat = datePremierAchat;
+
+}
+
+int MClient::getId(void) { return this->idClient; }
+System::String^ MClient::getNom(void) { return this->nom; }
+System::String^ MClient::getPrenom(void) { return this->prenom; }
+System::String^ MClient::getNom(void) { return this->dateNaissance; }
+System::String^ MClient::getPrenom(void) { return this->datePremierAchat; }
+
+// REQUETES SQL CLIENT
+
+System::String^ MClient::Insert(void)
+{
+	return "INSERT INTO Client (nom, prenom, date_Naissance_Client, date_Premier_Achat_Client) VALUES('" + this->nom + "','" + this->prenom + "','" + this->dateNaissance + "','" + this->datePremierAchat + "');";
+}
+
+
+// DEBUT ADRESSE
+
+
+
+// FIN CLIENT
+
+// DEBUT STATISTIQUES
+
+System::String^ Stats::CalculCA(int mois, int annee){
+	return "SELECT * FROM Gestion_des_commandes WHERE MONTH(Date_Paiement_Commande) =" + mois + "AND  YEAR(Date_Paiement_Commande) =" + annee + ";";
+}
+
+// FIN STATISTIQUES
+
+
 
 //Commande
 
