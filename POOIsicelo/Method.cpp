@@ -175,7 +175,8 @@ System::String^ MCommande::Select(void)
 }
 System::String^ MCommande::Insert(void)
 {
-	//return "INSERT INTO [dbo].[commande]([reference_commande],[date_livraison],[date_envoi],[quantite_totale_article],[quantite_article],[montant_total_ht],[montant_total_ttc],[montant_total_tva],[masque],[IDpersonnel],[IDclient],[IDpaiment])VALUES('"this->Reference"' ,'"this->Date_Livraison"','"this->Date_Envoi"',2,4,3000,3250,3500,1,'"this->IDpersonnel"','"this->IDclient"','"this->IDpaiement"');";
+	return "INSERT INTO Gestion_des_commandes([reference_commande],Date_Emission_Commande,Date_Livraison_Prevue_Commande,Quantite_Total_Article_Commande,[montant_total_ht],[montant_total_ttc],[montant_total_tva],ID_Moyen_de_Paiement,ID_Numero_Client,ID_Personnel)VALUES('" + this->Reference + "' ,'" + this->Date_Livraison + "','" + this->Date_Envoi + "',2,4,3000,3250,3500,1,'" + this->IDpersonnel + "','" + this->IDclient + "','" + this->IDpaiement + "')";
+	
 }
 System::String^ MCommande::Delete(void)
 {
@@ -324,7 +325,7 @@ System::String^ MCommande::getDateL(void) { return this->Date_Livraison; }
 
 CLcad::CLcad(void) {
 
-	this->sCnx = "Data Source=tcp:10.162.128.65,49172;Initial Catalog=testeisiclo;Persist Security Info=True;User ID=valentin;Password=2021";
+	this->sCnx = "Data Source=tcp:10.162.128.65,49172;Initial Catalog=v3;Persist Security Info=True;User ID=valentin;Password=2021";
 
 	this->sSql = "Rien";
 
