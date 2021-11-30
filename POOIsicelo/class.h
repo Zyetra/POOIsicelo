@@ -37,7 +37,7 @@ ref class Personne {
 		System::String^ Prenom;
 
 	public:
-		System::String^ getNom() {}
+		void getNom() {}
 		void getPrenom() {}
 };
 
@@ -86,10 +86,10 @@ ref class MClient{
 		int idClient;
 
 	public:
-		System::String^ Select(void);
+		//System::String^ Select(void);
 		System::String^ Insert(void);
-		System::String^ Delete(void);
-		System::String^ Update(void);
+		//System::String^ Delete(void);
+		//System::String^ Update(void);
 		void setId(int);
 		void setNom(System::String^);
 		void setPrenom(System::String^);
@@ -224,5 +224,5 @@ public:
 	void deleteUneCommande(System::String^);
 	void updateUneCommande(System::String^, System::String^, System::String^);
 	void ajouterUnClient(System::String^, System::String^, System::String^, System::String^);
-	void ajouterUneAdresse(System::String^, System::String^, System::String^, System::String^);
+	//void ajouterUneAdresse(System::String^, System::String^, System::String^, System::String^);
 };
