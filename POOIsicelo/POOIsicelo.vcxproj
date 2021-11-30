@@ -120,16 +120,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CLAdresse.cpp" />
+    <ClCompile Include="CLArticle.cpp" />
+    <ClCompile Include="CLCad.cpp" />
+    <ClCompile Include="CLClient.cpp" />
+    <ClCompile Include="CLCommande.cpp" />
+    <ClCompile Include="CLPersonnel.cpp" />
+    <ClCompile Include="CLServices.cpp" />
+    <ClCompile Include="CLStats.cpp" />
     <ClCompile Include="Commandes.cpp" />
     <ClCompile Include="GestionArticles.cpp" />
     <ClCompile Include="GestionClient.cpp" />
     <ClCompile Include="GestionPersonnel.cpp" />
-    <ClCompile Include="Method.cpp" />
     <ClCompile Include="Isicelo.cpp" />
     <ClCompile Include="Statistiques.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="class.h" />
+    <ClInclude Include="CLArticle.h" />
+    <ClInclude Include="CLCad.h" />
+    <ClInclude Include="CLCommande.h" />
+    <ClInclude Include="CLPersonne.h" />
+    <ClInclude Include="CLServices.h" />
+    <ClInclude Include="CLStats.h" />
     <ClInclude Include="Commandes.h">
       <FileType>CppForm</FileType>
     </ClInclude>

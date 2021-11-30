@@ -1,4 +1,10 @@
 #pragma once
+#include "CLServices.h"
+#include "CLCad.h"
+#include "CLCommande.h"
+#include "CLPersonne.h"
+#include "CLStats.h"
+#include "CLArticle.h"
 
 namespace POOIsicelo {
 
