@@ -53,7 +53,7 @@ void CLservices::ajouterUnClient(System::String^ nom, System::String^ prenom, Sy
 	}
 }
 
-void MClient::setId(int Id)
+void MClient::setIdClient(int Id)
 {
 	this->idClient = Id;
 }
@@ -78,25 +78,84 @@ void MClient::setDatePremierAchat(System::String^ datePremierAchat) {
 
 }
 
-int MClient::getId(void) { return this->idClient; }
+int MClient::getIdClient(void) { return this->idClient; }
 System::String^ MClient::getNom(void) { return this->nom; }
 System::String^ MClient::getPrenom(void) { return this->prenom; }
 System::String^ MClient::getNaissance(void) { return this->dateNaissance; }
 System::String^ MClient::getDatePremierAchat(void) { return this->datePremierAchat; }
 
-// REQUETES SQL CLIENT
+		// REQUETES SQL CLIENT
 
-System::String^ MClient::Insert(void)
+System::String^ MClient::Insert()
 {
-	return "INSERT INTO Client (nom, prenom, date_Naissance_Client, date_Premier_Achat_Client) VALUES('" + this->nom + "','" + this->prenom + "','" + this->dateNaissance + "','" + this->datePremierAchat + "');";
+	return "INSERT INTO Client (nom, prenom, date_Naissance_Client, date_Premier_Achat_Client, IDadresse) VALUES('" + this->nom + "','" + this->prenom + "','" + this->dateNaissance + "','" + this->datePremierAchat + "', (SELECT MAX(IDadresse) FROM adresse))";
 }
 
+// FIN CLIENT
 
 // DEBUT ADRESSE
 
+void CLservices::ajouterUneAdresse(System::String^ number, System::String^ street, System::String^ city, System::String^ postalCode) {
+
+	{
+		System::String^ sql;
+
+		this->oMappAdresse->setNumero(number);
+		this->oMappAdresse->setRue(street);
+		this->oMappAdresse->setVille(city);
+		this->oMappAdresse->setCodePostal(postalCode);
+
+		sql = this->oMappAdresse->InsertVille();
+		this->oCad->actionRows(sql);
+
+		sql = "";
+
+		sql = this->oMappAdresse->InsertAdresse();
+		this->oCad->actionRows(sql);
+	}
+}
+
+int MAdresse::getIdAdresse(void) { return this->idAdresse; }
+System::String^ MAdresse::getNumero(void) { return this->Numero; }
+System::String^ MAdresse::getRue(void) { return this->Rue; }
+System::String^ MAdresse::getVille(void) { return this->Ville; }
+System::String^ MAdresse::getCodePostal(void) { return this->Code_postal; }
+
+void MAdresse::setIdAdresse(int Id)
+{
+	this->idAdresse = Id;
+}
+void MAdresse::setNumero(System::String^ number)
+{
+	this->Numero = number;
+}
+void MAdresse::setRue(System::String^ street)
+{
+	this->Rue = street;
+}
+
+void MAdresse::setVille(System::String^ City) 
+{
+	this->Ville = City;
+}
+
+void MAdresse::setCodePostal(System::String^ PostalCode) 
+{
+	this->Code_postal = PostalCode;
+}
 
 
-// FIN CLIENT
+		// REQUETES SQL ADRESSE
+
+System::String^ MAdresse::InsertVille(void) 
+{
+	return "IF NOT EXISTS (SELECT * FROM ville WHERE nom_ville =" + this->Ville + " AND code_postal=" + this->Code_postal + ") INSERT INTO Ville (nom_ville, code_postal) VALUES (" + this->Ville + "," + this->Code_postal + ")";
+}
+
+System::String^ MAdresse::InsertAdresse(void)
+{
+	return "INSERT INTO adresse (numero, rue, IDville) VALUES (" + this->Numero + ", " + this->Rue + ", (SELECT IDville FROM ville WHERE nom_ville=" + this->Ville + "))";
+}
 
 // DEBUT STATISTIQUES
 
@@ -116,7 +175,7 @@ System::String^ MCommande::Select(void)
 }
 System::String^ MCommande::Insert(void)
 {
-	return "";
+	//return "INSERT INTO [dbo].[commande]([reference_commande],[date_livraison],[date_envoi],[quantite_totale_article],[quantite_article],[montant_total_ht],[montant_total_ttc],[montant_total_tva],[masque],[IDpersonnel],[IDclient],[IDpaiment])VALUES('"this->Reference"' ,'"this->Date_Livraison"','"this->Date_Envoi"',2,4,3000,3250,3500,1,'"this->IDpersonnel"','"this->IDclient"','"this->IDpaiement"');";
 }
 System::String^ MCommande::Delete(void)
 {

@@ -514,6 +514,7 @@ private: System::Void label14_Click(System::Object^ sender, System::EventArgs^ e
 }
 private: System::Void addClient_Click(System::Object^ sender, System::EventArgs^ e) {
 
+	this->oSvc->ajouterUneAdresse(this->numAdresse-> Text, this->rueAdresse->Text, this->villeAdresse->Text, this->codePostalDomicile->Text);
 	this->oSvc->ajouterUnClient(this->nomClient->Text, this->prenomClient->Text, this->dateNaissanceClient->Text, this->datePremierAchat->Text);
 
 }

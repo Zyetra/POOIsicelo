@@ -87,15 +87,15 @@ ref class MClient{
 
 	public:
 		//System::String^ Select(void);
-		System::String^ Insert(void);
+		System::String^ Insert();
 		//System::String^ Delete(void);
 		//System::String^ Update(void);
-		void setId(int);
+		void setIdClient(int);
 		void setNom(System::String^);
 		void setPrenom(System::String^);
 		void setDateNaissance(System::String^);
 		void setDatePremierAchat(System::String^);
-		int getId(void);
+		int getIdClient(void);
 		System::String^ getNom(void);
 		System::String^ getPrenom(void);
 		System::String^ getNaissance(void);
@@ -115,9 +115,28 @@ class Adresse {
 
 ref class MAdresse {
 	protected:
-		System::String^ ADSQL;
+		int idAdresse;
+		System::String^ Numero;
+		System::String^ Rue;
+		System::String^ Ville;
+		System::String^ Code_postal;
 
 	public:
+		//System::String^ Select(void);
+		System::String^ InsertVille(void);
+		System::String^ InsertAdresse(void);
+		//System::String^ Delete(void);
+		//System::String^ Update(void);
+		void setIdAdresse(int);
+		void setNumero(System::String^);
+		void setRue(System::String^);
+		void setVille(System::String^);
+		void setCodePostal(System::String^);
+		int getIdAdresse();
+		System::String^ getNumero();
+		System::String^ getRue();
+		System::String^ getVille();
+		System::String^ getCodePostal();
 };
 
 class Commande {
@@ -150,6 +169,9 @@ ref class MCommande {
 		System::String^ CoSql;
 		int IDcommande;
 		int Increment = 0;
+		int IDpersonnel;
+		int IDclient;
+		int IDpaiement;
 		float Montant_Paiement;
 		System::String^ Reference;
 		System::String^ Moyen_Paiement;
@@ -222,6 +244,7 @@ private:
 	CLcad^ oCad;
 	MCommande^ oMappTB;
 	MClient^ oMappClient;
+	MAdresse^ oMappAdresse;
 public:
 	CLservices(void);
 	System::Data::DataSet^ selectionnerToutesLesCommandes(System::String^);
@@ -229,5 +252,5 @@ public:
 	void deleteUneCommande(System::String^);
 	void updateUneCommande(System::String^, System::String^, System::String^);
 	void ajouterUnClient(System::String^, System::String^, System::String^, System::String^);
-	//void ajouterUneAdresse(System::String^, System::String^, System::String^, System::String^);
+	void ajouterUneAdresse(System::String^, System::String^, System::String^, System::String^);
 };
