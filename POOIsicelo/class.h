@@ -137,7 +137,6 @@ class Commande {
 		Commande(int taille);
 		~Commande();
 		void addArticle(Article* obj, int Nombre);
-		void addReference();
 		void getArticle();
 		void editCommande(std::string Reference);
 
@@ -150,10 +149,14 @@ ref class MCommande {
 	protected:
 		System::String^ CoSql;
 		int IDcommande;
-		int IDpersonnel;
-		int IDclient;
-		int IDpaiement;
+		int Increment = 0;
+		float Montant_Paiement;
 		System::String^ Reference;
+		System::String^ Moyen_Paiement;
+		System::String^ Date_Paiement1;
+		System::String^ Date_Paiement2;
+		System::String^ Date_Paiement3;
+		System::String^ Date_Paiement4;
 		System::String^ Date_Envoi;
 		System::String^ Date_Livraison;
 
@@ -163,9 +166,10 @@ ref class MCommande {
 		System::String^ Delete(void);
 		System::String^ Update(void);
 		void setId(int);
-		void setRef(System::String^);
+		void setRef(System::String^, System::String^, System::String^);
 		void setDateE(System::String^);
 		void setDateL(System::String^);
+		void setPaiement(System::String^, System::String^, float, int);
 		int getId(void);
 		System::String^ getRef(void);
 		System::String^ getDateE(void);
@@ -219,8 +223,8 @@ private:
 	MClient^ oMappClient;
 public:
 	CLservices(void);
-	System::Data::DataSet^ selectionnerToutesLesPersonnes(System::String^);
-	void ajouterUneCommande(System::String^, System::String^);
+	System::Data::DataSet^ selectionnerToutesLesCommandes(System::String^);
+	void ajouterUneCommande(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, float, int);
 	void deleteUneCommande(System::String^);
 	void updateUneCommande(System::String^, System::String^, System::String^);
 	void ajouterUnClient(System::String^, System::String^, System::String^, System::String^);
