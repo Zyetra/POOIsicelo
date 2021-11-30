@@ -82,8 +82,8 @@ void MClient::setDatePremierAchat(System::String^ datePremierAchat) {
 int MClient::getId(void) { return this->idClient; }
 System::String^ MClient::getNom(void) { return this->nom; }
 System::String^ MClient::getPrenom(void) { return this->prenom; }
-System::String^ MClient::getNom(void) { return this->dateNaissance; }
-System::String^ MClient::getPrenom(void) { return this->datePremierAchat; }
+System::String^ MClient::getNaissance(void) { return this->dateNaissance; }
+System::String^ MClient::getDatePremierAchat(void) { return this->datePremierAchat; }
 
 // REQUETES SQL CLIENT
 
