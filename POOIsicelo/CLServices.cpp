@@ -13,7 +13,10 @@ CLservices::CLservices(void)
 	this->oMappCommande = gcnew MCommande();
 	this->oMappAdresse = gcnew MAdresse();
 	this->oMappClient = gcnew MClient();
+	this->oMappPersonnel = gcnew MPersonnel();
 }
+
+// COMMANDE
 
 System::Data::DataSet^ CLservices::selectionnerToutesLesCommandes(System::String^ dataTableName)
 {
@@ -134,4 +137,30 @@ void CLservices::ajouterUneAdresse(System::String^ number, System::String^ stree
 		sql = this->oMappAdresse->InsertAdresse();
 		this->oCad->actionRows(sql);
 	}
+}
+
+// PERSONNEL
+
+void CLservices::ajouterPersonnel(System::String^ nom, System::String^ prenom, System::String^ dateEmbauche, System::String^ nomSuperieur, System::String^ prenomSuperieur) {
+
+	{
+		System::String^ sql;
+
+		this->oMappPersonnel->setNom(nom);
+		this->oMappPersonnel->setPrenom(prenom);
+		this->oMappPersonnel->setDateEmbauche(dateEmbauche);
+		this->oMappPersonnel->setNom_Superieur(nomSuperieur);
+		this->oMappPersonnel->setPrenom_Superieur(prenomSuperieur);
+		sql = this->oMappPersonnel->Insert();
+
+		this->oCad->actionRows(sql);
+	}
+}
+
+System::Data::DataSet^ CLservices::selectionnerTousLePersonnel(System::String^ dataTableName)
+{
+	System::String^ sql;
+
+	sql = this->oMappPersonnel->SelectAll();
+	return this->oCad->getRows(sql, dataTableName);
 }

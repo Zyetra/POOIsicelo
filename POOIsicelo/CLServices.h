@@ -11,6 +11,7 @@ private:
 	MCommande^ oMappCommande;
 	MClient^ oMappClient;
 	MAdresse^ oMappAdresse;
+	MPersonnel^ oMappPersonnel;
 public:
 	CLservices(void);
 	System::Data::DataSet^ selectionnerToutesLesCommandes(System::String^);
@@ -23,4 +24,7 @@ public:
 	System::Data::DataSet^ selectionnerTousLesClients(System::String^);
 	System::Data::DataSet^ selectionnerUnClient(System::String^, System::String^, System::String^, System::String^);
 	void supprimerUnClient(System::String^, System::String^, System::String^, System::String^);
+	void ajouterPersonnel(System::String^, System::String^, System::String^, System::String^, System::String^);
+	System::Data::DataSet^ selectionnerTousLePersonnel(System::String^);
+	//System::Data::DataSet^ selectionnerPersonnel(System::String^, System::String^, System::String^, System::String^, System::String^);
 };

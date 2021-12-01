@@ -19,17 +19,39 @@ protected:
 	int IDadresse;
 
 public:
-	void getSuperieur() {};
-	void getEmbauche() {};
-	void getAdresse() {};
+	Personnel() {};
 
 };
 
 ref class MPersonnel {
 protected:
 	System::String^ PSQL;
+	System::String^ nom;
+	System::String^ prenom;
+	System::String^ dateEmbauche;
+	System::String^ nomSuperieur;
+	System::String^ prenomSuperieur;
+	int idPersonnel;
 
 public:
+	System::String^ Insert();
+	System::String^ SelectAll(void);
+	//System::String^ Select();
+	//System::String^ Delete(void);
+	//System::String^ Update(void);
+	void setIdPersonnel(int);
+	void setNom(System::String^);
+	void setPrenom(System::String^);
+	void setNom_Superieur(System::String^);
+	void setPrenom_Superieur(System::String^);
+	void setDateEmbauche(System::String^);
+	int getIdPersonnel(void);
+	System::String^ getNom(void);
+	System::String^ getPrenom(void);
+	System::String^ getNom_Superieur(void);
+	System::String^ getPrenom_Superieur(void);
+	System::String^ getEmbauche(void);
+
 };
 
 
