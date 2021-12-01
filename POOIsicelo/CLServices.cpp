@@ -5,8 +5,6 @@
 #include <string>
 
 
-
-
 CLservices::CLservices(void)
 {
 	this->oCad = gcnew CLcad();
@@ -143,37 +141,10 @@ void CLservices::ajouterUneAdresse(System::String^ number, System::String^ stree
 	}
 }
 
-// PERSONNEL
-
-void CLservices::ajouterPersonnel(System::String^ nom, System::String^ prenom, System::String^ dateEmbauche, System::String^ nomSuperieur, System::String^ prenomSuperieur) {
-
-	{
-		System::String^ sql;
-
-		this->oMappPersonnel->setNom(nom);
-		this->oMappPersonnel->setPrenom(prenom);
-		this->oMappPersonnel->setDateEmbauche(dateEmbauche);
-		this->oMappPersonnel->setNom_Superieur(nomSuperieur);
-		this->oMappPersonnel->setPrenom_Superieur(prenomSuperieur);
-		sql = this->oMappPersonnel->Insert();
-
-		this->oCad->actionRows(sql);
-	}
-}
-
-System::Data::DataSet^ CLservices::selectionnerTousLePersonnel(System::String^ dataTableName)
-{
-	System::String^ sql;
-
-	sql = this->oMappPersonnel->SelectAll();
-	return this->oCad->getRows(sql, dataTableName);
-}
-
 void CLservices::modifierUneAdresse(System::String^ number, System::String^ street, System::String^ city, System::String^ postalCode, System::String^ idclient)
 {
 
 	System::String^ sql;
-
 
 	this->oMappAdresse->setVille(city);
 	this->oMappAdresse->setCodePostal(postalCode);
@@ -191,10 +162,87 @@ void CLservices::modifierUneAdresse(System::String^ number, System::String^ stre
 
 	sql = "";
 
-
 	short ID_Client = System::Convert::ToInt16(idclient);
 
 	sql = this->oMappAdresse->Update(ID_Client);
+	this->oCad->actionRows(sql);
+
+}
+
+// PERSONNEL
+
+void CLservices::ajouterPersonnel(System::String^ nomPersonnel, System::String^ prenomPersonnel, System::String^ dateEmbauche, System::String^ nomSuperieur, System::String^ prenomSuperieur) {
+
+	{
+		System::String^ sql;
+
+		this->oMappPersonnel->setNomPersonnel(nomPersonnel);
+		this->oMappPersonnel->setPrenomPersonnel(prenomPersonnel);
+		this->oMappPersonnel->setDateEmbauche(dateEmbauche);
+		this->oMappPersonnel->setNom_Superieur(nomSuperieur);
+		this->oMappPersonnel->setPrenom_Superieur(prenomSuperieur);
+		sql = this->oMappPersonnel->Insert();
+
+		this->oCad->actionRows(sql);
+	}
+}
+
+System::Data::DataSet^ CLservices::selectionnerTousLePersonnel(System::String^ dataTableName)
+{
+	System::String^ sql;
+
+	sql = this->oMappPersonnel->SelectAll();
+	return this->oCad->getRows(sql, dataTableName);
+}
+
+System::Data::DataSet^ CLservices::selectionnerPersonnel(System::String^ dataTableName, System::String^ nomPersonnel, System::String^ prenomPersonnel, System::String^ date_embauche)
+{
+	System::String^ sql;
+	this->oMappPersonnel->setNomPersonnel(nomPersonnel);
+	this->oMappPersonnel->setPrenomPersonnel(prenomPersonnel);
+	this->oMappPersonnel->setDateEmbauche(date_embauche);
+
+	sql = this->oMappPersonnel->Select();
+	return this->oCad->getRows(sql, dataTableName);
+}
+
+void CLservices::supprimerPersonnel(System::String^ nomPersonnel, System::String^ prenomPersonnel, System::String^ dateEmbauche, System::String^ idPersonnel)
+{
+	System::String^ sql;
+
+	this->oMappPersonnel->setIdPersonnel(int::Parse(idPersonnel));
+	this->oMappPersonnel->setNomPersonnel(nomPersonnel);
+	this->oMappPersonnel->setPrenomPersonnel(prenomPersonnel);
+	this->oMappPersonnel->setDateEmbauche(dateEmbauche);
+
+	sql = this->oMappPersonnel->Delete();
+	this->oCad->actionRows(sql);
+}
+
+void CLservices::modifierAdressePersonnel(System::String^ number, System::String^ street, System::String^ city, System::String^ postalCode, System::String^ idPersonnel)
+{
+
+	System::String^ sql;
+
+	this->oMappAdresse->setVille(city);
+	this->oMappAdresse->setCodePostal(postalCode);
+
+	sql = this->oMappAdresse->InsertVille();
+	this->oCad->actionRows(sql);
+
+	sql = "";
+
+	this->oMappAdresse->setNumero(number);
+	this->oMappAdresse->setRue(street);
+
+	sql = this->oMappAdresse->InsertAdresse();
+	this->oCad->actionRows(sql);
+
+	sql = "";
+
+	short ID_Personnel = System::Convert::ToInt16(idPersonnel);
+
+	sql = this->oMappAdresse->Update(ID_Personnel);
 	this->oCad->actionRows(sql);
 
 }

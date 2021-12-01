@@ -26,8 +26,8 @@ public:
 ref class MPersonnel {
 protected:
 	System::String^ PSQL;
-	System::String^ nom;
-	System::String^ prenom;
+	System::String^ nomPersonnel;
+	System::String^ prenomPersonnel;
 	System::String^ dateEmbauche;
 	System::String^ nomSuperieur;
 	System::String^ prenomSuperieur;
@@ -36,18 +36,18 @@ protected:
 public:
 	System::String^ Insert();
 	System::String^ SelectAll(void);
-	//System::String^ Select();
-	//System::String^ Delete(void);
+	System::String^ Select();
+	System::String^ Delete(void);
 	//System::String^ Update(void);
 	void setIdPersonnel(int);
-	void setNom(System::String^);
-	void setPrenom(System::String^);
+	void setNomPersonnel(System::String^);
+	void setPrenomPersonnel(System::String^);
 	void setNom_Superieur(System::String^);
 	void setPrenom_Superieur(System::String^);
 	void setDateEmbauche(System::String^);
 	int getIdPersonnel(void);
-	System::String^ getNom(void);
-	System::String^ getPrenom(void);
+	System::String^ getNomPersonnel(void);
+	System::String^ getPrenomPersonnel(void);
 	System::String^ getNom_Superieur(void);
 	System::String^ getPrenom_Superieur(void);
 	System::String^ getEmbauche(void);

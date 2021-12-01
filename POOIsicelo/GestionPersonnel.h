@@ -27,6 +27,8 @@ namespace POOIsicelo {
 			//
 			//TODO: ajoutez ici le code du constructeur
 			//
+			this->oSvc = gcnew CLservices();
+			this->Adresse1 = gcnew MAdresse();
 		}
 
 	protected:
@@ -65,15 +67,19 @@ namespace POOIsicelo {
 	private: System::Windows::Forms::TextBox^ prenomPersonnel;
 
 	private: System::Windows::Forms::GroupBox^ adresseClient;
+	private: System::Windows::Forms::TextBox^ codePostal1;
 
-	private: System::Windows::Forms::TextBox^ codePostalDomicile;
+
 	private: System::Windows::Forms::Label^ label9;
 	private: System::Windows::Forms::Label^ label12;
-	private: System::Windows::Forms::TextBox^ numAdresse;
-	private: System::Windows::Forms::ComboBox^ villeAdresse;
+	private: System::Windows::Forms::TextBox^ numAdresse1;
+	private: System::Windows::Forms::ComboBox^ villeAdresse1;
+
+
 	private: System::Windows::Forms::Label^ label10;
 	private: System::Windows::Forms::Label^ label11;
-	private: System::Windows::Forms::TextBox^ rueAdresse;
+	private: System::Windows::Forms::TextBox^ rueAdresse1;
+
 	private: System::Windows::Forms::GroupBox^ infoSuperieur;
 
 	private: System::Windows::Forms::Label^ label1;
@@ -85,6 +91,9 @@ namespace POOIsicelo {
 	private: System::Windows::Forms::DataGridView^ dataGridViewPersonnel;
 
 	private: System::Windows::Forms::Button^ affListePersonnel;
+	private: System::Windows::Forms::Label^ label13;
+	private: System::Windows::Forms::TextBox^ idPersonnel;
+
 
 	protected:
 
@@ -109,6 +118,8 @@ namespace POOIsicelo {
 			this->affPersonnel = (gcnew System::Windows::Forms::Button());
 			this->buttonRetour = (gcnew System::Windows::Forms::Button());
 			this->infoPersonnel = (gcnew System::Windows::Forms::GroupBox());
+			this->label13 = (gcnew System::Windows::Forms::Label());
+			this->idPersonnel = (gcnew System::Windows::Forms::TextBox());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->dateEmbauche = (gcnew System::Windows::Forms::TextBox());
@@ -116,14 +127,14 @@ namespace POOIsicelo {
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->prenomPersonnel = (gcnew System::Windows::Forms::TextBox());
 			this->adresseClient = (gcnew System::Windows::Forms::GroupBox());
-			this->codePostalDomicile = (gcnew System::Windows::Forms::TextBox());
+			this->codePostal1 = (gcnew System::Windows::Forms::TextBox());
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->label12 = (gcnew System::Windows::Forms::Label());
-			this->numAdresse = (gcnew System::Windows::Forms::TextBox());
-			this->villeAdresse = (gcnew System::Windows::Forms::ComboBox());
+			this->numAdresse1 = (gcnew System::Windows::Forms::TextBox());
+			this->villeAdresse1 = (gcnew System::Windows::Forms::ComboBox());
 			this->label10 = (gcnew System::Windows::Forms::Label());
 			this->label11 = (gcnew System::Windows::Forms::Label());
-			this->rueAdresse = (gcnew System::Windows::Forms::TextBox());
+			this->rueAdresse1 = (gcnew System::Windows::Forms::TextBox());
 			this->infoSuperieur = (gcnew System::Windows::Forms::GroupBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->nomSuperieur = (gcnew System::Windows::Forms::TextBox());
@@ -158,6 +169,7 @@ namespace POOIsicelo {
 			this->delPersonnel->TabIndex = 3;
 			this->delPersonnel->Text = L"Supprimer un Personnel";
 			this->delPersonnel->UseVisualStyleBackColor = true;
+			this->delPersonnel->Click += gcnew System::EventHandler(this, &GestionPersonnel::delPersonnel_Click);
 			// 
 			// modPersonnel
 			// 
@@ -168,6 +180,7 @@ namespace POOIsicelo {
 			this->modPersonnel->TabIndex = 4;
 			this->modPersonnel->Text = L"Modifier un Personnel";
 			this->modPersonnel->UseVisualStyleBackColor = true;
+			this->modPersonnel->Click += gcnew System::EventHandler(this, &GestionPersonnel::modPersonnel_Click);
 			// 
 			// affPersonnel
 			// 
@@ -193,6 +206,8 @@ namespace POOIsicelo {
 			// 
 			// infoPersonnel
 			// 
+			this->infoPersonnel->Controls->Add(this->label13);
+			this->infoPersonnel->Controls->Add(this->idPersonnel);
 			this->infoPersonnel->Controls->Add(this->label7);
 			this->infoPersonnel->Controls->Add(this->label5);
 			this->infoPersonnel->Controls->Add(this->dateEmbauche);
@@ -205,6 +220,24 @@ namespace POOIsicelo {
 			this->infoPersonnel->TabIndex = 7;
 			this->infoPersonnel->TabStop = false;
 			this->infoPersonnel->Text = L"Informations Personnel";
+			// 
+			// label13
+			// 
+			this->label13->AutoSize = true;
+			this->label13->Location = System::Drawing::Point(7, 201);
+			this->label13->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label13->Name = L"label13";
+			this->label13->Size = System::Drawing::Size(91, 16);
+			this->label13->TabIndex = 54;
+			this->label13->Text = L"N° Personnel :";
+			// 
+			// idPersonnel
+			// 
+			this->idPersonnel->Location = System::Drawing::Point(7, 221);
+			this->idPersonnel->Margin = System::Windows::Forms::Padding(4);
+			this->idPersonnel->Name = L"idPersonnel";
+			this->idPersonnel->Size = System::Drawing::Size(86, 22);
+			this->idPersonnel->TabIndex = 55;
 			// 
 			// label7
 			// 
@@ -262,14 +295,14 @@ namespace POOIsicelo {
 			// 
 			// adresseClient
 			// 
-			this->adresseClient->Controls->Add(this->codePostalDomicile);
+			this->adresseClient->Controls->Add(this->codePostal1);
 			this->adresseClient->Controls->Add(this->label9);
 			this->adresseClient->Controls->Add(this->label12);
-			this->adresseClient->Controls->Add(this->numAdresse);
-			this->adresseClient->Controls->Add(this->villeAdresse);
+			this->adresseClient->Controls->Add(this->numAdresse1);
+			this->adresseClient->Controls->Add(this->villeAdresse1);
 			this->adresseClient->Controls->Add(this->label10);
 			this->adresseClient->Controls->Add(this->label11);
-			this->adresseClient->Controls->Add(this->rueAdresse);
+			this->adresseClient->Controls->Add(this->rueAdresse1);
 			this->adresseClient->Location = System::Drawing::Point(505, 15);
 			this->adresseClient->Name = L"adresseClient";
 			this->adresseClient->Size = System::Drawing::Size(185, 274);
@@ -277,13 +310,13 @@ namespace POOIsicelo {
 			this->adresseClient->TabStop = false;
 			this->adresseClient->Text = L"Adresse Domicile";
 			// 
-			// codePostalDomicile
+			// codePostal1
 			// 
-			this->codePostalDomicile->Location = System::Drawing::Point(7, 221);
-			this->codePostalDomicile->Margin = System::Windows::Forms::Padding(4);
-			this->codePostalDomicile->Name = L"codePostalDomicile";
-			this->codePostalDomicile->Size = System::Drawing::Size(132, 22);
-			this->codePostalDomicile->TabIndex = 33;
+			this->codePostal1->Location = System::Drawing::Point(7, 221);
+			this->codePostal1->Margin = System::Windows::Forms::Padding(4);
+			this->codePostal1->Name = L"codePostal1";
+			this->codePostal1->Size = System::Drawing::Size(132, 22);
+			this->codePostal1->TabIndex = 33;
 			// 
 			// label9
 			// 
@@ -305,22 +338,22 @@ namespace POOIsicelo {
 			this->label12->TabIndex = 32;
 			this->label12->Text = L" Code postal :";
 			// 
-			// numAdresse
+			// numAdresse1
 			// 
-			this->numAdresse->Location = System::Drawing::Point(7, 49);
-			this->numAdresse->Margin = System::Windows::Forms::Padding(4);
-			this->numAdresse->Name = L"numAdresse";
-			this->numAdresse->Size = System::Drawing::Size(132, 22);
-			this->numAdresse->TabIndex = 27;
+			this->numAdresse1->Location = System::Drawing::Point(7, 49);
+			this->numAdresse1->Margin = System::Windows::Forms::Padding(4);
+			this->numAdresse1->Name = L"numAdresse1";
+			this->numAdresse1->Size = System::Drawing::Size(132, 22);
+			this->numAdresse1->TabIndex = 27;
 			// 
-			// villeAdresse
+			// villeAdresse1
 			// 
-			this->villeAdresse->FormattingEnabled = true;
-			this->villeAdresse->Location = System::Drawing::Point(7, 163);
-			this->villeAdresse->Margin = System::Windows::Forms::Padding(4);
-			this->villeAdresse->Name = L"villeAdresse";
-			this->villeAdresse->Size = System::Drawing::Size(160, 24);
-			this->villeAdresse->TabIndex = 31;
+			this->villeAdresse1->FormattingEnabled = true;
+			this->villeAdresse1->Location = System::Drawing::Point(7, 163);
+			this->villeAdresse1->Margin = System::Windows::Forms::Padding(4);
+			this->villeAdresse1->Name = L"villeAdresse1";
+			this->villeAdresse1->Size = System::Drawing::Size(160, 24);
+			this->villeAdresse1->TabIndex = 31;
 			// 
 			// label10
 			// 
@@ -342,13 +375,13 @@ namespace POOIsicelo {
 			this->label11->TabIndex = 30;
 			this->label11->Text = L"Ville :";
 			// 
-			// rueAdresse
+			// rueAdresse1
 			// 
-			this->rueAdresse->Location = System::Drawing::Point(7, 105);
-			this->rueAdresse->Margin = System::Windows::Forms::Padding(4);
-			this->rueAdresse->Name = L"rueAdresse";
-			this->rueAdresse->Size = System::Drawing::Size(132, 22);
-			this->rueAdresse->TabIndex = 29;
+			this->rueAdresse1->Location = System::Drawing::Point(7, 105);
+			this->rueAdresse1->Margin = System::Windows::Forms::Padding(4);
+			this->rueAdresse1->Name = L"rueAdresse1";
+			this->rueAdresse1->Size = System::Drawing::Size(132, 22);
+			this->rueAdresse1->TabIndex = 29;
 			// 
 			// infoSuperieur
 			// 
@@ -456,8 +489,19 @@ private: System::Void buttonRetour_Click(System::Object^ sender, System::EventAr
 		this->Close();
 }
 private: System::Void addClient_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->oSvc->ajouterUneAdresse(this->numAdresse->Text, this->rueAdresse->Text, this->villeAdresse->Text, this->codePostalDomicile->Text);
+	this->oSvc->ajouterUneAdresse(this->numAdresse1->Text, this->rueAdresse1->Text, this->villeAdresse1->Text, this->codePostal1->Text);
 	this->oSvc->ajouterPersonnel(this->nomPersonnel->Text, this->prenomPersonnel->Text, this->dateEmbauche->Text, this->nomSuperieur->Text, this->prenomSuperieur->Text);
+	
+	this->prenomPersonnel->ResetText();
+	this->nomPersonnel->ResetText();
+	this->dateEmbauche->ResetText();
+	this->nomSuperieur->ResetText();
+	this->prenomSuperieur->ResetText();
+	this->numAdresse1->ResetText();
+	this->rueAdresse1->ResetText();
+	this->villeAdresse1->ResetText();
+	this->codePostal1->ResetText();
+
 }
 private: System::Void affListePersonnel_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->dataGridViewPersonnel->Refresh();
@@ -465,14 +509,34 @@ private: System::Void affListePersonnel_Click(System::Object^ sender, System::Ev
 	this->dataGridViewPersonnel->DataSource = this->oDs;
 	this->dataGridViewPersonnel->DataMember = "Gestion_du_Personnel";
 }
-
 private: System::Void affPersonnel_Click(System::Object^ sender, System::EventArgs^ e) {
-	/*
 	this->dataGridViewPersonnel->Refresh();
-	this->oDs = this->oSvc->selectionnerPersonnel("Gestion_du_Personnel", this->nomPersonnel->Text, this->prenomPersonnel->Text, this->dateEmbauche->Text, this->nomSuperieur->Text, this->prenomSuperieur->Text);
+	this->oDs = this->oSvc->selectionnerPersonnel("Gestion_du_Personnel", this->nomPersonnel->Text, this->prenomPersonnel->Text, this->dateEmbauche->Text);
 	this->dataGridViewPersonnel->DataSource = this->oDs;
 	this->dataGridViewPersonnel->DataMember = "Gestion_du_Personnel";
-	*/
+}
+private: System::Void delPersonnel_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->oSvc->supprimerPersonnel(this->nomPersonnel->Text, this->prenomPersonnel->Text, this->dateEmbauche->Text, this->idPersonnel->Text);
+
+	this->prenomPersonnel->ResetText();
+	this->nomPersonnel->ResetText();
+	this->dateEmbauche->ResetText();
+	this->idPersonnel->ResetText();
+
+}
+private: System::Void modPersonnel_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->oSvc->modifierAdressePersonnel(this->numAdresse1->Text, this->rueAdresse1->Text, this->villeAdresse1->Text, this->codePostal1->Text, this->idPersonnel->Text);
+
+	this->prenomPersonnel->ResetText();
+	this->nomPersonnel->ResetText();
+	this->dateEmbauche->ResetText();
+	this->nomSuperieur->ResetText();
+	this->prenomSuperieur->ResetText();
+	this->numAdresse1->ResetText();
+	this->rueAdresse1->ResetText();
+	this->villeAdresse1->ResetText();
+	this->codePostal1->ResetText();
+
 }
 };
 }
