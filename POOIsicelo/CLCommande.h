@@ -29,15 +29,13 @@ public:
 ref class MCommande {
 
 protected:
-	System::String^ CoSql;
 	int IDcommande;
-	int Increment = 0;
-	int IDpersonnel;
-	int IDclient;
+	int Increment;
+	int IDpersonnel = 1;
+	int IDclient = 1;
 	int IDpaiement;
 	float Montant_Paiement;
 	System::String^ Reference;
-	System::String^ Moyen_Paiement;
 	System::String^ Date_Paiement1;
 	System::String^ Date_Paiement2;
 	System::String^ Date_Paiement3;
@@ -46,6 +44,7 @@ protected:
 	System::String^ Date_Livraison;
 
 public:
+	System::String^ SelectVille(System::String^, System::String^, System::String^);
 	System::String^ Select(void);
 	System::String^ Insert(void);
 	System::String^ Delete(void);
@@ -55,7 +54,7 @@ public:
 	void desRef(System::String^ Ref);
 	void setDateE(System::String^);
 	void setDateL(System::String^);
-	void setPaiement(System::String^, System::String^, float , short);
+	void setPaiement(System::String^, float, short, System::String^);
 	int getId(void);
 	System::String^ getRef(void);
 	System::String^ getDateE(void);

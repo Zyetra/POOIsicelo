@@ -33,20 +33,24 @@ void Commande::getArticle() {
 void Commande::editCommande(string Reference) {
 
 }
+System::String^ MCommande::SelectVille(System::String^ nomClient, System::String^ prenomClient, System::String^ dateNaissanceClient)
+{
+	return "SELECT nom_ville FROM ville INNER JOIN  adresse on(adresse.IDville=ville.IDville) INNER JOIN Gestion_des_clients on(Gestion_des_clients.IDadresse=adresse.IDadresse) WHERE Nom_Client='" + nomClient + "' AND Prenom_Client= '" + prenomClient + "'  AND Date_Naissance_Client= '" + dateNaissanceClient + "';";
+}
 
 System::String^ MCommande::Select(void)
 {
-	return "SELECT ID_Numero_Client,Nom_Client,Prenom_Client ,nom_ville FROM Gestion_des_clients INNER JOIN adresse on(adresse.IDadresse = Gestion_des_clients.IDadresse) INNER JOIN ville on(ville.IDville = adresse.IDville);";
+	return "SELECT ID_Commande,[reference_commande],Date_Emission_Commande,Date_Livraison_Prevue_Commande,Quantite_Total_Article_Commande,[montant_total_ht],[montant_total_ttc],[montant_total_tva],[masque],nom_personnel,prenom_personnel,nom_client,prenom_client,Moyen_de_Paiement FROM Gestion_des_commandes INNER JOIN Gestion_du_personnel ON(Gestion_du_personnel.ID_Personnel=Gestion_des_commandes.ID_Personnel)INNER JOIN Gestion_des_clients ON(Gestion_des_clients.ID_Numero_Client=Gestion_des_commandes.ID_Numero_Client)INNER JOIN Moyen_de_paiemment ON(Moyen_de_paiemment.ID_Moyen_de_Paiement=Gestion_des_commandes.ID_Moyen_de_Paiement);";
 }
 
 System::String^ MCommande::Insert(void)
 {
-	return "INSERT INTO Gestion_des_commandes([reference_commande],Date_Emission_Commande,Date_Livraison_Prevue_Commande,Quantite_Total_Article_Commande,[montant_total_ht],[montant_total_ttc],[montant_total_tva],ID_Moyen_de_Paiement,ID_Numero_Client,ID_Personnel)VALUES('" + this->Reference + "' ,'" + this->Date_Livraison + "','" + this->Date_Envoi + "',2,4,3000,3250,3500,1,'" + this->IDpersonnel + "','" + this->IDclient + "','" + this->IDpaiement + "')";
+	return "INSERT INTO Gestion_des_commandes([reference_commande],Date_Emission_Commande,Date_Livraison_Prevue_Commande,Date_Paiement_Commande,Quantite_Total_Article_Commande,[montant_total_ht],[montant_total_ttc],[montant_total_tva],ID_Moyen_de_Paiement,ID_Numero_Client,ID_Personnel)VALUES('" + this->Reference + "' ,'" + this->Date_Livraison + "','" + this->Date_Envoi + "','" + this->Date_Paiement1 + "',2,'" + this->Montant_Paiement + "',3250,3500,'" + this->IDpaiement + "','" + this->IDclient + "','" + this->IDpersonnel + "')";
 
 }
 System::String^ MCommande::Delete(void)
 {
-	return "";
+	return "UPDATE Gestion_des_commandes SET [masque_commande]='0' WHERE Reference_Commande = '" + this->Reference + "';";
 }
 System::String^ MCommande::Update(void)
 {
@@ -89,8 +93,15 @@ void MCommande::setDateL(System::String^ DateL)
 {
 	this->Date_Livraison = DateL;
 }
-void MCommande::setPaiement(System::String^ DateP, System::String^ MoyenP, float MontantP, short NombreP) {
-	this->Moyen_Paiement = MoyenP;
+void MCommande::setPaiement(System::String^ DateP, float MontantP, short NombreP, System::String^ MoyenP) {
+
+	if (MoyenP == System::Convert::ToString("CB")) {
+		this->IDpaiement = 1;
+	}
+	else if (MoyenP == System::Convert::ToString("paypal")) {
+		this->IDpaiement = 2;
+	}
+
 	string DatePP = msclr::interop::marshal_as<string>(DateP);
 	string Cache;
 	int value = 0;

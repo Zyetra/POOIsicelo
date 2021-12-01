@@ -34,3 +34,32 @@ void CLcad::actionRows(System::String^ sSql)
 	this->oCmd->ExecuteNonQuery();
 	this->oCnx->Close();
 }
+
+using namespace System;
+using namespace System::Data;
+using namespace System::Data::SqlClient;
+
+System::String^ CLcad::DataRead(System::String^ sSql) {
+	this->sSql = sSql;
+	this->oCmd->CommandText = this->sSql;
+
+	SqlConnection^ connection = gcnew SqlConnection(sCnx);
+	
+	SqlCommand^ command = gcnew SqlCommand(sSql, connection);
+		connection->Open();
+
+		SqlDataReader^ reader = command->ExecuteReader();
+		System::String^ VilleL;
+		
+		array<Object^>^ row = gcnew array<Object^>(reader->FieldCount);
+		while (reader->Read())
+		{
+			VilleL = System::Convert::ToString((reader->GetSqlString(0)));
+		}
+		reader->Close();
+		connection->Close();
+		return VilleL;
+	}
+
+
+

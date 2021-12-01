@@ -21,12 +21,17 @@ namespace POOIsicelo {
 	public ref class Commandes : public System::Windows::Forms::Form
 	{
 	public:
+		//System::String^ VilleL;
+
 		Commandes(void)
 		{
 			InitializeComponent();
 			//
 			//TODO: ajoutez ici le code du constructeur
 			//
+			this->oSvc = gcnew CLservices();
+			this->oSvc2 = gcnew CLservices();
+			this->Com1 = gcnew MCommande();
 		}
 
 	protected:
@@ -42,7 +47,10 @@ namespace POOIsicelo {
 		}
 
 	private: CLservices^ oSvc;
+	private: CLservices^ oSvc2;
+	private: MCommande^ Com1;
 	private: System::Data::DataSet^ oDs;
+
 	private: System::Windows::Forms::Button^ creerCommande;
 	private: System::Windows::Forms::Button^ delCommande;
 	private: System::Windows::Forms::Button^ modArticle;
@@ -107,7 +115,8 @@ namespace POOIsicelo {
 	private: System::Windows::Forms::TextBox^ facturation;
 	private: System::Windows::Forms::DateTimePicker^ dateEmission;
 	private: System::Windows::Forms::DateTimePicker^ dateLivraison;
-	private: System::Windows::Forms::TextBox^ textBox4;
+
+
 	private: System::Windows::Forms::Label^ label8;
 	private: System::Windows::Forms::NumericUpDown^ numericUpDown1;
 	private: System::Windows::Forms::DateTimePicker^ datePaiement;
@@ -116,6 +125,12 @@ namespace POOIsicelo {
 	private: System::Windows::Forms::Label^ label10;
 	private: System::Windows::Forms::Label^ label9;
 	private: System::Windows::Forms::TextBox^ nomClient;
+private: System::Windows::Forms::Label^ label11;
+private: System::Windows::Forms::DateTimePicker^ dateNaissance;
+private: System::Windows::Forms::ComboBox^ moyenPaiement;
+
+
+
 
 
 
@@ -156,7 +171,6 @@ namespace POOIsicelo {
 			this->refCommande = (gcnew System::Windows::Forms::TextBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
-			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->numericUpDown1 = (gcnew System::Windows::Forms::NumericUpDown());
 			this->datePaiement = (gcnew System::Windows::Forms::DateTimePicker());
@@ -187,10 +201,13 @@ namespace POOIsicelo {
 			this->nomSociete = (gcnew System::Windows::Forms::TextBox());
 			this->label12 = (gcnew System::Windows::Forms::Label());
 			this->groupBox4 = (gcnew System::Windows::Forms::GroupBox());
+			this->dateNaissance = (gcnew System::Windows::Forms::DateTimePicker());
+			this->label11 = (gcnew System::Windows::Forms::Label());
 			this->prenomClient = (gcnew System::Windows::Forms::TextBox());
 			this->label10 = (gcnew System::Windows::Forms::Label());
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->nomClient = (gcnew System::Windows::Forms::TextBox());
+			this->moyenPaiement = (gcnew System::Windows::Forms::ComboBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewCommande))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewArticles))->BeginInit();
 			this->groupBox1->SuspendLayout();
@@ -220,6 +237,7 @@ namespace POOIsicelo {
 			this->delCommande->TabIndex = 4;
 			this->delCommande->Text = L"Supprimer une Commande";
 			this->delCommande->UseVisualStyleBackColor = true;
+			this->delCommande->Click += gcnew System::EventHandler(this, &Commandes::delCommande_Click);
 			// 
 			// modArticle
 			// 
@@ -229,6 +247,7 @@ namespace POOIsicelo {
 			this->modArticle->TabIndex = 5;
 			this->modArticle->Text = L"Modifier une Commande";
 			this->modArticle->UseVisualStyleBackColor = true;
+			this->modArticle->Click += gcnew System::EventHandler(this, &Commandes::modArticle_Click);
 			// 
 			// affCommande
 			// 
@@ -238,6 +257,7 @@ namespace POOIsicelo {
 			this->affCommande->TabIndex = 6;
 			this->affCommande->Text = L"Afficher une Commande";
 			this->affCommande->UseVisualStyleBackColor = true;
+			this->affCommande->Click += gcnew System::EventHandler(this, &Commandes::affCommande_Click);
 			// 
 			// buttonRetour
 			// 
@@ -290,6 +310,8 @@ namespace POOIsicelo {
 			// 
 			// dateLivraison
 			// 
+			this->dateLivraison->CustomFormat = L"yyyy-MM-dd";
+			this->dateLivraison->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
 			this->dateLivraison->Location = System::Drawing::Point(4, 136);
 			this->dateLivraison->Margin = System::Windows::Forms::Padding(2);
 			this->dateLivraison->Name = L"dateLivraison";
@@ -298,12 +320,13 @@ namespace POOIsicelo {
 			// 
 			// dateEmission
 			// 
+			this->dateEmission->CustomFormat = L"yyyy-MM-dd";
+			this->dateEmission->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
 			this->dateEmission->Location = System::Drawing::Point(4, 89);
 			this->dateEmission->Margin = System::Windows::Forms::Padding(2);
 			this->dateEmission->Name = L"dateEmission";
 			this->dateEmission->Size = System::Drawing::Size(192, 20);
 			this->dateEmission->TabIndex = 25;
-			this->dateEmission->ValueChanged += gcnew System::EventHandler(this, &Commandes::dateTimePicker1_ValueChanged);
 			// 
 			// button1
 			// 
@@ -371,7 +394,7 @@ namespace POOIsicelo {
 			// 
 			// groupBox2
 			// 
-			this->groupBox2->Controls->Add(this->textBox4);
+			this->groupBox2->Controls->Add(this->moyenPaiement);
 			this->groupBox2->Controls->Add(this->label8);
 			this->groupBox2->Controls->Add(this->numericUpDown1);
 			this->groupBox2->Controls->Add(this->datePaiement);
@@ -387,13 +410,6 @@ namespace POOIsicelo {
 			this->groupBox2->TabIndex = 14;
 			this->groupBox2->TabStop = false;
 			this->groupBox2->Text = L"Paiement";
-			// 
-			// textBox4
-			// 
-			this->textBox4->Location = System::Drawing::Point(5, 89);
-			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(112, 20);
-			this->textBox4->TabIndex = 38;
 			// 
 			// label8
 			// 
@@ -418,6 +434,8 @@ namespace POOIsicelo {
 			// 
 			// datePaiement
 			// 
+			this->datePaiement->CustomFormat = L"yyyy-MM-dd";
+			this->datePaiement->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
 			this->datePaiement->Location = System::Drawing::Point(4, 41);
 			this->datePaiement->Margin = System::Windows::Forms::Padding(2);
 			this->datePaiement->Name = L"datePaiement";
@@ -675,6 +693,8 @@ namespace POOIsicelo {
 			// 
 			// groupBox4
 			// 
+			this->groupBox4->Controls->Add(this->dateNaissance);
+			this->groupBox4->Controls->Add(this->label11);
 			this->groupBox4->Controls->Add(this->prenomClient);
 			this->groupBox4->Controls->Add(this->label10);
 			this->groupBox4->Controls->Add(this->label9);
@@ -687,6 +707,26 @@ namespace POOIsicelo {
 			this->groupBox4->TabIndex = 16;
 			this->groupBox4->TabStop = false;
 			this->groupBox4->Text = L"Informations Client";
+			// 
+			// dateNaissance
+			// 
+			this->dateNaissance->CustomFormat = L"yyyy-MM-dd";
+			this->dateNaissance->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
+			this->dateNaissance->Location = System::Drawing::Point(4, 136);
+			this->dateNaissance->Margin = System::Windows::Forms::Padding(2);
+			this->dateNaissance->Name = L"dateNaissance";
+			this->dateNaissance->Size = System::Drawing::Size(151, 20);
+			this->dateNaissance->TabIndex = 31;
+			// 
+			// label11
+			// 
+			this->label11->AutoSize = true;
+			this->label11->Location = System::Drawing::Point(4, 120);
+			this->label11->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label11->Name = L"label11";
+			this->label11->Size = System::Drawing::Size(104, 13);
+			this->label11->TabIndex = 30;
+			this->label11->Text = L"Date de Naissance :";
 			// 
 			// prenomClient
 			// 
@@ -723,6 +763,15 @@ namespace POOIsicelo {
 			this->nomClient->Name = L"nomClient";
 			this->nomClient->Size = System::Drawing::Size(152, 20);
 			this->nomClient->TabIndex = 0;
+			// 
+			// moyenPaiement
+			// 
+			this->moyenPaiement->FormattingEnabled = true;
+			this->moyenPaiement->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"CB", L"paypal" });
+			this->moyenPaiement->Location = System::Drawing::Point(4, 90);
+			this->moyenPaiement->Name = L"moyenPaiement";
+			this->moyenPaiement->Size = System::Drawing::Size(117, 21);
+			this->moyenPaiement->TabIndex = 38;
 			// 
 			// Commandes
 			// 
@@ -762,12 +811,23 @@ namespace POOIsicelo {
 private: System::Void buttonRetour_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Close();
 }
-private: System::Void dateTimePicker1_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
-}
 private: System::Void creerCommande_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->oSvc->recupCommande(this->nomClient->Text, this->prenomClient->Text);
-	//this->oSvc->ajouterUneCommande(this->dateEmission->Text, this->dateLivraison->Text,this->nomClient->Text, this->prenomClient->Text, VilleL, this->datePaiement->Text, this->textBox4->Text, System::Convert::ToDecimal(this->montant1->Text), System::Convert::ToInt16(this->numericUpDown1->Text));
+	this->oSvc->ajouterUneCommande(this->dateEmission->Text, this->dateLivraison->Text,this->nomClient->Text, this->prenomClient->Text, this->datePaiement->Text, this->moyenPaiement->Text, this->dateNaissance->Text, float::Parse(this->montant1->Text) , System::Convert::ToInt16(this->numericUpDown1->Text));
 }
 
+private: System::Void affCommande_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->dataGridViewCommande->Refresh();
+	this->oDs = this->oSvc->selectionnerToutesLesCommandes("Gestion_Commande");
+	this->dataGridViewCommande->DataSource = this->oDs;
+	this->dataGridViewCommande->DataMember = "Gestion_Commande";
+}
+
+private: System::Void delCommande_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->oSvc->deleteUneCommande(this->refCommande->Text);
+}
+
+private: System::Void modArticle_Click(System::Object^ sender, System::EventArgs^ e) {
+
+}
 };
 }

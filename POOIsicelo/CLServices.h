@@ -3,6 +3,7 @@
 #include "CLCad.h"
 #include "CLCommande.h"
 #include "CLPersonne.h"
+#include "CLStats.h"
 
 ref class CLservices
 {
@@ -16,8 +17,8 @@ public:
 
 	CLservices(void);
 	System::Data::DataSet^ selectionnerToutesLesCommandes(System::String^);
-	System::Data::DataSet^ recupCommande(System::String^, System::String^);
-	void ajouterUneCommande(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, float, short);
+	System::String^ recupVille(System::String^, System::String^, System::String^);
+	void ajouterUneCommande(System::String^,System::String^ ,System::String^, System::String^, System::String^, System::String^, System::String^, float, short);
 	void deleteUneCommande(System::String^);
 	void updateUneCommande(System::String^, System::String^, System::String^);
 	void ajouterUnClient(System::String^, System::String^, System::String^, System::String^);

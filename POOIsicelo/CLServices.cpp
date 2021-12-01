@@ -26,24 +26,26 @@ System::Data::DataSet^ CLservices::selectionnerToutesLesCommandes(System::String
 	sql = this->oMappCommande->Select();
 	return this->oCad->getRows(sql, dataTableName);
 }
-System::Data::DataSet^ CLservices::recupCommande(System::String^ nomClient, System::String^ prenomClient) {
+System::String^ CLservices::recupVille(System::String^ nomClient, System::String^ prenomClient, System::String^ dateNaissanceClient) {
 	System::String^ sql;
 
-	sql = this->oMappCommande->Select();
-	return this->oCad->getRows(sql, "Gestion_des_clients");
+	sql = this->oMappCommande->SelectVille(nomClient, prenomClient, dateNaissanceClient);
+	return this->oCad->DataRead(sql);
 }
-void CLservices::ajouterUneCommande(System::String^ DateE, System::String^ DateL, System::String^ Nom, System::String^ Prenom, System::String^ VilleL, System::String^ DateP, System::String^ MoyenP, float MontantP, short NombreP)
+void CLservices::ajouterUneCommande(System::String^ DateE, System::String^ DateL, System::String^ Nom, System::String^ Prenom, System::String^ DateP, System::String^ MoyenP, System::String^ DateN, float MontantP, short NombreP)
 {
 	System::String^ sql;
 
+	System::String^ VilleL = this->recupVille(Nom, Prenom, DateN);
 	this->oMappCommande->setRef(Nom, Prenom, VilleL);
 	this->oMappCommande->setDateE(DateE);
 	this->oMappCommande->setDateL(DateL);
-	this->oMappCommande->setPaiement(DateP, MoyenP, MontantP, NombreP);
+	this->oMappCommande->setPaiement(DateP, MontantP, NombreP, MoyenP);
 	sql = this->oMappCommande->Insert();
 
 	this->oCad->actionRows(sql);
 }
+
 void CLservices::deleteUneCommande(System::String^ Ref)
 {
 	System::String^ sql;
