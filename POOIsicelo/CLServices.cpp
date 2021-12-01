@@ -14,6 +14,7 @@ CLservices::CLservices(void)
 	this->oMappAdresse = gcnew MAdresse();
 	this->oMappClient = gcnew MClient();
 	this->oMappPersonnel = gcnew MPersonnel();
+	this->oMappStats = gcnew MStats();
 }
 
 // COMMANDE
@@ -162,5 +163,13 @@ System::Data::DataSet^ CLservices::selectionnerTousLePersonnel(System::String^ d
 	System::String^ sql;
 
 	sql = this->oMappPersonnel->SelectAll();
+	return this->oCad->getRows(sql, dataTableName);
+}
+
+// STATISTIQUES
+
+System::Data::DataSet^ CLservices::selectionnerToutesLesDonnees(System::String^ dataTableName) {
+	System::String^ sql;
+	sql = this->oMappStats->SelectAll();
 	return this->oCad->getRows(sql, dataTableName);
 }

@@ -12,6 +12,7 @@ private:
 	MClient^ oMappClient;
 	MAdresse^ oMappAdresse;
 	MPersonnel^ oMappPersonnel;
+	MStats^ oMappStats;
 public:
 	CLservices(void);
 	System::Data::DataSet^ selectionnerToutesLesCommandes(System::String^);
@@ -27,4 +28,5 @@ public:
 	void ajouterPersonnel(System::String^, System::String^, System::String^, System::String^, System::String^);
 	System::Data::DataSet^ selectionnerTousLePersonnel(System::String^);
 	//System::Data::DataSet^ selectionnerPersonnel(System::String^, System::String^, System::String^, System::String^, System::String^);
+	System::Data::DataSet^ selectionnerToutesLesDonnees(System::String^);
 };
