@@ -43,3 +43,9 @@ System::String^ MAdresse::InsertAdresse(void)
 {
 	return "INSERT INTO adresse (numero, rue, IDville) VALUES ('" + this->Numero + "', '" + this->Rue + "', (SELECT IDville FROM ville WHERE nom_ville='" + this->Ville + "'));";
 }
+
+System::String^ MAdresse::Update(short idclient)
+{
+	return"UPDATE Gestion_des_Clients SET IDadresse = (SELECT TOP 1 IDadresse FROM adresse INNER JOIN ville on adresse.IDVILLE = ville.IDville WHERE numero ='" + this->Numero + "' AND rue ='" + this->Rue + "' AND nom_ville ='" + this->Ville + "' AND code_postal ='" + this->Code_postal + "') WHERE masque = 1 AND ID_Numero_Client ='" + idclient + "'; ";
+
+}

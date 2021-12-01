@@ -14,7 +14,7 @@ CLservices::CLservices(void)
 	this->oMappAdresse = gcnew MAdresse();
 	this->oMappClient = gcnew MClient();
 	this->oMappPersonnel = gcnew MPersonnel();
-	this->oMappStats = gcnew MStats();
+	//this->oMappStats = gcnew MStats();
 }
 
 // COMMANDE
@@ -116,6 +116,7 @@ void CLservices::supprimerUnClient(System::String^ nom_client, System::String^ p
 }
 
 
+
 // ADRESSE
 
 void CLservices::ajouterUneAdresse(System::String^ number, System::String^ street, System::String^ city, System::String^ postalCode) {
@@ -166,10 +167,41 @@ System::Data::DataSet^ CLservices::selectionnerTousLePersonnel(System::String^ d
 	return this->oCad->getRows(sql, dataTableName);
 }
 
+void CLservices::modifierUneAdresse(System::String^ number, System::String^ street, System::String^ city, System::String^ postalCode, System::String^ idclient)
+{
+
+	System::String^ sql;
+
+
+	this->oMappAdresse->setVille(city);
+	this->oMappAdresse->setCodePostal(postalCode);
+
+	sql = this->oMappAdresse->InsertVille();
+	this->oCad->actionRows(sql);
+
+	sql = "";
+
+	this->oMappAdresse->setNumero(number);
+	this->oMappAdresse->setRue(street);
+
+	sql = this->oMappAdresse->InsertAdresse();
+	this->oCad->actionRows(sql);
+
+	sql = "";
+
+
+	short ID_Client = System::Convert::ToInt16(idclient);
+
+	sql = this->oMappAdresse->Update(ID_Client);
+	this->oCad->actionRows(sql);
+
+}
+
 // STATISTIQUES
 
-System::Data::DataSet^ CLservices::selectionnerToutesLesDonnees(System::String^ dataTableName) {
+/*System::Data::DataSet^ CLservices::selectionnerToutesLesDonnees(System::String^ dataTableName) {
 	System::String^ sql;
 	sql = this->oMappStats->SelectAll();
 	return this->oCad->getRows(sql, dataTableName);
 }
+*/

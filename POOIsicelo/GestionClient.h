@@ -32,6 +32,7 @@ namespace POOIsicelo {
 			//
 			this->oSvc = gcnew CLservices();
 			this->Adresse1 = gcnew MAdresse();
+
 		}
 
 	protected:
@@ -507,12 +508,25 @@ private: System::Windows::Forms::Button^ affListeClient;
 		this->Close();
 	}
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->oSvc->modifierUneAdresse(this->numAdresse->Text, this->rueAdresse->Text, this->villeAdresse->Text, this->codePostalDomicile->Text, this->numClient->Text);
+		this->prenomClient->ResetText();
+		this->nomClient->ResetText();
+		this->dateNaissanceClient->ResetText();
+		this->datePremierAchat->ResetText();
+		this->numAdresse->ResetText();
+		this->rueAdresse->ResetText();
+		this->villeAdresse->ResetText();
+		this->codePostalDomicile->ResetText();
 	}
 private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->dataGridViewClient->Refresh();
 	this->oDs = this->oSvc->selectionnerUnClient("Gestion_des_Clients", this->nomClient->Text, this->prenomClient->Text, this->dateNaissanceClient->Text);
 	this->dataGridViewClient->DataSource = this->oDs;
 	this->dataGridViewClient->DataMember = "Gestion_des_Clients";
+
+
+
+
 }
 private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
@@ -531,6 +545,15 @@ private: System::Void addClient_Click(System::Object^ sender, System::EventArgs^
 	this->oSvc->ajouterUneAdresse(this->numAdresse->Text, this->rueAdresse->Text, this->villeAdresse->Text, this->codePostalDomicile->Text);
 	this->oSvc->ajouterUnClient(this->nomClient->Text, this->prenomClient->Text, this->dateNaissanceClient->Text, this->datePremierAchat->Text);
 
+	this->prenomClient->ResetText();
+	this->nomClient->ResetText();
+	this->dateNaissanceClient->ResetText();
+	this->datePremierAchat->ResetText();
+	this->numAdresse->ResetText();
+	this->rueAdresse->ResetText();
+	this->villeAdresse->ResetText();
+	this->codePostalDomicile->ResetText();
+
 }
 private: System::Void villeAdresse_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 
@@ -543,6 +566,14 @@ private: System::Void affListeClient_Click(System::Object^ sender, System::Event
 }
 private: System::Void delClient_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->oSvc->supprimerUnClient(this->nomClient->Text, this->prenomClient->Text, this->dateNaissanceClient->Text, this->numClient->Text);
+	this->prenomClient->ResetText();
+	this->nomClient->ResetText();
+	this->dateNaissanceClient->ResetText();
+	this->datePremierAchat->ResetText();
+	this->numAdresse->ResetText();
+	this->rueAdresse->ResetText();
+	this->villeAdresse->ResetText();
+	this->codePostalDomicile->ResetText();
 }
 };
 }

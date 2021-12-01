@@ -54,3 +54,4 @@ System::String^ MClient::Delete()
 {
 	return "UPDATE Gestion_des_Clients SET masque = 0 WHERE ID_Numero_Client='" + this->idClient + "'AND Nom_client = '" + this->nom + "' AND Prenom_client = '" + this->prenom + "' AND Date_Naissance_Client = '" + this->dateNaissance + "'; ";
 }
+

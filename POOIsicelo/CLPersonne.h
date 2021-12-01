@@ -120,7 +120,7 @@ public:
 	System::String^ InsertVille(void);
 	System::String^ InsertAdresse(void);
 	//System::String^ Delete(void);
-	//System::String^ Update(void);
+	System::String^ Update(short);
 	void setIdAdresse(int);
 	void setNumero(System::String^);
 	void setRue(System::String^);

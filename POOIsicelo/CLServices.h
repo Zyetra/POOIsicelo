@@ -6,14 +6,14 @@
 
 ref class CLservices
 {
-private:
+public:
 	CLcad^ oCad;
 	MCommande^ oMappCommande;
 	MClient^ oMappClient;
 	MAdresse^ oMappAdresse;
 	MPersonnel^ oMappPersonnel;
-	MStats^ oMappStats;
-public:
+	//MStats^ oMappStats;
+
 	CLservices(void);
 	System::Data::DataSet^ selectionnerToutesLesCommandes(System::String^);
 	System::Data::DataSet^ recupCommande(System::String^, System::String^);
@@ -28,5 +28,7 @@ public:
 	void ajouterPersonnel(System::String^, System::String^, System::String^, System::String^, System::String^);
 	System::Data::DataSet^ selectionnerTousLePersonnel(System::String^);
 	//System::Data::DataSet^ selectionnerPersonnel(System::String^, System::String^, System::String^, System::String^, System::String^);
-	System::Data::DataSet^ selectionnerToutesLesDonnees(System::String^);
+	//System::Data::DataSet^ selectionnerToutesLesDonnees(System::String^);
+	void modifierUneAdresse(System::String^, System::String^, System::String^, System::String^, System::String^);
+
 };
