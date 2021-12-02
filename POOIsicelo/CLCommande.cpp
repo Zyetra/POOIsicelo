@@ -7,23 +7,16 @@
 
 using namespace std;
 
-Commande::Commande(int taille) {
-	this->taille = taille;
-	this->index = 0;
-	Tab_Commande = new Article * [this->taille];
-	Tab_Nombre = new int[this->taille];
+Commande::Commande() {
 
 }
 
 Commande::~Commande() {
-	delete* Tab_Commande;
-	delete Tab_Nombre;
+
 }
 
-void Commande::addArticle(Article* obj, int Nombre) {
-	Tab_Commande[this->index] = obj;
-	Tab_Nombre[this->index] = Nombre;
-	this->index++;
+void Commande::addArticle(short IDArticle, short Quantite) {
+
 }
 
 void Commande::getArticle() {
@@ -44,7 +37,7 @@ System::String^ MCommande::SelectArticle(void) {
 
 System::String^ MCommande::Select(void)
 {
-	return "SELECT ID_Commande,[reference_commande],Date_Emission_Commande,Date_Livraison_Prevue_Commande,Date_Paiement_Commande,Quantite_Total_Article_Commande,[montant_total_ht],[montant_total_ttc],[montant_total_tva],nom_personnel,prenom_personnel,nom_client,prenom_client,[masque_commande],Moyen_de_Paiement FROM Gestion_des_commandes INNER JOIN Gestion_du_personnel ON(Gestion_du_personnel.ID_Personnel=Gestion_des_commandes.ID_Personnel)INNER JOIN Gestion_des_clients ON(Gestion_des_clients.ID_Numero_Client=Gestion_des_commandes.ID_Numero_Client)INNER JOIN Moyen_de_paiemment ON(Moyen_de_paiemment.ID_Moyen_de_Paiement=Gestion_des_commandes.ID_Moyen_de_Paiement) WHERE masque_commande ='1';";
+	return "SELECT [reference_commande],Date_Emission_Commande,Date_Livraison_Prevue_Commande,Date_Paiement_Commande,Quantite_Total_Article_Commande,[montant_total_ht],[montant_total_ttc],[montant_total_tva],nom_personnel,prenom_personnel,nom_client,prenom_client,Designation_Article, Quantite_Article_Stock,[masque_commande],Moyen_de_Paiement FROM Gestion_des_commandes INNER JOIN Gestion_du_personnel ON(Gestion_du_personnel.ID_Personnel=Gestion_des_commandes.ID_Personnel)INNER JOIN Gestion_des_clients ON(Gestion_des_clients.ID_Numero_Client=Gestion_des_commandes.ID_Numero_Client)INNER JOIN Moyen_de_paiemment ON(Moyen_de_paiemment.ID_Moyen_de_Paiement=Gestion_des_commandes.ID_Moyen_de_Paiement) INNER JOIN Influer ON(Influer.ID_Commande=Gestion_des_commandes.ID_Commande) INNER JOIN Gestion_des_articles ON(Influer.ID_Article=Gestion_des_articles.ID_Article) WHERE masque_commande ='1';";
 }
 
 System::String^ MCommande::Insert(void)
@@ -54,11 +47,18 @@ System::String^ MCommande::Insert(void)
 }
 System::String^ MCommande::Delete(void)
 {
-	return "DELETE FROM Gestion_des_commandes WHERE Reference_Commande = '" + this->Reference + "';";
+	return "UPDATE Gestion_des_commandes SET masque_commande = '0' WHERE Reference_Commande = '" + this->Reference + "';";
 }
 System::String^ MCommande::Update(void)
 {
 	return "UPDATE Gestion_des_commandes SET [Date_Livraison_Prevue_Commande] = '" + this->Date_Livraison + "', [Date_Emission_Commande] = '"+ this->Date_Envoi + "', [ID_Moyen_De_Paiement] = '"+ IDpaiement +"' WHERE [Reference_Commande] = '"+ this->Reference +"' ;";
+}
+System::String^ MCommande::recupIDArticle(System::String^ NomArticle) {
+	return "SELECT ID_Article FROM Gestion_des_articles WHERE Designation_Article = '" + NomArticle + "'";
+}
+
+void MCommande::addArticleCommande(short IDArticle, short Quantite ) {
+
 }
 void MCommande::setId(int IDCommande)
 {
@@ -210,8 +210,3 @@ void MCommande::setPaiement(System::String^ DateP, float MontantP, short NombreP
 		this->Montant_Paiement = MontantP / 4;
 	}
 }
-
-int MCommande::getId(void) { return this->IDcommande; }
-System::String^ MCommande::getRef(void) { return this->Reference; }
-System::String^ MCommande::getDateE(void) { return this->Date_Envoi; }
-System::String^ MCommande::getDateL(void) { return this->Date_Livraison; }

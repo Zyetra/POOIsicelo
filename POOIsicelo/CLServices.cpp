@@ -73,6 +73,21 @@ void CLservices::updateUneCommande(System::String^ Ref, System::String^ DateE, S
 
 	this->oCad->actionRows(sql);
 }
+System::String^ CLservices::ajouterArticleCommande(System::String^ NomArticle, short Quantite) {
+
+	System::String^ sql;
+
+	short IDArticle = System::Convert::ToInt16(this->recupIDArticle(NomArticle));
+	this->oMappCommande->addArticleCommande(IDArticle, Quantite);
+	return"oui";
+}
+
+System::String^ CLservices::recupIDArticle(System::String^ NomArticle) {
+	System::String^ sql;
+
+	sql = this->oMappCommande->recupIDArticle(NomArticle);
+	return this->oCad->DataRead(sql);
+}
 
 
 // CLIENT 
@@ -280,7 +295,7 @@ System::Data::DataSet^ CLservices::selectionnerTousLesArticles(System::String^ d
 }
 System::Data::DataSet^ CLservices::selectionnerUnArticles(System::String^ dataTableName, System::String^ reference) {
 	System::String^ sql;
-	this->oMappArticle->setReference(reference);
+	this->oMappArticle->setReferenceArticle(reference);
 	sql = this->oMappArticle->Selectone();
 	return this->oCad->getRows(sql, dataTableName);
 }
@@ -291,7 +306,7 @@ void CLservices::creationArticles(System::String^ NomArticle, System::String^ re
 
 		//this->oMappArticle->setIdArticle;
 		this->oMappArticle->setNomArticle(NomArticle);
-		this->oMappArticle->setReference(reference);
+		this->oMappArticle->setReferenceArticle(reference);
 		short Taux_TVA_Article = System::Convert::ToInt16(Taux_tva);
 		this->oMappArticle->setTauxtva(Taux_TVA_Article);
 		short Prix_UHT_Article = System::Convert::ToInt16(Prix_uht);
@@ -300,16 +315,16 @@ void CLservices::creationArticles(System::String^ NomArticle, System::String^ re
 		this->oMappArticle->setquantite(Quantite_Article_Stock);
 		short Seuil_Reaprovisionnement_Article = System::Convert::ToInt16(seuil);
 		this->oMappArticle->setquantite(Seuil_Reaprovisionnement_Article);
-		sql = this->oMappArticle->Insert();
+		sql = this->oMappArticle->InsertArticle();
 		this->oCad->actionRows(sql);
 	}
 }
 void CLservices::supArticles(System::String^ reference) {
 	{
 		System::String^ sql;
-		this->oMappArticle->setReference(reference);
+		this->oMappArticle->setReferenceArticle(reference);
 
-		sql = this->oMappArticle->Delete();
+		sql = this->oMappArticle->DeleteArticle();
 		this->oCad->actionRows(sql);
 	}
 }
@@ -320,7 +335,7 @@ void CLservices::modifArticles(System::String^ NomArticle, System::String^ Taux_
 
 		//this->oMappArticle->setIdArticle;
 		this->oMappArticle->setNomArticle(NomArticle);
-		this->oMappArticle->setReference(reference);
+		this->oMappArticle->setReferenceArticle(reference);
 		short Taux_TVA_Article = System::Convert::ToInt16(Taux_tva);
 		this->oMappArticle->setTauxtva(Taux_TVA_Article);
 		short Prix_UHT_Article = System::Convert::ToInt16(Prix_uht);
@@ -329,7 +344,7 @@ void CLservices::modifArticles(System::String^ NomArticle, System::String^ Taux_
 		this->oMappArticle->setquantite(Quantite_Article_Stock);
 		short Seuil_Reaprovisionnement_Article = System::Convert::ToInt16(seuil);
 		this->oMappArticle->setquantite(Seuil_Reaprovisionnement_Article);
-		sql = this->oMappArticle->Update();
+		sql = this->oMappArticle->UpdateArticle();
 		this->oCad->actionRows(sql);
 	}
 }

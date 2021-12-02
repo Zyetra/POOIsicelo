@@ -4,21 +4,15 @@
 
 class Commande {
 protected:
-	std::string Reference;
-	std::string Date_Livraison;
-	std::string Date_Envoi;
-	Article** Tab_Commande;
-	int taille;
-	int index;
-	int Nombre;
-	int* Tab_Nombre;
-	int Nbr_Paiement;
-	int IDpersonnel;
+
+	short Tab_Article[50];
+	short Tab_Nombre[50];
+
 
 public:
-	Commande(int taille);
+	Commande();
 	~Commande();
-	void addArticle(Article* obj, int Nombre);
+	void addArticle(short, short);
 	void getArticle();
 	void editCommande(std::string Reference);
 
@@ -26,7 +20,7 @@ public:
 
 };
 
-ref class MCommande {
+ref class MCommande{
 
 protected:
 	int IDcommande;
@@ -35,6 +29,10 @@ protected:
 	int IDclient;
 	int IDpaiement;
 	float Montant_Paiement;
+
+	short Tab_Commande;
+	//System::Array^ Tab_Nombre = System::Array::CreateInstance(short, 5);
+
 	System::String^ Reference;
 	System::String^ Date_Paiement1;
 	System::String^ Date_Paiement2;
@@ -57,10 +55,8 @@ public:
 	void setDateL(System::String^);
 	void setPaiement(System::String^, float, short, System::String^);
 	void updMoyenPaiement(System::String^, System::String^);
-	int getId(void);
-	System::String^ getRef(void);
-	System::String^ getDateE(void);
-	System::String^ getDateL(void);
+	System::String^ recupIDArticle(System::String^);
+	void addArticleCommande(short, short);
 };
 
 

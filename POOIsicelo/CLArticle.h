@@ -35,12 +35,12 @@ protected:
 public:
 	System::String^ SelectAll(void);
 	System::String^ Selectone(void);
-	System::String^ Insert();
-	System::String^ Delete(void);
-	System::String^ Update(void);
+	System::String^ InsertArticle();
+	System::String^ DeleteArticle(void);
+	System::String^ UpdateArticle(void);
 	void setIdArticle(int);
 	void setNomArticle(System::String^);
-	void setReference(System::String^);
+	void setReferenceArticle(System::String^);
 	void setquantite(int);
 	void setTauxtva(int);
 	void setPrixuht(int);

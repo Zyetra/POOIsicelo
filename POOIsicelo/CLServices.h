@@ -23,6 +23,8 @@ public:
 	void ajouterUneCommande(System::String^,System::String^ ,System::String^, System::String^, System::String^, System::String^, System::String^, float, short);
 	void deleteUneCommande(System::String^);
 	void updateUneCommande(System::String^, System::String^, System::String^, System::String^, System::String^);
+	System::String^ ajouterArticleCommande(System::String^, short);
+	System::String^ recupIDArticle(System::String^);
 	// CLIENT
 	void ajouterUnClient(System::String^, System::String^, System::String^, System::String^);
 	System::Data::DataSet^ selectionnerTousLesClients(System::String^);
