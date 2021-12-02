@@ -59,7 +59,7 @@ namespace POOIsicelo {
 
 	private: System::Windows::Forms::Label^ label7;
 	private: System::Windows::Forms::Label^ label5;
-	private: System::Windows::Forms::TextBox^ dateEmbauche;
+
 
 	private: System::Windows::Forms::TextBox^ nomPersonnel;
 
@@ -73,7 +73,7 @@ namespace POOIsicelo {
 	private: System::Windows::Forms::Label^ label9;
 	private: System::Windows::Forms::Label^ label12;
 	private: System::Windows::Forms::TextBox^ numAdresse1;
-	private: System::Windows::Forms::ComboBox^ villeAdresse1;
+
 
 
 	private: System::Windows::Forms::Label^ label10;
@@ -93,6 +93,8 @@ namespace POOIsicelo {
 	private: System::Windows::Forms::Button^ affListePersonnel;
 	private: System::Windows::Forms::Label^ label13;
 	private: System::Windows::Forms::TextBox^ idPersonnel;
+	private: System::Windows::Forms::DateTimePicker^ dateEmbauche;
+	private: System::Windows::Forms::TextBox^ villeAdresse1;
 
 
 	protected:
@@ -112,17 +114,18 @@ namespace POOIsicelo {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(GestionPersonnel::typeid));
 			this->addPersonnel = (gcnew System::Windows::Forms::Button());
 			this->delPersonnel = (gcnew System::Windows::Forms::Button());
 			this->modPersonnel = (gcnew System::Windows::Forms::Button());
 			this->affPersonnel = (gcnew System::Windows::Forms::Button());
 			this->buttonRetour = (gcnew System::Windows::Forms::Button());
 			this->infoPersonnel = (gcnew System::Windows::Forms::GroupBox());
+			this->dateEmbauche = (gcnew System::Windows::Forms::DateTimePicker());
 			this->label13 = (gcnew System::Windows::Forms::Label());
 			this->idPersonnel = (gcnew System::Windows::Forms::TextBox());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->dateEmbauche = (gcnew System::Windows::Forms::TextBox());
 			this->nomPersonnel = (gcnew System::Windows::Forms::TextBox());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->prenomPersonnel = (gcnew System::Windows::Forms::TextBox());
@@ -131,7 +134,6 @@ namespace POOIsicelo {
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->label12 = (gcnew System::Windows::Forms::Label());
 			this->numAdresse1 = (gcnew System::Windows::Forms::TextBox());
-			this->villeAdresse1 = (gcnew System::Windows::Forms::ComboBox());
 			this->label10 = (gcnew System::Windows::Forms::Label());
 			this->label11 = (gcnew System::Windows::Forms::Label());
 			this->rueAdresse1 = (gcnew System::Windows::Forms::TextBox());
@@ -142,6 +144,7 @@ namespace POOIsicelo {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->dataGridViewPersonnel = (gcnew System::Windows::Forms::DataGridView());
 			this->affListePersonnel = (gcnew System::Windows::Forms::Button());
+			this->villeAdresse1 = (gcnew System::Windows::Forms::TextBox());
 			this->infoPersonnel->SuspendLayout();
 			this->adresseClient->SuspendLayout();
 			this->infoSuperieur->SuspendLayout();
@@ -206,11 +209,12 @@ namespace POOIsicelo {
 			// 
 			// infoPersonnel
 			// 
+			this->infoPersonnel->BackColor = System::Drawing::Color::Transparent;
+			this->infoPersonnel->Controls->Add(this->dateEmbauche);
 			this->infoPersonnel->Controls->Add(this->label13);
 			this->infoPersonnel->Controls->Add(this->idPersonnel);
 			this->infoPersonnel->Controls->Add(this->label7);
 			this->infoPersonnel->Controls->Add(this->label5);
-			this->infoPersonnel->Controls->Add(this->dateEmbauche);
 			this->infoPersonnel->Controls->Add(this->nomPersonnel);
 			this->infoPersonnel->Controls->Add(this->label6);
 			this->infoPersonnel->Controls->Add(this->prenomPersonnel);
@@ -220,6 +224,15 @@ namespace POOIsicelo {
 			this->infoPersonnel->TabIndex = 7;
 			this->infoPersonnel->TabStop = false;
 			this->infoPersonnel->Text = L"Informations Personnel";
+			// 
+			// dateEmbauche
+			// 
+			this->dateEmbauche->CustomFormat = L"yyyy-MM-dd";
+			this->dateEmbauche->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
+			this->dateEmbauche->Location = System::Drawing::Point(6, 158);
+			this->dateEmbauche->Name = L"dateEmbauche";
+			this->dateEmbauche->Size = System::Drawing::Size(172, 22);
+			this->dateEmbauche->TabIndex = 54;
 			// 
 			// label13
 			// 
@@ -259,20 +272,12 @@ namespace POOIsicelo {
 			this->label5->TabIndex = 17;
 			this->label5->Text = L"Nom :";
 			// 
-			// dateEmbauche
-			// 
-			this->dateEmbauche->Location = System::Drawing::Point(7, 163);
-			this->dateEmbauche->Margin = System::Windows::Forms::Padding(4);
-			this->dateEmbauche->Name = L"dateEmbauche";
-			this->dateEmbauche->Size = System::Drawing::Size(132, 22);
-			this->dateEmbauche->TabIndex = 20;
-			// 
 			// nomPersonnel
 			// 
 			this->nomPersonnel->Location = System::Drawing::Point(7, 49);
 			this->nomPersonnel->Margin = System::Windows::Forms::Padding(4);
 			this->nomPersonnel->Name = L"nomPersonnel";
-			this->nomPersonnel->Size = System::Drawing::Size(132, 22);
+			this->nomPersonnel->Size = System::Drawing::Size(171, 22);
 			this->nomPersonnel->TabIndex = 16;
 			// 
 			// label6
@@ -290,16 +295,17 @@ namespace POOIsicelo {
 			this->prenomPersonnel->Location = System::Drawing::Point(7, 105);
 			this->prenomPersonnel->Margin = System::Windows::Forms::Padding(4);
 			this->prenomPersonnel->Name = L"prenomPersonnel";
-			this->prenomPersonnel->Size = System::Drawing::Size(132, 22);
+			this->prenomPersonnel->Size = System::Drawing::Size(171, 22);
 			this->prenomPersonnel->TabIndex = 18;
 			// 
 			// adresseClient
 			// 
+			this->adresseClient->BackColor = System::Drawing::Color::Transparent;
+			this->adresseClient->Controls->Add(this->villeAdresse1);
 			this->adresseClient->Controls->Add(this->codePostal1);
 			this->adresseClient->Controls->Add(this->label9);
 			this->adresseClient->Controls->Add(this->label12);
 			this->adresseClient->Controls->Add(this->numAdresse1);
-			this->adresseClient->Controls->Add(this->villeAdresse1);
 			this->adresseClient->Controls->Add(this->label10);
 			this->adresseClient->Controls->Add(this->label11);
 			this->adresseClient->Controls->Add(this->rueAdresse1);
@@ -346,15 +352,6 @@ namespace POOIsicelo {
 			this->numAdresse1->Size = System::Drawing::Size(132, 22);
 			this->numAdresse1->TabIndex = 27;
 			// 
-			// villeAdresse1
-			// 
-			this->villeAdresse1->FormattingEnabled = true;
-			this->villeAdresse1->Location = System::Drawing::Point(7, 163);
-			this->villeAdresse1->Margin = System::Windows::Forms::Padding(4);
-			this->villeAdresse1->Name = L"villeAdresse1";
-			this->villeAdresse1->Size = System::Drawing::Size(160, 24);
-			this->villeAdresse1->TabIndex = 31;
-			// 
 			// label10
 			// 
 			this->label10->AutoSize = true;
@@ -385,6 +382,7 @@ namespace POOIsicelo {
 			// 
 			// infoSuperieur
 			// 
+			this->infoSuperieur->BackColor = System::Drawing::Color::Transparent;
 			this->infoSuperieur->Controls->Add(this->label1);
 			this->infoSuperieur->Controls->Add(this->nomSuperieur);
 			this->infoSuperieur->Controls->Add(this->prenomSuperieur);
@@ -435,7 +433,7 @@ namespace POOIsicelo {
 			// dataGridViewPersonnel
 			// 
 			this->dataGridViewPersonnel->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridViewPersonnel->Location = System::Drawing::Point(16, 318);
+			this->dataGridViewPersonnel->Location = System::Drawing::Point(16, 312);
 			this->dataGridViewPersonnel->Margin = System::Windows::Forms::Padding(4);
 			this->dataGridViewPersonnel->Name = L"dataGridViewPersonnel";
 			this->dataGridViewPersonnel->RowHeadersWidth = 51;
@@ -453,10 +451,20 @@ namespace POOIsicelo {
 			this->affListePersonnel->UseVisualStyleBackColor = true;
 			this->affListePersonnel->Click += gcnew System::EventHandler(this, &GestionPersonnel::affListePersonnel_Click);
 			// 
+			// villeAdresse1
+			// 
+			this->villeAdresse1->Location = System::Drawing::Point(7, 159);
+			this->villeAdresse1->Margin = System::Windows::Forms::Padding(4);
+			this->villeAdresse1->Name = L"villeAdresse1";
+			this->villeAdresse1->Size = System::Drawing::Size(132, 22);
+			this->villeAdresse1->TabIndex = 34;
+			// 
 			// GestionPersonnel
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 			this->ClientSize = System::Drawing::Size(995, 533);
 			this->Controls->Add(this->affListePersonnel);
 			this->Controls->Add(this->dataGridViewPersonnel);
@@ -468,6 +476,8 @@ namespace POOIsicelo {
 			this->Controls->Add(this->modPersonnel);
 			this->Controls->Add(this->delPersonnel);
 			this->Controls->Add(this->addPersonnel);
+			this->DoubleBuffered = true;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"GestionPersonnel";
 			this->Text = L"GestionPersonnel";
@@ -501,6 +511,7 @@ private: System::Void addClient_Click(System::Object^ sender, System::EventArgs^
 	this->rueAdresse1->ResetText();
 	this->villeAdresse1->ResetText();
 	this->codePostal1->ResetText();
+	this->idPersonnel->ResetText();
 
 }
 private: System::Void affListePersonnel_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -525,7 +536,9 @@ private: System::Void delPersonnel_Click(System::Object^ sender, System::EventAr
 
 }
 private: System::Void modPersonnel_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->oSvc->ajouterUneAdresse(this->numAdresse1->Text, this->rueAdresse1->Text, this->villeAdresse1->Text, this->codePostal1->Text);
 	this->oSvc->modifierAdressePersonnel(this->numAdresse1->Text, this->rueAdresse1->Text, this->villeAdresse1->Text, this->codePostal1->Text, this->idPersonnel->Text);
+	this->oSvc->modififerSuperieur(this->nomSuperieur->Text, this->prenomSuperieur->Text, this->idPersonnel->Text);
 
 	this->prenomPersonnel->ResetText();
 	this->nomPersonnel->ResetText();
@@ -536,6 +549,7 @@ private: System::Void modPersonnel_Click(System::Object^ sender, System::EventAr
 	this->rueAdresse1->ResetText();
 	this->villeAdresse1->ResetText();
 	this->codePostal1->ResetText();
+	this->idPersonnel->ResetText();
 
 }
 };

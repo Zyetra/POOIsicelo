@@ -36,6 +36,7 @@ public:
 	System::Data::DataSet^ selectionnerPersonnel(System::String^, System::String^, System::String^, System::String^);
 	void supprimerPersonnel(System::String^, System::String^, System::String^, System::String^);
 	void modifierAdressePersonnel(System::String^, System::String^, System::String^, System::String^, System::String^);
+	void modififerSuperieur(System::String^, System::String^, System::String^);
 	// STATISTIQUES
 	//System::Data::DataSet^ selectionnerToutesLesDonnees(System::String^);
 	//Article

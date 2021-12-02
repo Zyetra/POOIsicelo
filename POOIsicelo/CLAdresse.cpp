@@ -49,3 +49,9 @@ System::String^ MAdresse::Update(short idclient)
 	return"UPDATE Gestion_des_Clients SET IDadresse = (SELECT TOP 1 IDadresse FROM adresse INNER JOIN ville on adresse.IDVILLE = ville.IDville WHERE numero ='" + this->Numero + "' AND rue ='" + this->Rue + "' AND nom_ville ='" + this->Ville + "' AND code_postal ='" + this->Code_postal + "') WHERE masque = 1 AND ID_Numero_Client ='" + idclient + "'; ";
 
 }
+
+System::String^ MAdresse::UpdatePersonnel(short idPersonnel)
+{
+	return"UPDATE Gestion_du_Personnel SET IDadresse = (SELECT TOP 1 IDadresse FROM adresse INNER JOIN ville on adresse.IDVILLE = ville.IDville WHERE numero ='" + this->Numero + "' AND rue ='" + this->Rue + "' AND nom_ville ='" + this->Ville + "' AND code_postal ='" + this->Code_postal + "') WHERE masque_perso = 1 AND ID_Personnel ='" + idPersonnel + "'; ";
+
+}

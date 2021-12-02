@@ -228,6 +228,20 @@ void CLservices::supprimerPersonnel(System::String^ nomPersonnel, System::String
 	this->oCad->actionRows(sql);
 }
 
+void CLservices::modififerSuperieur(System::String^ nomSuperieur, System::String^ prenomSuperieur, System::String^ idPersonnel)
+{
+	System::String^ sql;
+
+	this->oMappPersonnel->setNom_Superieur(nomSuperieur);
+	this->oMappPersonnel->setPrenom_Superieur(prenomSuperieur);
+
+	short ID_Personnel = System::Convert::ToInt16(idPersonnel);
+
+	sql = this->oMappPersonnel->Update(ID_Personnel);
+	this->oCad->actionRows(sql);
+
+}
+
 void CLservices::modifierAdressePersonnel(System::String^ number, System::String^ street, System::String^ city, System::String^ postalCode, System::String^ idPersonnel)
 {
 
@@ -251,7 +265,7 @@ void CLservices::modifierAdressePersonnel(System::String^ number, System::String
 
 	short ID_Personnel = System::Convert::ToInt16(idPersonnel);
 
-	sql = this->oMappAdresse->Update(ID_Personnel);
+	sql = this->oMappAdresse->UpdatePersonnel(ID_Personnel);
 	this->oCad->actionRows(sql);
 
 }

@@ -56,3 +56,8 @@ System::String^ MPersonnel::Delete()
 {
 	return "UPDATE Gestion_du_Personnel SET masque_perso = 0 WHERE ID_Personnel ='" + this->idPersonnel + "'AND Nom_Personnel = '" + this->nomPersonnel + "' AND Prenom_Personnel = '" + this->prenomPersonnel + "' AND Date_Embauche_Personnel = '" + this->dateEmbauche + "'; ";
 }
+
+System::String^ MPersonnel::Update(short idPersonnel)
+{
+	return "UPDATE Gestion_du_Personnel SET Nom_Superieur = '" + this->nomSuperieur + "', Prenom_Superieur = '" + this->prenomSuperieur + "' WHERE masque_perso = 1 AND ID_Personnel = '" + idPersonnel + "';";
+}

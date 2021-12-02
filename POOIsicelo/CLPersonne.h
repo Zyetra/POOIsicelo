@@ -38,7 +38,7 @@ public:
 	System::String^ SelectAll(void);
 	System::String^ Select();
 	System::String^ Delete(void);
-	//System::String^ Update(void);
+	System::String^ Update(short);
 	void setIdPersonnel(int);
 	void setNomPersonnel(System::String^);
 	void setPrenomPersonnel(System::String^);
@@ -122,6 +122,7 @@ public:
 	System::String^ InsertAdresse(void);
 	//System::String^ Delete(void);
 	System::String^ Update(short);
+	System::String^ UpdatePersonnel(short);
 	void setIdAdresse(int);
 	void setNumero(System::String^);
 	void setRue(System::String^);
