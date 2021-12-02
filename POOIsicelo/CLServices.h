@@ -13,6 +13,7 @@ public:
 	MClient^ oMappClient;
 	MAdresse^ oMappAdresse;
 	MPersonnel^ oMappPersonnel;
+	MArticle^ oMappArticle;
 	//MStats^ oMappStats;
 
 	CLservices(void);
@@ -37,6 +38,13 @@ public:
 	void supprimerPersonnel(System::String^, System::String^, System::String^, System::String^);
 	void modifierAdressePersonnel(System::String^, System::String^, System::String^, System::String^, System::String^);
 	void modififerSuperieur(System::String^, System::String^, System::String^);
+	// Article
+	System::Data::DataSet^ selectionnerTousLesArticles(System::String^);
+	void creationArticles(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
+	void supArticles(System::String^);
+	void modifArticles(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
+	System::Data::DataSet^ selectionnerUnArticles(System::String^, System::String^);
+
 	// STATISTIQUES
 	//System::Data::DataSet^ selectionnerToutesLesDonnees(System::String^);
 	//Article

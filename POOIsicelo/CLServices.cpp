@@ -269,6 +269,71 @@ void CLservices::modifierAdressePersonnel(System::String^ number, System::String
 	this->oCad->actionRows(sql);
 
 }
+//Article
+
+System::Data::DataSet^ CLservices::selectionnerTousLesArticles(System::String^ dataTableName) {
+	System::String^ sql;
+
+
+	sql = this->oMappArticle->SelectAll();
+	return this->oCad->getRows(sql, dataTableName);
+}
+System::Data::DataSet^ CLservices::selectionnerUnArticles(System::String^ dataTableName, System::String^ reference) {
+	System::String^ sql;
+	this->oMappArticle->setReference(reference);
+	sql = this->oMappArticle->Selectone();
+	return this->oCad->getRows(sql, dataTableName);
+}
+
+void CLservices::creationArticles(System::String^ NomArticle, System::String^ reference, System::String^ Taux_tva, System::String^ Prix_uht, System::String^ Quantit, System::String^ seuil) {
+	{
+		System::String^ sql;
+
+		//this->oMappArticle->setIdArticle;
+		this->oMappArticle->setNomArticle(NomArticle);
+		this->oMappArticle->setReference(reference);
+		short Taux_TVA_Article = System::Convert::ToInt16(Taux_tva);
+		this->oMappArticle->setTauxtva(Taux_TVA_Article);
+		short Prix_UHT_Article = System::Convert::ToInt16(Prix_uht);
+		this->oMappArticle->setPrixuht(Prix_UHT_Article);
+		short Quantite_Article_Stock = System::Convert::ToInt16(Quantit);
+		this->oMappArticle->setquantite(Quantite_Article_Stock);
+		short Seuil_Reaprovisionnement_Article = System::Convert::ToInt16(seuil);
+		this->oMappArticle->setquantite(Seuil_Reaprovisionnement_Article);
+		sql = this->oMappArticle->Insert();
+		this->oCad->actionRows(sql);
+	}
+}
+void CLservices::supArticles(System::String^ reference) {
+	{
+		System::String^ sql;
+		this->oMappArticle->setReference(reference);
+
+		sql = this->oMappArticle->Delete();
+		this->oCad->actionRows(sql);
+	}
+}
+
+void CLservices::modifArticles(System::String^ NomArticle, System::String^ Taux_tva, System::String^ Prix_uht, System::String^ Quantit, System::String^ seuil, System::String^ reference) {
+	{
+		System::String^ sql;
+
+		//this->oMappArticle->setIdArticle;
+		this->oMappArticle->setNomArticle(NomArticle);
+		this->oMappArticle->setReference(reference);
+		short Taux_TVA_Article = System::Convert::ToInt16(Taux_tva);
+		this->oMappArticle->setTauxtva(Taux_TVA_Article);
+		short Prix_UHT_Article = System::Convert::ToInt16(Prix_uht);
+		this->oMappArticle->setPrixuht(Prix_UHT_Article);
+		short Quantite_Article_Stock = System::Convert::ToInt16(Quantit);
+		this->oMappArticle->setquantite(Quantite_Article_Stock);
+		short Seuil_Reaprovisionnement_Article = System::Convert::ToInt16(seuil);
+		this->oMappArticle->setquantite(Seuil_Reaprovisionnement_Article);
+		sql = this->oMappArticle->Update();
+		this->oCad->actionRows(sql);
+	}
+}
+
 
 // STATISTIQUES
 
