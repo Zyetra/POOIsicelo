@@ -32,7 +32,7 @@ protected:
 	int IDcommande;
 	int Increment;
 	int IDpersonnel = 1;
-	int IDclient = 1;
+	int IDclient;
 	int IDpaiement;
 	float Montant_Paiement;
 	System::String^ Reference;
@@ -45,6 +45,7 @@ protected:
 
 public:
 	System::String^ SelectVille(System::String^, System::String^, System::String^);
+	System::String^ SelectArticle(void);
 	System::String^ Select(void);
 	System::String^ Insert(void);
 	System::String^ Delete(void);
@@ -55,6 +56,7 @@ public:
 	void setDateE(System::String^);
 	void setDateL(System::String^);
 	void setPaiement(System::String^, float, short, System::String^);
+	void updMoyenPaiement(System::String^, System::String^);
 	int getId(void);
 	System::String^ getRef(void);
 	System::String^ getDateE(void);
