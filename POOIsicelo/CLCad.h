@@ -14,5 +14,5 @@ public:
 	CLcad(void);
 	System::Data::DataSet^ getRows(System::String^, System::String^);
 	void actionRows(System::String^);
-	System::String^ CLcad::DataRead(System::String^);
+	System::String^ DataRead(System::String^);
 };
