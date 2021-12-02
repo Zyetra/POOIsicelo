@@ -30,7 +30,7 @@ namespace POOIsicelo {
 			//TODO: ajoutez ici le code du constructeur
 			//
 			this->oSvc = gcnew CLservices();
-			this->oSvc2 = gcnew CLservices();
+			this->oCad = gcnew CLcad();
 			this->Com1 = gcnew MCommande();
 		}
 
@@ -47,7 +47,7 @@ namespace POOIsicelo {
 		}
 
 	private: CLservices^ oSvc;
-	private: CLservices^ oSvc2;
+	private: CLcad^ oCad;
 	private: MCommande^ Com1;
 	private: System::Data::DataSet^ oDs;
 
@@ -848,6 +848,18 @@ private: System::Void buttonRetour_Click(System::Object^ sender, System::EventAr
 }
 private: System::Void creerCommande_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->oSvc->ajouterUneCommande(this->dateEmission->Text, this->dateLivraison->Text,this->nomClient->Text, this->prenomClient->Text, this->datePaiement->Text, this->moyenPaiement->Text, this->dateNaissance->Text, float::Parse(this->montant1->Text) , System::Convert::ToInt16(this->numericUpDown1->Text));
+	this->nomSociete->AppendText(this->oCad->DataRead("SELECT Nom_Societe FROM Gestion_de_la_facturation WHERE ID_Emmision_Facture = '1'"));
+	
+
+	this->dateEmission->ResetText();
+	this->dateLivraison->ResetText();
+	this->nomClient->ResetText();
+	this->prenomClient->ResetText();
+	this->datePaiement->ResetText();
+	this->moyenPaiement->ResetText();
+	this->dateNaissance->ResetText();
+	this->montant1->ResetText();
+	this->numericUpDown1->ResetText();
 }
 
 private: System::Void affCommande_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -862,6 +874,9 @@ private: System::Void delCommande_Click(System::Object^ sender, System::EventArg
 }
 
 private: System::Void modArticle_Click(System::Object^ sender, System::EventArgs^ e) {
+	//this->nomClient->AppendText(this->oCad->DataRead("SELECT Nom_Client FROM Gestion_des_commandes INNER JOIN Gestion_des_clients ON(Gestion_des_commandes.ID_Numero_Client=Gestion_des_clients.ID_Numero_Client) WHERE Reference_Commande = '" + this->refCommande + "'"));
+	//this->prenomClient->AppendText(this->oCad->DataRead("SELECT Prenom_Client FROM Gestion_des_commandes INNER JOIN Gestion_des_clients ON(Gestion_des_commandes.ID_Numero_Client=Gestion_des_clients.ID_Numero_Client) WHERE Reference_Commande = '" + this->refCommande + "'"));
+	//this->montant1->AppendText(this->oCad->DataRead("SELECT Montant_Total_HT FROM Gestion_des_commandes WHERE Reference_Commande = '" + this->refCommande + "'"));
 	this->oSvc->updateUneCommande(this->refCommande->Text,this->dateEmission->Text, this->dateLivraison->Text, this->moyenPaiement->Text, this->datePaiement->Text);
 }
 
