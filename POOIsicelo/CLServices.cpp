@@ -24,6 +24,14 @@ System::Data::DataSet^ CLservices::selectionnerToutesLesCommandes(System::String
 	sql = this->oMappCommande->Select();
 	return this->oCad->getRows(sql, dataTableName);
 }
+
+System::Data::DataSet^ CLservices::selectionnerToutLesArticles(System::String^ dataTableName) {
+	System::String^ sql;
+
+	sql = this->oMappCommande->SelectArticle();
+	return this->oCad->getRows(sql, dataTableName);
+}
+
 System::String^ CLservices::recupVille(System::String^ nomClient, System::String^ prenomClient, System::String^ dateNaissanceClient) {
 	System::String^ sql;
 
@@ -53,11 +61,12 @@ void CLservices::deleteUneCommande(System::String^ Ref)
 
 	this->oCad->actionRows(sql);
 }
-void CLservices::updateUneCommande(System::String^ Ref, System::String^ DateE, System::String^ DateL)
+void CLservices::updateUneCommande(System::String^ Ref, System::String^ DateE, System::String^ DateL, System::String^ MoyenP, System::String^ DateP)
 {
 	System::String^ sql;
 
 	this->oMappCommande->desRef(Ref);
+	this->oMappCommande->updMoyenPaiement(MoyenP, DateP);
 	this->oMappCommande->setDateE(DateE);
 	this->oMappCommande->setDateL(DateL);
 	sql = this->oMappCommande->Update();

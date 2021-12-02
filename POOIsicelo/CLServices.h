@@ -21,7 +21,7 @@ public:
 	System::String^ recupVille(System::String^, System::String^, System::String^);
 	void ajouterUneCommande(System::String^,System::String^ ,System::String^, System::String^, System::String^, System::String^, System::String^, float, short);
 	void deleteUneCommande(System::String^);
-	void updateUneCommande(System::String^, System::String^, System::String^);
+	void updateUneCommande(System::String^, System::String^, System::String^, System::String^, System::String^);
 	// CLIENT
 	void ajouterUnClient(System::String^, System::String^, System::String^, System::String^);
 	System::Data::DataSet^ selectionnerTousLesClients(System::String^);
@@ -38,5 +38,7 @@ public:
 	void modifierAdressePersonnel(System::String^, System::String^, System::String^, System::String^, System::String^);
 	// STATISTIQUES
 	//System::Data::DataSet^ selectionnerToutesLesDonnees(System::String^);
+	//Article
+	System::Data::DataSet^ selectionnerToutLesArticles(System::String^ dataTableName);
 
 };
