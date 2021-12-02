@@ -41,7 +41,7 @@ System::String^ MAdresse::InsertVille(void)
 
 System::String^ MAdresse::InsertAdresse(void)
 {
-	return "INSERT INTO adresse (numero, rue, IDville) VALUES ('" + this->Numero + "', '" + this->Rue + "', (SELECT IDville FROM ville WHERE nom_ville='" + this->Ville + "'));";
+	return "INSERT INTO adresse(numero, rue, IDville) VALUES('" + this->Numero + "', '" + this->Rue + "', (SELECT IDville FROM ville WHERE nom_ville = '" + this->Ville + "')); ";
 }
 
 System::String^ MAdresse::Update(short idclient)

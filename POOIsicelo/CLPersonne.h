@@ -82,6 +82,7 @@ public:
 	System::String^ Select();
 	System::String^ Insert();
 	System::String^ Delete(void);
+	System::String^ remplirNumAdresse(System::String^, System::String^, System::String^);
 	//System::String^ Update(void);
 	void setIdClient(int);
 	void setNom(System::String^);

@@ -32,7 +32,8 @@ namespace POOIsicelo {
 			//
 			this->oSvc = gcnew CLservices();
 			this->Adresse1 = gcnew MAdresse();
-
+			this->oMappClient = gcnew MClient();
+			this->oCad = gcnew CLcad();
 		}
 
 	protected:
@@ -61,10 +62,12 @@ namespace POOIsicelo {
 
 	private: CLservices^ oSvc;
 	private: MAdresse^ Adresse1;
+	private: MClient^ oMappClient;
+	private: CLcad^ oCad;
 	private: System::Data::DataSet^ oDs;
 
 
-	private: System::Windows::Forms::TextBox^ datePremierAchat;
+
 	private: System::Windows::Forms::Label^ label8;
 
 
@@ -106,7 +109,7 @@ namespace POOIsicelo {
 
 	private: System::Windows::Forms::Label^ label14;
 	private: System::Windows::Forms::Label^ label15;
-	private: System::Windows::Forms::TextBox^ dateNaissanceClient;
+
 
 
 	private: System::Windows::Forms::TextBox^ nomClient;
@@ -120,7 +123,7 @@ namespace POOIsicelo {
 	private: System::Windows::Forms::Label^ label9;
 	private: System::Windows::Forms::Label^ label12;
 	private: System::Windows::Forms::TextBox^ numAdresse;
-	private: System::Windows::Forms::ComboBox^ villeAdresse;
+
 	private: System::Windows::Forms::Label^ label10;
 	private: System::Windows::Forms::Label^ label11;
 	private: System::Windows::Forms::TextBox^ rueAdresse;
@@ -137,6 +140,11 @@ namespace POOIsicelo {
 
 
 private: System::Windows::Forms::Button^ affListeClient;
+private: System::Windows::Forms::DateTimePicker^ dateNaissanceClient;
+private: System::Windows::Forms::DateTimePicker^ datePremierAchat;
+private: System::Windows::Forms::TextBox^ villeAdresse;
+
+
 
 
 	protected:
@@ -156,6 +164,7 @@ private: System::Windows::Forms::Button^ affListeClient;
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(GestionClient::typeid));
 			this->buttonRetour = (gcnew System::Windows::Forms::Button());
 			this->addClient = (gcnew System::Windows::Forms::Button());
 			this->delClient = (gcnew System::Windows::Forms::Button());
@@ -163,23 +172,23 @@ private: System::Windows::Forms::Button^ affListeClient;
 			this->affClient = (gcnew System::Windows::Forms::Button());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->dataGridViewClient = (gcnew System::Windows::Forms::DataGridView());
-			this->datePremierAchat = (gcnew System::Windows::Forms::TextBox());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->label13 = (gcnew System::Windows::Forms::Label());
 			this->numClient = (gcnew System::Windows::Forms::TextBox());
 			this->infoClient = (gcnew System::Windows::Forms::GroupBox());
+			this->datePremierAchat = (gcnew System::Windows::Forms::DateTimePicker());
+			this->dateNaissanceClient = (gcnew System::Windows::Forms::DateTimePicker());
 			this->label14 = (gcnew System::Windows::Forms::Label());
 			this->label15 = (gcnew System::Windows::Forms::Label());
-			this->dateNaissanceClient = (gcnew System::Windows::Forms::TextBox());
 			this->nomClient = (gcnew System::Windows::Forms::TextBox());
 			this->label20 = (gcnew System::Windows::Forms::Label());
 			this->prenomClient = (gcnew System::Windows::Forms::TextBox());
 			this->adresseDomicile = (gcnew System::Windows::Forms::GroupBox());
+			this->villeAdresse = (gcnew System::Windows::Forms::TextBox());
 			this->codePostalDomicile = (gcnew System::Windows::Forms::TextBox());
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->label12 = (gcnew System::Windows::Forms::Label());
 			this->numAdresse = (gcnew System::Windows::Forms::TextBox());
-			this->villeAdresse = (gcnew System::Windows::Forms::ComboBox());
 			this->label10 = (gcnew System::Windows::Forms::Label());
 			this->label11 = (gcnew System::Windows::Forms::Label());
 			this->rueAdresse = (gcnew System::Windows::Forms::TextBox());
@@ -264,14 +273,6 @@ private: System::Windows::Forms::Button^ affListeClient;
 			this->dataGridViewClient->Size = System::Drawing::Size(1124, 202);
 			this->dataGridViewClient->TabIndex = 0;
 			// 
-			// datePremierAchat
-			// 
-			this->datePremierAchat->Location = System::Drawing::Point(7, 218);
-			this->datePremierAchat->Margin = System::Windows::Forms::Padding(4);
-			this->datePremierAchat->Name = L"datePremierAchat";
-			this->datePremierAchat->Size = System::Drawing::Size(236, 22);
-			this->datePremierAchat->TabIndex = 16;
-			// 
 			// label8
 			// 
 			this->label8->AutoSize = true;
@@ -303,14 +304,14 @@ private: System::Windows::Forms::Button^ affListeClient;
 			// 
 			// infoClient
 			// 
+			this->infoClient->Controls->Add(this->datePremierAchat);
+			this->infoClient->Controls->Add(this->dateNaissanceClient);
 			this->infoClient->Controls->Add(this->label14);
 			this->infoClient->Controls->Add(this->label15);
-			this->infoClient->Controls->Add(this->dateNaissanceClient);
 			this->infoClient->Controls->Add(this->nomClient);
 			this->infoClient->Controls->Add(this->label20);
 			this->infoClient->Controls->Add(this->prenomClient);
 			this->infoClient->Controls->Add(this->label8);
-			this->infoClient->Controls->Add(this->datePremierAchat);
 			this->infoClient->Controls->Add(this->label13);
 			this->infoClient->Controls->Add(this->numClient);
 			this->infoClient->Location = System::Drawing::Point(280, 15);
@@ -319,6 +320,25 @@ private: System::Windows::Forms::Button^ affListeClient;
 			this->infoClient->TabIndex = 48;
 			this->infoClient->TabStop = false;
 			this->infoClient->Text = L"Informations Client";
+			// 
+			// datePremierAchat
+			// 
+			this->datePremierAchat->CustomFormat = L"yyyy-MM-dd";
+			this->datePremierAchat->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
+			this->datePremierAchat->Location = System::Drawing::Point(7, 219);
+			this->datePremierAchat->Name = L"datePremierAchat";
+			this->datePremierAchat->Size = System::Drawing::Size(236, 22);
+			this->datePremierAchat->TabIndex = 29;
+			// 
+			// dateNaissanceClient
+			// 
+			this->dateNaissanceClient->CustomFormat = L"yyyy-MM-dd";
+			this->dateNaissanceClient->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
+			this->dateNaissanceClient->Location = System::Drawing::Point(7, 161);
+			this->dateNaissanceClient->Name = L"dateNaissanceClient";
+			this->dateNaissanceClient->Size = System::Drawing::Size(236, 22);
+			this->dateNaissanceClient->TabIndex = 28;
+			this->dateNaissanceClient->ValueChanged += gcnew System::EventHandler(this, &GestionClient::dateTimePicker1_ValueChanged);
 			// 
 			// label14
 			// 
@@ -339,14 +359,6 @@ private: System::Windows::Forms::Button^ affListeClient;
 			this->label15->Size = System::Drawing::Size(42, 16);
 			this->label15->TabIndex = 17;
 			this->label15->Text = L"Nom :";
-			// 
-			// dateNaissanceClient
-			// 
-			this->dateNaissanceClient->Location = System::Drawing::Point(7, 163);
-			this->dateNaissanceClient->Margin = System::Windows::Forms::Padding(4);
-			this->dateNaissanceClient->Name = L"dateNaissanceClient";
-			this->dateNaissanceClient->Size = System::Drawing::Size(236, 22);
-			this->dateNaissanceClient->TabIndex = 20;
 			// 
 			// nomClient
 			// 
@@ -376,11 +388,11 @@ private: System::Windows::Forms::Button^ affListeClient;
 			// 
 			// adresseDomicile
 			// 
+			this->adresseDomicile->Controls->Add(this->villeAdresse);
 			this->adresseDomicile->Controls->Add(this->codePostalDomicile);
 			this->adresseDomicile->Controls->Add(this->label9);
 			this->adresseDomicile->Controls->Add(this->label12);
 			this->adresseDomicile->Controls->Add(this->numAdresse);
-			this->adresseDomicile->Controls->Add(this->villeAdresse);
 			this->adresseDomicile->Controls->Add(this->label10);
 			this->adresseDomicile->Controls->Add(this->label11);
 			this->adresseDomicile->Controls->Add(this->rueAdresse);
@@ -390,6 +402,14 @@ private: System::Windows::Forms::Button^ affListeClient;
 			this->adresseDomicile->TabIndex = 49;
 			this->adresseDomicile->TabStop = false;
 			this->adresseDomicile->Text = L"Adresse Domicile";
+			// 
+			// villeAdresse
+			// 
+			this->villeAdresse->Location = System::Drawing::Point(7, 159);
+			this->villeAdresse->Margin = System::Windows::Forms::Padding(4);
+			this->villeAdresse->Name = L"villeAdresse";
+			this->villeAdresse->Size = System::Drawing::Size(236, 22);
+			this->villeAdresse->TabIndex = 34;
 			// 
 			// codePostalDomicile
 			// 
@@ -426,16 +446,6 @@ private: System::Windows::Forms::Button^ affListeClient;
 			this->numAdresse->Name = L"numAdresse";
 			this->numAdresse->Size = System::Drawing::Size(236, 22);
 			this->numAdresse->TabIndex = 27;
-			// 
-			// villeAdresse
-			// 
-			this->villeAdresse->FormattingEnabled = true;
-			this->villeAdresse->Location = System::Drawing::Point(7, 163);
-			this->villeAdresse->Margin = System::Windows::Forms::Padding(4);
-			this->villeAdresse->Name = L"villeAdresse";
-			this->villeAdresse->Size = System::Drawing::Size(236, 24);
-			this->villeAdresse->TabIndex = 31;
-			this->villeAdresse->SelectedIndexChanged += gcnew System::EventHandler(this, &GestionClient::villeAdresse_SelectedIndexChanged);
 			// 
 			// label10
 			// 
@@ -491,9 +501,11 @@ private: System::Windows::Forms::Button^ affListeClient;
 			this->Controls->Add(this->delClient);
 			this->Controls->Add(this->addClient);
 			this->Controls->Add(this->buttonRetour);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"GestionClient";
-			this->Text = L"Form1";
+			this->Text = L"Gestion Client";
+			this->Load += gcnew System::EventHandler(this, &GestionClient::GestionClient_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewClient))->EndInit();
 			this->infoClient->ResumeLayout(false);
 			this->infoClient->PerformLayout();
@@ -508,6 +520,7 @@ private: System::Windows::Forms::Button^ affListeClient;
 		this->Close();
 	}
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->oSvc->ajouterUneAdresse(this->numAdresse->Text, this->rueAdresse->Text, this->villeAdresse->Text, this->codePostalDomicile->Text);
 		this->oSvc->modifierUneAdresse(this->numAdresse->Text, this->rueAdresse->Text, this->villeAdresse->Text, this->codePostalDomicile->Text, this->numClient->Text);
 		this->prenomClient->ResetText();
 		this->nomClient->ResetText();
@@ -523,6 +536,10 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 	this->oDs = this->oSvc->selectionnerUnClient("Gestion_des_Clients", this->nomClient->Text, this->prenomClient->Text, this->dateNaissanceClient->Text);
 	this->dataGridViewClient->DataSource = this->oDs;
 	this->dataGridViewClient->DataMember = "Gestion_des_Clients";
+	this->numAdresse->AppendText(this->oCad->DataRead("SELECT numero FROM Gestion_des_Clients INNER JOIN adresse ON Gestion_des_Clients.IDadresse = adresse.IDadresse INNER JOIN ville ON adresse.IDville = ville.IDville WHERE Nom_Client = '" + this->nomClient->Text + "' AND Prenom_Client = '" + this->prenomClient->Text + "' AND Date_Naissance_Client = '" + this->dateNaissanceClient->Text + "'; "));
+	this->rueAdresse->AppendText(this->oCad->DataRead("SELECT rue FROM Gestion_des_Clients INNER JOIN adresse ON Gestion_des_Clients.IDadresse = adresse.IDadresse INNER JOIN ville ON adresse.IDville = ville.IDville WHERE Nom_Client = '" + this->nomClient->Text + "' AND Prenom_Client = '" + this->prenomClient->Text + "' AND Date_Naissance_Client = '" + this->dateNaissanceClient->Text + "'; "));
+	this->villeAdresse->AppendText(this->oCad->DataRead("SELECT nom_ville FROM Gestion_des_Clients INNER JOIN adresse ON Gestion_des_Clients.IDadresse = adresse.IDadresse INNER JOIN ville ON adresse.IDville = ville.IDville WHERE Nom_Client = '" + this->nomClient->Text + "' AND Prenom_Client = '" + this->prenomClient->Text + "' AND Date_Naissance_Client = '" + this->dateNaissanceClient->Text + "'; "));
+	this->codePostalDomicile->AppendText(this->oCad->DataRead("SELECT code_postal FROM Gestion_des_Clients INNER JOIN adresse ON Gestion_des_Clients.IDadresse = adresse.IDadresse INNER JOIN ville ON adresse.IDville = ville.IDville WHERE Nom_Client = '" + this->nomClient->Text + "' AND Prenom_Client = '" + this->prenomClient->Text + "' AND Date_Naissance_Client = '" + this->dateNaissanceClient->Text + "'; "));
 
 
 
@@ -574,6 +591,11 @@ private: System::Void delClient_Click(System::Object^ sender, System::EventArgs^
 	this->rueAdresse->ResetText();
 	this->villeAdresse->ResetText();
 	this->codePostalDomicile->ResetText();
+}
+private: System::Void dateTimePicker1_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+
+private: System::Void GestionClient_Load(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

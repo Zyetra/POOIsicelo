@@ -55,3 +55,8 @@ System::String^ MClient::Delete()
 	return "UPDATE Gestion_des_Clients SET masque = 0 WHERE ID_Numero_Client='" + this->idClient + "'AND Nom_client = '" + this->nom + "' AND Prenom_client = '" + this->prenom + "' AND Date_Naissance_Client = '" + this->dateNaissance + "'; ";
 }
 
+System::String^ MClient::remplirNumAdresse(System::String^ nom, System::String^ prenom, System::String^ dateNaissanceClient)
+{
+	return "SELECT numero FROM Gestion_des_Clients INNER JOIN adresse ON Gestion_des_Clients.IDadresse=adresse.IDadresse INNER JOIN ville ON adresse.IDville=ville.IDville WHERE Nom_Client = '" + this->nom + "' AND Prenom_Client = '" + this->prenom + "' AND Date_Naissance_Client = '" + this->dateNaissance + "';";
+}
+
