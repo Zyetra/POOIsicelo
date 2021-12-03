@@ -584,6 +584,10 @@ private: System::Windows::Forms::TextBox^ villeAdresse;
 		this->codePostalDomicile->ResetText();
 	}
 private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->numAdresse->ResetText();
+	this->rueAdresse->ResetText();
+	this->villeAdresse->ResetText();
+	this->codePostalDomicile->ResetText();
 	this->dataGridViewClient->Refresh();
 	this->oDs = this->oSvc->selectionnerUnClient("Gestion_des_Clients", this->nomClient->Text, this->prenomClient->Text, this->dateNaissanceClient->Text);
 	this->dataGridViewClient->DataSource = this->oDs;
