@@ -157,6 +157,7 @@ namespace POOIsicelo {
 			// 
 			this->addPersonnel->AccessibleDescription = L"hello";
 			this->addPersonnel->BackColor = System::Drawing::Color::Transparent;
+			this->addPersonnel->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->addPersonnel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold));
 			this->addPersonnel->ForeColor = System::Drawing::SystemColors::HotTrack;
 			this->addPersonnel->Location = System::Drawing::Point(16, 15);
@@ -170,6 +171,7 @@ namespace POOIsicelo {
 			// 
 			// delPersonnel
 			// 
+			this->delPersonnel->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->delPersonnel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold));
 			this->delPersonnel->ForeColor = System::Drawing::SystemColors::HotTrack;
 			this->delPersonnel->Location = System::Drawing::Point(16, 57);
@@ -183,6 +185,7 @@ namespace POOIsicelo {
 			// 
 			// modPersonnel
 			// 
+			this->modPersonnel->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->modPersonnel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold));
 			this->modPersonnel->ForeColor = System::Drawing::SystemColors::HotTrack;
 			this->modPersonnel->Location = System::Drawing::Point(16, 101);
@@ -196,6 +199,7 @@ namespace POOIsicelo {
 			// 
 			// affPersonnel
 			// 
+			this->affPersonnel->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->affPersonnel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold));
 			this->affPersonnel->ForeColor = System::Drawing::SystemColors::HotTrack;
 			this->affPersonnel->Location = System::Drawing::Point(16, 147);
@@ -209,6 +213,7 @@ namespace POOIsicelo {
 			// 
 			// buttonRetour
 			// 
+			this->buttonRetour->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->buttonRetour->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold));
 			this->buttonRetour->ForeColor = System::Drawing::SystemColors::HotTrack;
 			this->buttonRetour->Location = System::Drawing::Point(16, 250);
@@ -489,6 +494,7 @@ namespace POOIsicelo {
 			// 
 			// affListePersonnel
 			// 
+			this->affListePersonnel->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->affListePersonnel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->affListePersonnel->ForeColor = System::Drawing::SystemColors::HotTrack;

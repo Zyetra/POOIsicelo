@@ -200,6 +200,7 @@ private: System::Windows::Forms::TextBox^ villeAdresse;
 			// 
 			// buttonRetour
 			// 
+			this->buttonRetour->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->buttonRetour->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->buttonRetour->ForeColor = System::Drawing::SystemColors::HotTrack;
@@ -215,6 +216,7 @@ private: System::Windows::Forms::TextBox^ villeAdresse;
 			// addClient
 			// 
 			this->addClient->AccessibleDescription = L"hello";
+			this->addClient->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->addClient->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->addClient->ForeColor = System::Drawing::SystemColors::HotTrack;
@@ -229,6 +231,7 @@ private: System::Windows::Forms::TextBox^ villeAdresse;
 			// 
 			// delClient
 			// 
+			this->delClient->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->delClient->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->delClient->ForeColor = System::Drawing::SystemColors::HotTrack;
@@ -243,6 +246,7 @@ private: System::Windows::Forms::TextBox^ villeAdresse;
 			// 
 			// modClient
 			// 
+			this->modClient->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->modClient->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->modClient->ForeColor = System::Drawing::SystemColors::HotTrack;
@@ -257,6 +261,7 @@ private: System::Windows::Forms::TextBox^ villeAdresse;
 			// 
 			// affClient
 			// 
+			this->affClient->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->affClient->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->affClient->ForeColor = System::Drawing::SystemColors::HotTrack;
@@ -517,6 +522,7 @@ private: System::Windows::Forms::TextBox^ villeAdresse;
 			// 
 			// affListeClient
 			// 
+			this->affListeClient->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->affListeClient->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->affListeClient->ForeColor = System::Drawing::SystemColors::HotTrack;

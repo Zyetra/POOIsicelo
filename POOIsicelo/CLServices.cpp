@@ -12,6 +12,7 @@ CLservices::CLservices(void)
 	this->oMappAdresse = gcnew MAdresse();
 	this->oMappClient = gcnew MClient();
 	this->oMappPersonnel = gcnew MPersonnel();
+	this->oMappArticle = gcnew MArticle();
 	//this->oMappStats = gcnew MStats();
 }
 

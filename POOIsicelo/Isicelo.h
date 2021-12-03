@@ -74,6 +74,7 @@ namespace POOIsicelo {
 			// 
 			// button1
 			// 
+			this->button1->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold));
 			this->button1->ForeColor = System::Drawing::SystemColors::HotTrack;
 			this->button1->Location = System::Drawing::Point(423, 95);
@@ -87,6 +88,7 @@ namespace POOIsicelo {
 			// button2
 			// 
 			this->button2->BackColor = System::Drawing::Color::Transparent;
+			this->button2->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold));
 			this->button2->ForeColor = System::Drawing::SystemColors::HotTrack;
 			this->button2->Location = System::Drawing::Point(121, 95);
@@ -99,6 +101,7 @@ namespace POOIsicelo {
 			// 
 			// button3
 			// 
+			this->button3->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold));
 			this->button3->ForeColor = System::Drawing::SystemColors::HotTrack;
 			this->button3->Location = System::Drawing::Point(725, 95);
@@ -112,6 +115,7 @@ namespace POOIsicelo {
 			// button4
 			// 
 			this->button4->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
+			this->button4->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->button4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold));
 			this->button4->ForeColor = System::Drawing::SystemColors::HotTrack;
 			this->button4->Location = System::Drawing::Point(272, 254);
@@ -124,6 +128,7 @@ namespace POOIsicelo {
 			// 
 			// button5
 			// 
+			this->button5->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->button5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold));
 			this->button5->ForeColor = System::Drawing::SystemColors::HotTrack;
 			this->button5->ImageAlign = System::Drawing::ContentAlignment::TopCenter;
@@ -137,6 +142,7 @@ namespace POOIsicelo {
 			// 
 			// Stop
 			// 
+			this->Stop->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->Stop->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold));
 			this->Stop->ForeColor = System::Drawing::SystemColors::HotTrack;
 			this->Stop->Location = System::Drawing::Point(423, 389);

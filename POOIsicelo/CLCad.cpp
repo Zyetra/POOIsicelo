@@ -3,7 +3,7 @@
 
 CLcad::CLcad(void) {
 
-	this->sCnx = "Data Source=tcp: 88.167.23.31,49151;Initial Catalog=v3;Persist Security Info=True;User ID=valentin;Password=2021";
+	this->sCnx = "Data Source=tcp: 10.162.128.65,49151;Initial Catalog=v3;Persist Security Info=True;User ID=valentin;Password=2021";
 
 	this->sSql = "Rien";
 

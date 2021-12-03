@@ -110,11 +110,12 @@ namespace POOIsicelo {
 			// creerArticle
 			// 
 			this->creerArticle->AccessibleDescription = L"hello";
+			this->creerArticle->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->creerArticle->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->creerArticle->ForeColor = System::Drawing::SystemColors::HotTrack;
 			this->creerArticle->Location = System::Drawing::Point(16, 15);
-			this->creerArticle->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->creerArticle->Margin = System::Windows::Forms::Padding(4);
 			this->creerArticle->Name = L"creerArticle";
 			this->creerArticle->Size = System::Drawing::Size(183, 28);
 			this->creerArticle->TabIndex = 2;
@@ -124,11 +125,12 @@ namespace POOIsicelo {
 			// 
 			// delArticle
 			// 
+			this->delArticle->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->delArticle->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->delArticle->ForeColor = System::Drawing::SystemColors::HotTrack;
 			this->delArticle->Location = System::Drawing::Point(16, 66);
-			this->delArticle->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->delArticle->Margin = System::Windows::Forms::Padding(4);
 			this->delArticle->Name = L"delArticle";
 			this->delArticle->Size = System::Drawing::Size(183, 28);
 			this->delArticle->TabIndex = 3;
@@ -138,11 +140,12 @@ namespace POOIsicelo {
 			// 
 			// modArticle
 			// 
+			this->modArticle->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->modArticle->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->modArticle->ForeColor = System::Drawing::SystemColors::HotTrack;
 			this->modArticle->Location = System::Drawing::Point(16, 124);
-			this->modArticle->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->modArticle->Margin = System::Windows::Forms::Padding(4);
 			this->modArticle->Name = L"modArticle";
 			this->modArticle->Size = System::Drawing::Size(183, 28);
 			this->modArticle->TabIndex = 4;
@@ -152,11 +155,12 @@ namespace POOIsicelo {
 			// 
 			// affArticle
 			// 
+			this->affArticle->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->affArticle->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->affArticle->ForeColor = System::Drawing::SystemColors::HotTrack;
 			this->affArticle->Location = System::Drawing::Point(16, 180);
-			this->affArticle->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->affArticle->Margin = System::Windows::Forms::Padding(4);
 			this->affArticle->Name = L"affArticle";
 			this->affArticle->Size = System::Drawing::Size(183, 28);
 			this->affArticle->TabIndex = 5;
@@ -166,6 +170,7 @@ namespace POOIsicelo {
 			// 
 			// buttonRetour
 			// 
+			this->buttonRetour->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->buttonRetour->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->buttonRetour->ForeColor = System::Drawing::SystemColors::HotTrack;
@@ -182,7 +187,7 @@ namespace POOIsicelo {
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView1->Location = System::Drawing::Point(16, 305);
-			this->dataGridView1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->dataGridView1->Margin = System::Windows::Forms::Padding(4);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->Size = System::Drawing::Size(963, 212);
@@ -219,7 +224,7 @@ namespace POOIsicelo {
 			// 
 			this->tauxTVA->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
 			this->tauxTVA->Location = System::Drawing::Point(561, 185);
-			this->tauxTVA->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->tauxTVA->Margin = System::Windows::Forms::Padding(4);
 			this->tauxTVA->Name = L"tauxTVA";
 			this->tauxTVA->Size = System::Drawing::Size(181, 22);
 			this->tauxTVA->TabIndex = 27;
@@ -238,7 +243,7 @@ namespace POOIsicelo {
 			// 
 			this->seuilReaprovi->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
 			this->seuilReaprovi->Location = System::Drawing::Point(285, 185);
-			this->seuilReaprovi->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->seuilReaprovi->Margin = System::Windows::Forms::Padding(4);
 			this->seuilReaprovi->Name = L"seuilReaprovi";
 			this->seuilReaprovi->Size = System::Drawing::Size(181, 22);
 			this->seuilReaprovi->TabIndex = 25;
@@ -257,7 +262,7 @@ namespace POOIsicelo {
 			// 
 			this->quantiteStock->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
 			this->quantiteStock->Location = System::Drawing::Point(7, 185);
-			this->quantiteStock->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->quantiteStock->Margin = System::Windows::Forms::Padding(4);
 			this->quantiteStock->Name = L"quantiteStock";
 			this->quantiteStock->Size = System::Drawing::Size(181, 22);
 			this->quantiteStock->TabIndex = 23;
@@ -276,7 +281,7 @@ namespace POOIsicelo {
 			// 
 			this->PrixHTArticle->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
 			this->PrixHTArticle->Location = System::Drawing::Point(561, 79);
-			this->PrixHTArticle->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->PrixHTArticle->Margin = System::Windows::Forms::Padding(4);
 			this->PrixHTArticle->Name = L"PrixHTArticle";
 			this->PrixHTArticle->Size = System::Drawing::Size(181, 22);
 			this->PrixHTArticle->TabIndex = 21;
@@ -285,7 +290,7 @@ namespace POOIsicelo {
 			// 
 			this->refArticle->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
 			this->refArticle->Location = System::Drawing::Point(285, 79);
-			this->refArticle->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->refArticle->Margin = System::Windows::Forms::Padding(4);
 			this->refArticle->Name = L"refArticle";
 			this->refArticle->Size = System::Drawing::Size(181, 22);
 			this->refArticle->TabIndex = 20;
@@ -314,7 +319,7 @@ namespace POOIsicelo {
 			// 
 			this->desiArticle->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
 			this->desiArticle->Location = System::Drawing::Point(7, 79);
-			this->desiArticle->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->desiArticle->Margin = System::Windows::Forms::Padding(4);
 			this->desiArticle->Name = L"desiArticle";
 			this->desiArticle->Size = System::Drawing::Size(181, 22);
 			this->desiArticle->TabIndex = 17;
@@ -370,19 +375,42 @@ namespace POOIsicelo {
 			this->oDs = this->oSvc->selectionnerUnArticles("Gestion_des_articles", this->refArticle->Text);
 			this->dataGridView1->DataSource = this->oDs;
 			this->dataGridView1->DataMember = "Gestion_des_articles";
+			this->refArticle->ResetText();
+			this->desiArticle->ResetText();
+			this->tauxTVA->ResetText();
+			this->PrixHTArticle->ResetText();
+			this->quantiteStock->ResetText();
+			this->seuilReaprovi->ResetText();
 		}
 	}
 private: System::Void creerArticle_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->oSvc->creationArticles(this->desiArticle->Text, this->refArticle->Text, this->tauxTVA->Text, this->PrixHTArticle->Text, this->quantiteStock->Text, this->seuilReaprovi->Text);
+	this->refArticle->ResetText();
+	this->desiArticle->ResetText();
+	this->tauxTVA->ResetText();
+	this->PrixHTArticle->ResetText();
+	this->quantiteStock->ResetText();
+	this->seuilReaprovi->ResetText();
 }
 
 private: System::Void delArticle_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->oSvc->supArticles(this->refArticle->Text);
+	this->refArticle->ResetText();
+	this->desiArticle->ResetText();
+	this->tauxTVA->ResetText();
+	this->PrixHTArticle->ResetText();
+	this->quantiteStock->ResetText();
+	this->seuilReaprovi->ResetText();
 
 }
 private: System::Void modArticle_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->oSvc->modifArticles(this->desiArticle->Text, this->quantiteStock->Text, this->PrixHTArticle->Text, this->tauxTVA->Text, this->seuilReaprovi->Text, this->refArticle->Text);
-
+	this->refArticle->ResetText();
+	this->desiArticle->ResetText();
+	this->tauxTVA->ResetText();
+	this->PrixHTArticle->ResetText();
+	this->quantiteStock->ResetText();
+	this->seuilReaprovi->ResetText();
 }
 };
 }
