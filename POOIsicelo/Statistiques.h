@@ -118,9 +118,13 @@ namespace POOIsicelo {
 			// SelectAll
 			// 
 			this->SelectAll->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->SelectAll->Location = System::Drawing::Point(527, 315);
+			this->SelectAll->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->SelectAll->ForeColor = System::Drawing::SystemColors::HotTrack;
+			this->SelectAll->Location = System::Drawing::Point(738, 388);
+			this->SelectAll->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->SelectAll->Name = L"SelectAll";
-			this->SelectAll->Size = System::Drawing::Size(129, 35);
+			this->SelectAll->Size = System::Drawing::Size(172, 43);
 			this->SelectAll->TabIndex = 0;
 			this->SelectAll->Text = L"Afficher toutes les commandes";
 			this->SelectAll->UseVisualStyleBackColor = true;
@@ -130,11 +134,12 @@ namespace POOIsicelo {
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(12, 198);
+			this->dataGridView1->Location = System::Drawing::Point(16, 244);
+			this->dataGridView1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->Size = System::Drawing::Size(644, 111);
+			this->dataGridView1->RowHeadersWidth = 51;
+			this->dataGridView1->Size = System::Drawing::Size(894, 137);
 			this->dataGridView1->TabIndex = 1;
-			this->dataGridView1->DataSource = NULL;
 			// 
 			// comboBoxMois
 			// 
@@ -143,18 +148,22 @@ namespace POOIsicelo {
 				L"Janvier", L"Février", L"Mars", L"Avril", L"Mai",
 					L"Juin", L"Juillet", L"Août", L"Septembre", L"Octobre", L"Novembre", L"Décembre"
 			});
-			this->comboBoxMois->Location = System::Drawing::Point(146, 12);
+			this->comboBoxMois->Location = System::Drawing::Point(215, 15);
+			this->comboBoxMois->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->comboBoxMois->Name = L"comboBoxMois";
-			this->comboBoxMois->Size = System::Drawing::Size(80, 21);
+			this->comboBoxMois->Size = System::Drawing::Size(105, 24);
 			this->comboBoxMois->TabIndex = 2;
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
 			this->label1->BackColor = System::Drawing::Color::Transparent;
-			this->label1->Location = System::Drawing::Point(9, 15);
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label1->Location = System::Drawing::Point(0, 18);
+			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(131, 13);
+			this->label1->Size = System::Drawing::Size(192, 16);
 			this->label1->TabIndex = 3;
 			this->label1->Text = L"Chiffre d\'affaire du mois de";
 			// 
@@ -162,9 +171,12 @@ namespace POOIsicelo {
 			// 
 			this->label2->AutoSize = true;
 			this->label2->BackColor = System::Drawing::Color::Transparent;
-			this->label2->Location = System::Drawing::Point(234, 15);
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label2->Location = System::Drawing::Point(328, 18);
+			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(56, 13);
+			this->label2->Size = System::Drawing::Size(80, 16);
 			this->label2->TabIndex = 4;
 			this->label2->Text = L"de l\'année";
 			// 
@@ -173,15 +185,16 @@ namespace POOIsicelo {
 			this->CalculCAButton->AccessibleName = L"";
 			this->CalculCAButton->AutoSize = true;
 			this->CalculCAButton->BackColor = System::Drawing::Color::Transparent;
-			//this->CalculCAButton->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"CalculCAButton.BackgroundImage")));
-			//this->CalculCAButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->CalculCAButton->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"CalculCAButton.BackgroundImage")));
+			this->CalculCAButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->CalculCAButton->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->CalculCAButton->FlatAppearance->BorderColor = System::Drawing::SystemColors::ActiveBorder;
 			this->CalculCAButton->FlatAppearance->BorderSize = 0;
 			this->CalculCAButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->CalculCAButton->Location = System::Drawing::Point(357, 5);
+			this->CalculCAButton->Location = System::Drawing::Point(497, 7);
+			this->CalculCAButton->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->CalculCAButton->Name = L"CalculCAButton";
-			this->CalculCAButton->Size = System::Drawing::Size(32, 32);
+			this->CalculCAButton->Size = System::Drawing::Size(43, 43);
 			this->CalculCAButton->TabIndex = 6;
 			this->CalculCAButton->UseVisualStyleBackColor = false;
 			this->CalculCAButton->Click += gcnew System::EventHandler(this, &Statistiques::CalculCAButton_Click);
@@ -190,9 +203,10 @@ namespace POOIsicelo {
 			// 
 			// textBoxAnnee
 			// 
-			this->textBoxAnnee->Location = System::Drawing::Point(295, 12);
+			this->textBoxAnnee->Location = System::Drawing::Point(416, 15);
+			this->textBoxAnnee->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBoxAnnee->Name = L"textBoxAnnee";
-			this->textBoxAnnee->Size = System::Drawing::Size(56, 20);
+			this->textBoxAnnee->Size = System::Drawing::Size(73, 22);
 			this->textBoxAnnee->TabIndex = 7;
 			// 
 			// checkedListBox1
@@ -204,22 +218,24 @@ namespace POOIsicelo {
 					L"Afficher la valeur d\'achat du stock", L"Afficher la valeur commerciale du stock", L"Afficher les produits sous le seuil de réapprovisionnement",
 					L"Afficher le montant total des achats pour un client", L"Afficher les 10 articles les moins vendus", L"Afficher les 10 articles les plus vendus"
 			});
-			this->checkedListBox1->Location = System::Drawing::Point(12, 47);
+			this->checkedListBox1->Location = System::Drawing::Point(16, 58);
+			this->checkedListBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->checkedListBox1->Name = L"checkedListBox1";
-			this->checkedListBox1->Size = System::Drawing::Size(339, 109);
+			this->checkedListBox1->Size = System::Drawing::Size(451, 123);
 			this->checkedListBox1->TabIndex = 8;
 			// 
 			// searchButton
 			// 
 			this->searchButton->BackColor = System::Drawing::Color::Transparent;
-			//this->searchButton->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"searchButton.BackgroundImage")));
-			//this->searchButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->searchButton->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"searchButton.BackgroundImage")));
+			this->searchButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->searchButton->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->searchButton->FlatAppearance->BorderSize = 0;
 			this->searchButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->searchButton->Location = System::Drawing::Point(357, 47);
+			this->searchButton->Location = System::Drawing::Point(497, 58);
+			this->searchButton->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->searchButton->Name = L"searchButton";
-			this->searchButton->Size = System::Drawing::Size(32, 32);
+			this->searchButton->Size = System::Drawing::Size(43, 43);
 			this->searchButton->TabIndex = 9;
 			this->searchButton->UseVisualStyleBackColor = false;
 			this->searchButton->Click += gcnew System::EventHandler(this, &Statistiques::searchButton_Click);
@@ -230,9 +246,12 @@ namespace POOIsicelo {
 			// 
 			this->label3->AutoSize = true;
 			this->label3->BackColor = System::Drawing::Color::Transparent;
-			this->label3->Location = System::Drawing::Point(422, 15);
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label3->Location = System::Drawing::Point(563, 18);
+			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(234, 13);
+			this->label3->Size = System::Drawing::Size(347, 16);
 			this->label3->TabIndex = 10;
 			this->label3->Text = L"Simuler des variations de valeurs commerciales :";
 			// 
@@ -240,26 +259,29 @@ namespace POOIsicelo {
 			// 
 			this->label4->AutoSize = true;
 			this->label4->BackColor = System::Drawing::Color::Transparent;
-			this->label4->Location = System::Drawing::Point(422, 47);
+			this->label4->Location = System::Drawing::Point(594, 58);
+			this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(51, 13);
+			this->label4->Size = System::Drawing::Size(63, 16);
 			this->label4->TabIndex = 11;
 			this->label4->Text = L"TVA (%) :";
 			// 
 			// textBoxTVA
 			// 
-			this->textBoxTVA->Location = System::Drawing::Point(589, 44);
+			this->textBoxTVA->Location = System::Drawing::Point(816, 54);
+			this->textBoxTVA->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBoxTVA->Name = L"textBoxTVA";
-			this->textBoxTVA->Size = System::Drawing::Size(58, 20);
+			this->textBoxTVA->Size = System::Drawing::Size(76, 22);
 			this->textBoxTVA->TabIndex = 12;
 			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
 			this->label5->BackColor = System::Drawing::Color::Transparent;
-			this->label5->Location = System::Drawing::Point(422, 77);
+			this->label5->Location = System::Drawing::Point(594, 95);
+			this->label5->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(105, 13);
+			this->label5->Size = System::Drawing::Size(133, 16);
 			this->label5->TabIndex = 13;
 			this->label5->Text = L"Marge commerciale :";
 			// 
@@ -267,9 +289,10 @@ namespace POOIsicelo {
 			// 
 			this->label6->AutoSize = true;
 			this->label6->BackColor = System::Drawing::Color::Transparent;
-			this->label6->Location = System::Drawing::Point(422, 107);
+			this->label6->Location = System::Drawing::Point(594, 132);
+			this->label6->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(110, 13);
+			this->label6->Size = System::Drawing::Size(141, 16);
 			this->label6->TabIndex = 14;
 			this->label6->Text = L"Remise commerciale :";
 			// 
@@ -277,45 +300,50 @@ namespace POOIsicelo {
 			// 
 			this->label7->AutoSize = true;
 			this->label7->BackColor = System::Drawing::Color::Transparent;
-			this->label7->Location = System::Drawing::Point(422, 137);
+			this->label7->Location = System::Drawing::Point(594, 169);
+			this->label7->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(109, 13);
+			this->label7->Size = System::Drawing::Size(134, 16);
 			this->label7->TabIndex = 15;
 			this->label7->Text = L"Démarque inconnue :";
 			// 
 			// textBoxMarge
 			// 
-			this->textBoxMarge->Location = System::Drawing::Point(589, 74);
+			this->textBoxMarge->Location = System::Drawing::Point(816, 91);
+			this->textBoxMarge->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBoxMarge->Name = L"textBoxMarge";
-			this->textBoxMarge->Size = System::Drawing::Size(58, 20);
+			this->textBoxMarge->Size = System::Drawing::Size(76, 22);
 			this->textBoxMarge->TabIndex = 16;
 			// 
 			// textBoxRemise
 			// 
-			this->textBoxRemise->Location = System::Drawing::Point(589, 104);
+			this->textBoxRemise->Location = System::Drawing::Point(816, 128);
+			this->textBoxRemise->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBoxRemise->Name = L"textBoxRemise";
-			this->textBoxRemise->Size = System::Drawing::Size(58, 20);
+			this->textBoxRemise->Size = System::Drawing::Size(76, 22);
 			this->textBoxRemise->TabIndex = 17;
 			// 
 			// textBoxDemarque
 			// 
-			this->textBoxDemarque->Location = System::Drawing::Point(589, 134);
+			this->textBoxDemarque->Location = System::Drawing::Point(816, 165);
+			this->textBoxDemarque->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBoxDemarque->Name = L"textBoxDemarque";
-			this->textBoxDemarque->Size = System::Drawing::Size(58, 20);
+			this->textBoxDemarque->Size = System::Drawing::Size(76, 22);
 			this->textBoxDemarque->TabIndex = 18;
 			// 
 			// Simuler
 			// 
 			this->Simuler->AccessibleName = L"";
 			this->Simuler->BackColor = System::Drawing::Color::Transparent;
-			//this->Simuler->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Simuler.BackgroundImage")));
-			//this->Simuler->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->Simuler->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Simuler.BackgroundImage")));
+			this->Simuler->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->Simuler->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->Simuler->FlatAppearance->BorderSize = 0;
 			this->Simuler->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->Simuler->Location = System::Drawing::Point(615, 160);
+			this->Simuler->Location = System::Drawing::Point(832, 197);
+			this->Simuler->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Simuler->Name = L"Simuler";
-			this->Simuler->Size = System::Drawing::Size(32, 32);
+			this->Simuler->Size = System::Drawing::Size(43, 43);
 			this->Simuler->TabIndex = 19;
 			this->Simuler->UseVisualStyleBackColor = false;
 			this->Simuler->Click += gcnew System::EventHandler(this, &Statistiques::Simuler_Click);
@@ -325,19 +353,24 @@ namespace POOIsicelo {
 			// ActionLabel
 			// 
 			this->ActionLabel->AutoSize = true;
-			this->ActionLabel->Location = System::Drawing::Point(12, 326);
+			this->ActionLabel->Location = System::Drawing::Point(16, 401);
+			this->ActionLabel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->ActionLabel->Name = L"ActionLabel";
-			this->ActionLabel->Size = System::Drawing::Size(0, 13);
+			this->ActionLabel->Size = System::Drawing::Size(0, 16);
 			this->ActionLabel->TabIndex = 20;
 			// 
 			// retourMenu
 			// 
 			this->retourMenu->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->retourMenu->Location = System::Drawing::Point(295, 322);
+			this->retourMenu->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->retourMenu->ForeColor = System::Drawing::SystemColors::HotTrack;
+			this->retourMenu->Location = System::Drawing::Point(416, 389);
+			this->retourMenu->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->retourMenu->Name = L"retourMenu";
-			this->retourMenu->Size = System::Drawing::Size(75, 23);
+			this->retourMenu->Size = System::Drawing::Size(138, 42);
 			this->retourMenu->TabIndex = 21;
-			this->retourMenu->Text = L"Retour";
+			this->retourMenu->Text = L"Retour au menu";
 			this->retourMenu->UseVisualStyleBackColor = true;
 			this->retourMenu->Click += gcnew System::EventHandler(this, &Statistiques::retourMenu_Click);
 			this->retourMenu->MouseLeave += gcnew System::EventHandler(this, &Statistiques::Simuler_MouseLeave);
@@ -345,11 +378,11 @@ namespace POOIsicelo {
 			// 
 			// Statistiques
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			//this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
-			//this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(666, 361);
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->ClientSize = System::Drawing::Size(943, 444);
 			this->Controls->Add(this->retourMenu);
 			this->Controls->Add(this->ActionLabel);
 			this->Controls->Add(this->Simuler);
@@ -372,7 +405,8 @@ namespace POOIsicelo {
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->SelectAll);
 			this->DoubleBuffered = true;
-			//this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"Statistiques";
 			this->Text = L"Statistiques";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
