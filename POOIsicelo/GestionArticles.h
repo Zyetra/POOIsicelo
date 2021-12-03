@@ -242,7 +242,7 @@ namespace POOIsicelo {
 			// seuilReaprovi
 			// 
 			this->seuilReaprovi->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
-			this->seuilReaprovi->Location = System::Drawing::Point(285, 185);
+			this->seuilReaprovi->Location = System::Drawing::Point(7, 185);
 			this->seuilReaprovi->Margin = System::Windows::Forms::Padding(4);
 			this->seuilReaprovi->Name = L"seuilReaprovi";
 			this->seuilReaprovi->Size = System::Drawing::Size(181, 22);
@@ -261,7 +261,7 @@ namespace POOIsicelo {
 			// quantiteStock
 			// 
 			this->quantiteStock->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
-			this->quantiteStock->Location = System::Drawing::Point(7, 185);
+			this->quantiteStock->Location = System::Drawing::Point(285, 185);
 			this->quantiteStock->Margin = System::Windows::Forms::Padding(4);
 			this->quantiteStock->Name = L"quantiteStock";
 			this->quantiteStock->Size = System::Drawing::Size(181, 22);

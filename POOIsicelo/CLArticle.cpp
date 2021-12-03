@@ -55,7 +55,7 @@ System::String^ MArticle::Selectone()
 }
 System::String^ MArticle::InsertArticle()
 {
-	return "INSERT INTO Gestion_des_articles (Designation_Article,Reference_Article,Taux_TVA_Article,Prix_UHT_Article,Quantite_Article_Stock,Seuil_Reaprovisionnement_Article,ID_TVA,ID_Nature_Article)VALUES('" + this->NomArticle + "','" + this->reference + "','" + this->Taux_tva + "','" + this->Prix_uht + "','" + this->Quantit + "','"+ this->seuille+"','1','1');";
+	return "INSERT INTO Gestion_des_articles (Designation_Article,Reference_Article,Taux_TVA_Article,Prix_UHT_Article,Quantite_Article_Stock,Seuil_Reaprovisionnement_Article,ID_TVA,ID_Nature_Article)VALUES('" + this->NomArticle + "','" + this->reference + "','" + this->Taux_tva + "','" + this->Prix_uht + "','" + this->Quantit + "','10','1','1');";
 }
 System::String^ MArticle::DeleteArticle()
 {
@@ -63,5 +63,5 @@ System::String^ MArticle::DeleteArticle()
 }
 System::String^ MArticle::UpdateArticle()
 {
-	return "UPDATE Gestion_des_articles SET Designation_Article='" + this->NomArticle + "',Taux_TVA_Article='" + this->Taux_tva + "',Prix_UHT_Article='" + this->Prix_uht + "',Quantite_Article_Stock='" + this->Quantit + "',Seuil_Reaprovisionnement_Article='" + this->seuille + "'WHERE [reference_article]='" + this->reference + "';";
+	return "UPDATE Gestion_des_articles SET Designation_Article='" + this->NomArticle + "',Taux_TVA_Article='" + this->Taux_tva + "',Prix_UHT_Article='" + this->Prix_uht + "',Quantite_Article_Stock='" + this->Quantit + "',Seuil_Reaprovisionnement_Article= '10' WHERE [reference_article]='" + this->reference + "';";
 }
