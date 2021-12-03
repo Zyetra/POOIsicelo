@@ -955,13 +955,24 @@ private: System::Void affCommande_Click(System::Object^ sender, System::EventArg
 	this->prenomClient->AppendText(this->oCad->DataRead("SELECT Prenom_Client FROM Gestion_des_clients INNER JOIN Gestion_des_commandes ON(Gestion_des_commandes.ID_Numero_Client=Gestion_des_clients.ID_Numero_Client) WHERE Reference_Commande = '" + this->refCommande->Text + "' ;"));
 	this->montant1->Clear();
 	//	this->montant1->AppendText(System::Convert::ToString(this->oCad->DataReadFloat("SELECT Montant_Total_HT FROM Gestion_des_commandes WHERE Reference_Commande = '" + this->refCommande->Text + "' ;")));  
+	this->nomSociete->Clear();
 	this->nomSociete->AppendText("Isicelo");
+	this->adrSociete->Clear();
 	this->adrSociete->AppendText("23 rue d'Arras, Arras, 62000");
+	this->numService->Clear();
 	this->numService->AppendText("03 58 96 65 98");
+	this->nomClient1->Clear();
 	this->nomClient1->AppendText(this->oCad->DataRead("SELECT Nom_Client FROM Gestion_des_commandes INNER JOIN Gestion_des_clients ON(Gestion_des_commandes.ID_Numero_Client=Gestion_des_clients.ID_Numero_Client) WHERE Reference_Commande = '" + this->refCommande->Text + "'"));
+	this->codeClient->Clear();
 	this->codeClient->AppendText(this->Com1->setIDClient(this->oCad->DataReadID(this->Com1->SelectIDClient(this->nomClient->Text, this->prenomClient->Text, this->dateNaissance->Text))));
 	this->adresseLivraison->AppendText(this->oSvc->recupAdresse(this->nomClient->Text, this->prenomClient->Text, this->dateNaissance->Text));
 	this->adresseFacturation->AppendText(this->oSvc->recupAdresse(this->nomClient->Text, this->prenomClient->Text, this->dateNaissance->Text));
+	this->prixHT->Clear();
+	this->prixHT->AppendText(System::Convert::ToString(this->oCad->DataReadID("SELECT Montant_Total_HT FROM Gestion_des_commandes WHERE Reference_Commande = '" + this->refCommande->Text + "' ")));
+	this->prixTTC->Clear();
+	this->prixTTC->AppendText(System::Convert::ToString(this->oCad->DataReadID("SELECT Montant_Total_TTC FROM Gestion_des_commandes WHERE Reference_Commande = '" + this->refCommande->Text + "' ")));
+	this->prixTVA->Clear();
+	this->prixTVA->AppendText(System::Convert::ToString(this->oCad->DataReadID("SELECT Montant_Total_TVA FROM Gestion_des_commandes WHERE Reference_Commande = '" + this->refCommande->Text + "' ")));
 }
 
 private: System::Void delCommande_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -970,6 +981,25 @@ private: System::Void delCommande_Click(System::Object^ sender, System::EventArg
 
 private: System::Void modArticle_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->oSvc->updateUneCommande(this->refCommande->Text,this->dateEmission->Text, this->dateLivraison->Text, this->moyenPaiement->Text, this->datePaiement->Text);
+
+	this->dateEmission->ResetText();
+	this->dateLivraison->ResetText();
+	this->nomClient->ResetText();
+	this->prenomClient->ResetText();
+	this->datePaiement->ResetText();
+	this->moyenPaiement->ResetText();
+	this->montant1->ResetText();
+	this->numericUpDown1->ResetText();
+	this->nomSociete->ResetText();
+	this->numService->ResetText();
+	this->adrSociete->ResetText();
+	this->prixHT->ResetText();
+	this->prixTTC->ResetText();
+	this->prixTVA->ResetText();
+	this->nomClient1->ResetText();
+	this->codeClient->ResetText();
+	this->adresseFacturation->ResetText();
+	this->adresseLivraison->ResetText();
 }
 
 private: System::Void addArticle_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
