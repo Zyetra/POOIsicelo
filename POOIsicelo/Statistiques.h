@@ -221,7 +221,7 @@ namespace POOIsicelo {
 			this->checkedListBox1->Location = System::Drawing::Point(16, 58);
 			this->checkedListBox1->Margin = System::Windows::Forms::Padding(4);
 			this->checkedListBox1->Name = L"checkedListBox1";
-			this->checkedListBox1->Size = System::Drawing::Size(451, 123);
+			this->checkedListBox1->Size = System::Drawing::Size(451, 140);
 			this->checkedListBox1->TabIndex = 8;
 			// 
 			// searchButton
