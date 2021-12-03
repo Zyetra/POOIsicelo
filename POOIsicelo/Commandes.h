@@ -205,13 +205,21 @@ private: System::Windows::Forms::Label^ label12;
 			this->label20 = (gcnew System::Windows::Forms::Label());
 			this->codeClient = (gcnew System::Windows::Forms::TextBox());
 			this->label19 = (gcnew System::Windows::Forms::Label());
+			this->nomClient1 = (gcnew System::Windows::Forms::TextBox());
+			this->label18 = (gcnew System::Windows::Forms::Label());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->numService = (gcnew System::Windows::Forms::TextBox());
+			this->label17 = (gcnew System::Windows::Forms::Label());
+			this->adrSociete = (gcnew System::Windows::Forms::TextBox());
+			this->label16 = (gcnew System::Windows::Forms::Label());
 			this->prixHT = (gcnew System::Windows::Forms::TextBox());
 			this->prixTVA = (gcnew System::Windows::Forms::TextBox());
 			this->prixTTC = (gcnew System::Windows::Forms::TextBox());
 			this->label15 = (gcnew System::Windows::Forms::Label());
 			this->label14 = (gcnew System::Windows::Forms::Label());
 			this->label13 = (gcnew System::Windows::Forms::Label());
+			this->nomSociete = (gcnew System::Windows::Forms::TextBox());
+			this->label12 = (gcnew System::Windows::Forms::Label());
 			this->groupBox4 = (gcnew System::Windows::Forms::GroupBox());
 			this->dateNaissance = (gcnew System::Windows::Forms::DateTimePicker());
 			this->label11 = (gcnew System::Windows::Forms::Label());
@@ -219,14 +227,6 @@ private: System::Windows::Forms::Label^ label12;
 			this->label10 = (gcnew System::Windows::Forms::Label());
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->nomClient = (gcnew System::Windows::Forms::TextBox());
-			this->label18 = (gcnew System::Windows::Forms::Label());
-			this->nomClient1 = (gcnew System::Windows::Forms::TextBox());
-			this->label12 = (gcnew System::Windows::Forms::Label());
-			this->nomSociete = (gcnew System::Windows::Forms::TextBox());
-			this->label17 = (gcnew System::Windows::Forms::Label());
-			this->numService = (gcnew System::Windows::Forms::TextBox());
-			this->label16 = (gcnew System::Windows::Forms::Label());
-			this->adrSociete = (gcnew System::Windows::Forms::TextBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewCommande))->BeginInit();
 			this->groupBox1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->quantiteArticle))->BeginInit();
@@ -240,9 +240,12 @@ private: System::Windows::Forms::Label^ label12;
 			// creerCommande
 			// 
 			this->creerCommande->AccessibleDescription = L"hello";
-			this->creerCommande->Location = System::Drawing::Point(12, 12);
+			this->creerCommande->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold));
+			this->creerCommande->ForeColor = System::Drawing::SystemColors::HotTrack;
+			this->creerCommande->Location = System::Drawing::Point(16, 15);
+			this->creerCommande->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->creerCommande->Name = L"creerCommande";
-			this->creerCommande->Size = System::Drawing::Size(123, 34);
+			this->creerCommande->Size = System::Drawing::Size(164, 42);
 			this->creerCommande->TabIndex = 3;
 			this->creerCommande->Text = L"Créer une Commande";
 			this->creerCommande->UseVisualStyleBackColor = true;
@@ -250,9 +253,12 @@ private: System::Windows::Forms::Label^ label12;
 			// 
 			// delCommande
 			// 
-			this->delCommande->Location = System::Drawing::Point(12, 53);
+			this->delCommande->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold));
+			this->delCommande->ForeColor = System::Drawing::SystemColors::HotTrack;
+			this->delCommande->Location = System::Drawing::Point(16, 67);
+			this->delCommande->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->delCommande->Name = L"delCommande";
-			this->delCommande->Size = System::Drawing::Size(123, 39);
+			this->delCommande->Size = System::Drawing::Size(164, 48);
 			this->delCommande->TabIndex = 4;
 			this->delCommande->Text = L"Supprimer une Commande";
 			this->delCommande->UseVisualStyleBackColor = true;
@@ -260,9 +266,12 @@ private: System::Windows::Forms::Label^ label12;
 			// 
 			// modArticle
 			// 
-			this->modArticle->Location = System::Drawing::Point(12, 98);
+			this->modArticle->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold));
+			this->modArticle->ForeColor = System::Drawing::SystemColors::HotTrack;
+			this->modArticle->Location = System::Drawing::Point(16, 125);
+			this->modArticle->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->modArticle->Name = L"modArticle";
-			this->modArticle->Size = System::Drawing::Size(123, 37);
+			this->modArticle->Size = System::Drawing::Size(164, 46);
 			this->modArticle->TabIndex = 5;
 			this->modArticle->Text = L"Modifier une Commande";
 			this->modArticle->UseVisualStyleBackColor = true;
@@ -270,9 +279,12 @@ private: System::Windows::Forms::Label^ label12;
 			// 
 			// affCommande
 			// 
-			this->affCommande->Location = System::Drawing::Point(12, 141);
+			this->affCommande->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold));
+			this->affCommande->ForeColor = System::Drawing::SystemColors::HotTrack;
+			this->affCommande->Location = System::Drawing::Point(16, 182);
+			this->affCommande->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->affCommande->Name = L"affCommande";
-			this->affCommande->Size = System::Drawing::Size(123, 36);
+			this->affCommande->Size = System::Drawing::Size(164, 44);
 			this->affCommande->TabIndex = 6;
 			this->affCommande->Text = L"Afficher une Commande";
 			this->affCommande->UseVisualStyleBackColor = true;
@@ -280,26 +292,30 @@ private: System::Windows::Forms::Label^ label12;
 			// 
 			// buttonRetour
 			// 
-			this->buttonRetour->Location = System::Drawing::Point(11, 196);
-			this->buttonRetour->Margin = System::Windows::Forms::Padding(2);
+			this->buttonRetour->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold));
+			this->buttonRetour->ForeColor = System::Drawing::SystemColors::HotTrack;
+			this->buttonRetour->Location = System::Drawing::Point(15, 241);
+			this->buttonRetour->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->buttonRetour->Name = L"buttonRetour";
-			this->buttonRetour->Size = System::Drawing::Size(76, 39);
+			this->buttonRetour->Size = System::Drawing::Size(165, 48);
 			this->buttonRetour->TabIndex = 7;
-			this->buttonRetour->Text = L"Retour";
+			this->buttonRetour->Text = L"Retour au menu";
 			this->buttonRetour->UseVisualStyleBackColor = true;
 			this->buttonRetour->Click += gcnew System::EventHandler(this, &Commandes::buttonRetour_Click);
 			// 
 			// dataGridViewCommande
 			// 
 			this->dataGridViewCommande->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridViewCommande->Location = System::Drawing::Point(12, 248);
+			this->dataGridViewCommande->Location = System::Drawing::Point(16, 305);
+			this->dataGridViewCommande->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->dataGridViewCommande->Name = L"dataGridViewCommande";
 			this->dataGridViewCommande->RowHeadersWidth = 51;
-			this->dataGridViewCommande->Size = System::Drawing::Size(1046, 172);
+			this->dataGridViewCommande->Size = System::Drawing::Size(1395, 212);
 			this->dataGridViewCommande->TabIndex = 11;
 			// 
 			// groupBox1
 			// 
+			this->groupBox1->BackColor = System::Drawing::Color::Transparent;
 			this->groupBox1->Controls->Add(this->quantiteArticle);
 			this->groupBox1->Controls->Add(this->button2);
 			this->groupBox1->Controls->Add(this->addArticle);
@@ -311,30 +327,37 @@ private: System::Windows::Forms::Label^ label12;
 			this->groupBox1->Controls->Add(this->label2);
 			this->groupBox1->Controls->Add(this->refCommande);
 			this->groupBox1->Controls->Add(this->label1);
-			this->groupBox1->Location = System::Drawing::Point(334, 12);
-			this->groupBox1->Margin = System::Windows::Forms::Padding(2);
+			this->groupBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->groupBox1->Location = System::Drawing::Point(482, 11);
+			this->groupBox1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Padding = System::Windows::Forms::Padding(2);
-			this->groupBox1->Size = System::Drawing::Size(206, 223);
+			this->groupBox1->Padding = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->groupBox1->Size = System::Drawing::Size(275, 274);
 			this->groupBox1->TabIndex = 13;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Commande";
 			// 
 			// quantiteArticle
 			// 
-			this->quantiteArticle->Location = System::Drawing::Point(4, 198);
+			this->quantiteArticle->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
+			this->quantiteArticle->Location = System::Drawing::Point(5, 244);
+			this->quantiteArticle->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->quantiteArticle->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->quantiteArticle->Name = L"quantiteArticle";
-			this->quantiteArticle->Size = System::Drawing::Size(127, 20);
+			this->quantiteArticle->Size = System::Drawing::Size(159, 22);
 			this->quantiteArticle->TabIndex = 29;
 			this->quantiteArticle->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(136, 173);
-			this->button2->Margin = System::Windows::Forms::Padding(2);
+			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button2->ForeColor = System::Drawing::SystemColors::HotTrack;
+			this->button2->Location = System::Drawing::Point(170, 213);
+			this->button2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(63, 19);
+			this->button2->Size = System::Drawing::Size(95, 23);
 			this->button2->TabIndex = 28;
 			this->button2->Text = L"Actualiser";
 			this->button2->UseVisualStyleBackColor = true;
@@ -342,40 +365,46 @@ private: System::Windows::Forms::Label^ label12;
 			// 
 			// addArticle
 			// 
+			this->addArticle->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
 			this->addArticle->FormattingEnabled = true;
-			this->addArticle->Location = System::Drawing::Point(4, 173);
-			this->addArticle->Margin = System::Windows::Forms::Padding(2);
+			this->addArticle->Location = System::Drawing::Point(5, 213);
+			this->addArticle->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->addArticle->Name = L"addArticle";
-			this->addArticle->Size = System::Drawing::Size(128, 21);
+			this->addArticle->Size = System::Drawing::Size(159, 24);
 			this->addArticle->TabIndex = 27;
 			this->addArticle->SelectedIndexChanged += gcnew System::EventHandler(this, &Commandes::addArticle_SelectedIndexChanged);
 			// 
 			// dateLivraison
 			// 
 			this->dateLivraison->CustomFormat = L"yyyy-MM-dd";
+			this->dateLivraison->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
 			this->dateLivraison->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
-			this->dateLivraison->Location = System::Drawing::Point(4, 136);
-			this->dateLivraison->Margin = System::Windows::Forms::Padding(2);
+			this->dateLivraison->Location = System::Drawing::Point(5, 167);
+			this->dateLivraison->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->dateLivraison->Name = L"dateLivraison";
-			this->dateLivraison->Size = System::Drawing::Size(192, 20);
+			this->dateLivraison->Size = System::Drawing::Size(260, 22);
 			this->dateLivraison->TabIndex = 26;
 			// 
 			// dateEmission
 			// 
 			this->dateEmission->CustomFormat = L"yyyy-MM-dd";
+			this->dateEmission->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
 			this->dateEmission->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
-			this->dateEmission->Location = System::Drawing::Point(4, 89);
-			this->dateEmission->Margin = System::Windows::Forms::Padding(2);
+			this->dateEmission->Location = System::Drawing::Point(5, 110);
+			this->dateEmission->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->dateEmission->Name = L"dateEmission";
-			this->dateEmission->Size = System::Drawing::Size(192, 20);
+			this->dateEmission->Size = System::Drawing::Size(260, 22);
 			this->dateEmission->TabIndex = 25;
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(136, 200);
-			this->button1->Margin = System::Windows::Forms::Padding(2);
+			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button1->ForeColor = System::Drawing::SystemColors::HotTrack;
+			this->button1->Location = System::Drawing::Point(171, 246);
+			this->button1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(63, 19);
+			this->button1->Size = System::Drawing::Size(94, 23);
 			this->button1->TabIndex = 24;
 			this->button1->Text = L"Ajouter";
 			this->button1->UseVisualStyleBackColor = true;
@@ -384,52 +413,55 @@ private: System::Windows::Forms::Label^ label12;
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(5, 158);
-			this->label4->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
+			this->label4->Location = System::Drawing::Point(7, 194);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(86, 13);
+			this->label4->Size = System::Drawing::Size(105, 16);
 			this->label4->TabIndex = 22;
 			this->label4->Text = L"Article à ajouter :";
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(4, 120);
-			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
+			this->label3->Location = System::Drawing::Point(5, 148);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(128, 13);
+			this->label3->Size = System::Drawing::Size(159, 16);
 			this->label3->TabIndex = 20;
 			this->label3->Text = L"Date de livraison prévue :";
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(4, 73);
-			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
+			this->label2->Location = System::Drawing::Point(5, 90);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(87, 13);
+			this->label2->Size = System::Drawing::Size(110, 16);
 			this->label2->TabIndex = 18;
 			this->label2->Text = L"Date d\'émission :";
 			// 
 			// refCommande
 			// 
-			this->refCommande->Location = System::Drawing::Point(5, 41);
+			this->refCommande->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
+			this->refCommande->Location = System::Drawing::Point(7, 50);
+			this->refCommande->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->refCommande->Name = L"refCommande";
-			this->refCommande->Size = System::Drawing::Size(191, 20);
+			this->refCommande->Size = System::Drawing::Size(258, 22);
 			this->refCommande->TabIndex = 17;
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(4, 25);
-			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
+			this->label1->Location = System::Drawing::Point(5, 31);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(63, 13);
+			this->label1->Size = System::Drawing::Size(76, 16);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Référence :";
 			// 
 			// groupBox2
 			// 
+			this->groupBox2->BackColor = System::Drawing::Color::Transparent;
 			this->groupBox2->Controls->Add(this->moyenPaiement);
 			this->groupBox2->Controls->Add(this->label8);
 			this->groupBox2->Controls->Add(this->numericUpDown1);
@@ -438,94 +470,103 @@ private: System::Windows::Forms::Label^ label12;
 			this->groupBox2->Controls->Add(this->label7);
 			this->groupBox2->Controls->Add(this->label6);
 			this->groupBox2->Controls->Add(this->label5);
-			this->groupBox2->Location = System::Drawing::Point(561, 12);
-			this->groupBox2->Margin = System::Windows::Forms::Padding(2);
+			this->groupBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->groupBox2->Location = System::Drawing::Point(819, 15);
+			this->groupBox2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->groupBox2->Name = L"groupBox2";
-			this->groupBox2->Padding = System::Windows::Forms::Padding(2);
-			this->groupBox2->Size = System::Drawing::Size(204, 223);
+			this->groupBox2->Padding = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->groupBox2->Size = System::Drawing::Size(193, 274);
 			this->groupBox2->TabIndex = 14;
 			this->groupBox2->TabStop = false;
 			this->groupBox2->Text = L"Paiement";
 			// 
 			// moyenPaiement
 			// 
+			this->moyenPaiement->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
 			this->moyenPaiement->FormattingEnabled = true;
 			this->moyenPaiement->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"CB", L"paypal" });
-			this->moyenPaiement->Location = System::Drawing::Point(4, 90);
+			this->moyenPaiement->Location = System::Drawing::Point(5, 111);
+			this->moyenPaiement->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->moyenPaiement->Name = L"moyenPaiement";
-			this->moyenPaiement->Size = System::Drawing::Size(117, 21);
+			this->moyenPaiement->Size = System::Drawing::Size(176, 24);
 			this->moyenPaiement->TabIndex = 38;
 			// 
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->Location = System::Drawing::Point(4, 173);
-			this->label8->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
+			this->label8->Location = System::Drawing::Point(5, 213);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(117, 13);
+			this->label8->Size = System::Drawing::Size(148, 16);
 			this->label8->TabIndex = 37;
 			this->label8->Text = L"Nombre de Paiements :";
 			// 
 			// numericUpDown1
 			// 
-			this->numericUpDown1->Location = System::Drawing::Point(4, 188);
-			this->numericUpDown1->Margin = System::Windows::Forms::Padding(2);
+			this->numericUpDown1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
+			this->numericUpDown1->Location = System::Drawing::Point(5, 231);
+			this->numericUpDown1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->numericUpDown1->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 4, 0, 0, 0 });
 			this->numericUpDown1->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->numericUpDown1->Name = L"numericUpDown1";
-			this->numericUpDown1->Size = System::Drawing::Size(111, 20);
+			this->numericUpDown1->Size = System::Drawing::Size(176, 22);
 			this->numericUpDown1->TabIndex = 36;
 			this->numericUpDown1->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			// 
 			// datePaiement
 			// 
 			this->datePaiement->CustomFormat = L"yyyy-MM-dd";
+			this->datePaiement->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
 			this->datePaiement->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
-			this->datePaiement->Location = System::Drawing::Point(4, 41);
-			this->datePaiement->Margin = System::Windows::Forms::Padding(2);
+			this->datePaiement->Location = System::Drawing::Point(5, 50);
+			this->datePaiement->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->datePaiement->Name = L"datePaiement";
-			this->datePaiement->Size = System::Drawing::Size(192, 20);
+			this->datePaiement->Size = System::Drawing::Size(176, 22);
 			this->datePaiement->TabIndex = 27;
 			// 
 			// montant1
 			// 
-			this->montant1->Location = System::Drawing::Point(4, 134);
+			this->montant1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
+			this->montant1->Location = System::Drawing::Point(5, 165);
+			this->montant1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->montant1->Name = L"montant1";
-			this->montant1->Size = System::Drawing::Size(112, 20);
+			this->montant1->Size = System::Drawing::Size(176, 22);
 			this->montant1->TabIndex = 35;
 			// 
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(4, 120);
-			this->label7->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
+			this->label7->Location = System::Drawing::Point(5, 148);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(52, 13);
+			this->label7->Size = System::Drawing::Size(60, 16);
 			this->label7->TabIndex = 27;
 			this->label7->Text = L"Montant :";
 			// 
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(4, 73);
-			this->label6->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
+			this->label6->Location = System::Drawing::Point(5, 90);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(45, 13);
+			this->label6->Size = System::Drawing::Size(54, 16);
 			this->label6->TabIndex = 26;
 			this->label6->Text = L"Moyen :";
 			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(4, 25);
-			this->label5->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
+			this->label5->Location = System::Drawing::Point(5, 31);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(98, 13);
+			this->label5->Size = System::Drawing::Size(121, 16);
 			this->label5->TabIndex = 25;
 			this->label5->Text = L"Date de Paiement :";
 			// 
 			// groupBox3
 			// 
+			this->groupBox3->BackColor = System::Drawing::Color::Transparent;
 			this->groupBox3->Controls->Add(this->adresseFacturation);
 			this->groupBox3->Controls->Add(this->label21);
 			this->groupBox3->Controls->Add(this->adresseLivraison);
@@ -547,140 +588,233 @@ private: System::Windows::Forms::Label^ label12;
 			this->groupBox3->Controls->Add(this->label13);
 			this->groupBox3->Controls->Add(this->nomSociete);
 			this->groupBox3->Controls->Add(this->label12);
-			this->groupBox3->Location = System::Drawing::Point(796, 12);
-			this->groupBox3->Margin = System::Windows::Forms::Padding(2);
+			this->groupBox3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->groupBox3->Location = System::Drawing::Point(1061, 15);
+			this->groupBox3->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->groupBox3->Name = L"groupBox3";
-			this->groupBox3->Padding = System::Windows::Forms::Padding(2);
-			this->groupBox3->Size = System::Drawing::Size(262, 223);
+			this->groupBox3->Padding = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->groupBox3->Size = System::Drawing::Size(349, 274);
 			this->groupBox3->TabIndex = 15;
 			this->groupBox3->TabStop = false;
 			this->groupBox3->Text = L"Facture";
 			// 
 			// adresseFacturation
 			// 
-			this->adresseFacturation->Location = System::Drawing::Point(154, 198);
+			this->adresseFacturation->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
+			this->adresseFacturation->Location = System::Drawing::Point(205, 244);
+			this->adresseFacturation->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->adresseFacturation->Name = L"adresseFacturation";
-			this->adresseFacturation->Size = System::Drawing::Size(102, 20);
+			this->adresseFacturation->Size = System::Drawing::Size(135, 22);
 			this->adresseFacturation->TabIndex = 61;
 			// 
 			// label21
 			// 
 			this->label21->AutoSize = true;
-			this->label21->Location = System::Drawing::Point(152, 182);
-			this->label21->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label21->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
+			this->label21->Location = System::Drawing::Point(203, 224);
 			this->label21->Name = L"label21";
-			this->label21->Size = System::Drawing::Size(66, 13);
+			this->label21->Size = System::Drawing::Size(79, 16);
 			this->label21->TabIndex = 60;
 			this->label21->Text = L"Facturation :";
 			// 
 			// adresseLivraison
 			// 
-			this->adresseLivraison->Location = System::Drawing::Point(5, 198);
+			this->adresseLivraison->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
+			this->adresseLivraison->Location = System::Drawing::Point(7, 244);
+			this->adresseLivraison->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->adresseLivraison->Name = L"adresseLivraison";
-			this->adresseLivraison->Size = System::Drawing::Size(126, 20);
+			this->adresseLivraison->Size = System::Drawing::Size(167, 22);
 			this->adresseLivraison->TabIndex = 59;
 			// 
 			// label20
 			// 
 			this->label20->AutoSize = true;
-			this->label20->Location = System::Drawing::Point(4, 182);
-			this->label20->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label20->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
+			this->label20->Location = System::Drawing::Point(5, 224);
 			this->label20->Name = L"label20";
-			this->label20->Size = System::Drawing::Size(55, 13);
+			this->label20->Size = System::Drawing::Size(67, 16);
 			this->label20->TabIndex = 58;
 			this->label20->Text = L"Livraison :";
 			// 
 			// codeClient
 			// 
-			this->codeClient->Location = System::Drawing::Point(154, 161);
+			this->codeClient->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
+			this->codeClient->Location = System::Drawing::Point(205, 198);
+			this->codeClient->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->codeClient->Name = L"codeClient";
-			this->codeClient->Size = System::Drawing::Size(102, 20);
+			this->codeClient->Size = System::Drawing::Size(135, 22);
 			this->codeClient->TabIndex = 57;
 			// 
 			// label19
 			// 
 			this->label19->AutoSize = true;
-			this->label19->Location = System::Drawing::Point(152, 145);
-			this->label19->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label19->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
+			this->label19->Location = System::Drawing::Point(203, 178);
 			this->label19->Name = L"label19";
-			this->label19->Size = System::Drawing::Size(63, 13);
+			this->label19->Size = System::Drawing::Size(77, 16);
 			this->label19->TabIndex = 56;
 			this->label19->Text = L"Code client:";
+			// 
+			// nomClient1
+			// 
+			this->nomClient1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
+			this->nomClient1->Location = System::Drawing::Point(7, 198);
+			this->nomClient1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->nomClient1->Name = L"nomClient1";
+			this->nomClient1->Size = System::Drawing::Size(167, 22);
+			this->nomClient1->TabIndex = 55;
+			// 
+			// label18
+			// 
+			this->label18->AutoSize = true;
+			this->label18->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
+			this->label18->Location = System::Drawing::Point(5, 178);
+			this->label18->Name = L"label18";
+			this->label18->Size = System::Drawing::Size(94, 16);
+			this->label18->TabIndex = 25;
+			this->label18->Text = L"Nom du client :";
 			// 
 			// pictureBox1
 			// 
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(202, 14);
-			this->pictureBox1->Margin = System::Windows::Forms::Padding(2);
+			this->pictureBox1->Location = System::Drawing::Point(269, 17);
+			this->pictureBox1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(53, 55);
+			this->pictureBox1->Size = System::Drawing::Size(71, 68);
 			this->pictureBox1->TabIndex = 54;
 			this->pictureBox1->TabStop = false;
 			// 
+			// numService
+			// 
+			this->numService->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
+			this->numService->Location = System::Drawing::Point(205, 153);
+			this->numService->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->numService->Name = L"numService";
+			this->numService->Size = System::Drawing::Size(135, 22);
+			this->numService->TabIndex = 53;
+			// 
+			// label17
+			// 
+			this->label17->AutoSize = true;
+			this->label17->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
+			this->label17->Location = System::Drawing::Point(203, 132);
+			this->label17->Name = L"label17";
+			this->label17->Size = System::Drawing::Size(127, 16);
+			this->label17->TabIndex = 52;
+			this->label17->Text = L"Numéro de service :";
+			// 
+			// adrSociete
+			// 
+			this->adrSociete->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
+			this->adrSociete->Location = System::Drawing::Point(7, 153);
+			this->adrSociete->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->adrSociete->Name = L"adrSociete";
+			this->adrSociete->Size = System::Drawing::Size(167, 22);
+			this->adrSociete->TabIndex = 51;
+			// 
+			// label16
+			// 
+			this->label16->AutoSize = true;
+			this->label16->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
+			this->label16->Location = System::Drawing::Point(5, 132);
+			this->label16->Name = L"label16";
+			this->label16->Size = System::Drawing::Size(130, 16);
+			this->label16->TabIndex = 50;
+			this->label16->Text = L"Adresse de société :";
+			// 
 			// prixHT
 			// 
-			this->prixHT->Location = System::Drawing::Point(5, 86);
+			this->prixHT->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
+			this->prixHT->Location = System::Drawing::Point(7, 106);
+			this->prixHT->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->prixHT->Name = L"prixHT";
-			this->prixHT->Size = System::Drawing::Size(66, 20);
+			this->prixHT->Size = System::Drawing::Size(87, 22);
 			this->prixHT->TabIndex = 49;
 			// 
 			// prixTVA
 			// 
-			this->prixTVA->Location = System::Drawing::Point(100, 86);
+			this->prixTVA->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
+			this->prixTVA->Location = System::Drawing::Point(133, 106);
+			this->prixTVA->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->prixTVA->Name = L"prixTVA";
-			this->prixTVA->Size = System::Drawing::Size(66, 20);
+			this->prixTVA->Size = System::Drawing::Size(87, 22);
 			this->prixTVA->TabIndex = 48;
 			// 
 			// prixTTC
 			// 
-			this->prixTTC->Location = System::Drawing::Point(190, 86);
+			this->prixTTC->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
+			this->prixTTC->Location = System::Drawing::Point(253, 106);
+			this->prixTTC->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->prixTTC->Name = L"prixTTC";
-			this->prixTTC->Size = System::Drawing::Size(66, 20);
+			this->prixTTC->Size = System::Drawing::Size(87, 22);
 			this->prixTTC->TabIndex = 47;
 			// 
 			// label15
 			// 
 			this->label15->AutoSize = true;
-			this->label15->Location = System::Drawing::Point(190, 70);
-			this->label15->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label15->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
+			this->label15->Location = System::Drawing::Point(253, 86);
 			this->label15->Name = L"label15";
-			this->label15->Size = System::Drawing::Size(34, 13);
+			this->label15->Size = System::Drawing::Size(40, 16);
 			this->label15->TabIndex = 45;
 			this->label15->Text = L"TTC :";
 			// 
 			// label14
 			// 
 			this->label14->AutoSize = true;
-			this->label14->Location = System::Drawing::Point(100, 72);
-			this->label14->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label14->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
+			this->label14->Location = System::Drawing::Point(133, 89);
 			this->label14->Name = L"label14";
-			this->label14->Size = System::Drawing::Size(34, 13);
+			this->label14->Size = System::Drawing::Size(40, 16);
 			this->label14->TabIndex = 44;
 			this->label14->Text = L"TVA :";
 			// 
 			// label13
 			// 
 			this->label13->AutoSize = true;
-			this->label13->Location = System::Drawing::Point(4, 70);
-			this->label13->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
+			this->label13->Location = System::Drawing::Point(5, 86);
 			this->label13->Name = L"label13";
-			this->label13->Size = System::Drawing::Size(28, 13);
+			this->label13->Size = System::Drawing::Size(32, 16);
 			this->label13->TabIndex = 43;
 			this->label13->Text = L"HT :";
 			// 
+			// nomSociete
+			// 
+			this->nomSociete->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
+			this->nomSociete->Location = System::Drawing::Point(7, 50);
+			this->nomSociete->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->nomSociete->Name = L"nomSociete";
+			this->nomSociete->Size = System::Drawing::Size(167, 22);
+			this->nomSociete->TabIndex = 43;
+			// 
+			// label12
+			// 
+			this->label12->AutoSize = true;
+			this->label12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
+			this->label12->Location = System::Drawing::Point(5, 31);
+			this->label12->Name = L"label12";
+			this->label12->Size = System::Drawing::Size(130, 16);
+			this->label12->TabIndex = 43;
+			this->label12->Text = L"Nom de ma société :";
+			// 
 			// groupBox4
 			// 
+			this->groupBox4->BackColor = System::Drawing::Color::Transparent;
 			this->groupBox4->Controls->Add(this->dateNaissance);
 			this->groupBox4->Controls->Add(this->label11);
 			this->groupBox4->Controls->Add(this->prenomClient);
 			this->groupBox4->Controls->Add(this->label10);
 			this->groupBox4->Controls->Add(this->label9);
 			this->groupBox4->Controls->Add(this->nomClient);
-			this->groupBox4->Location = System::Drawing::Point(160, 12);
-			this->groupBox4->Margin = System::Windows::Forms::Padding(2);
+			this->groupBox4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->groupBox4->Location = System::Drawing::Point(213, 15);
+			this->groupBox4->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->groupBox4->Name = L"groupBox4";
-			this->groupBox4->Padding = System::Windows::Forms::Padding(2);
-			this->groupBox4->Size = System::Drawing::Size(160, 223);
+			this->groupBox4->Padding = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->groupBox4->Size = System::Drawing::Size(213, 274);
 			this->groupBox4->TabIndex = 16;
 			this->groupBox4->TabStop = false;
 			this->groupBox4->Text = L"Informations Client";
@@ -688,132 +822,71 @@ private: System::Windows::Forms::Label^ label12;
 			// dateNaissance
 			// 
 			this->dateNaissance->CustomFormat = L"yyyy-MM-dd";
+			this->dateNaissance->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
 			this->dateNaissance->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
-			this->dateNaissance->Location = System::Drawing::Point(4, 136);
-			this->dateNaissance->Margin = System::Windows::Forms::Padding(2);
+			this->dateNaissance->Location = System::Drawing::Point(5, 167);
+			this->dateNaissance->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->dateNaissance->Name = L"dateNaissance";
-			this->dateNaissance->Size = System::Drawing::Size(151, 20);
+			this->dateNaissance->Size = System::Drawing::Size(200, 22);
 			this->dateNaissance->TabIndex = 31;
 			// 
 			// label11
 			// 
 			this->label11->AutoSize = true;
-			this->label11->Location = System::Drawing::Point(4, 120);
-			this->label11->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
+			this->label11->Location = System::Drawing::Point(5, 148);
 			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(104, 13);
+			this->label11->Size = System::Drawing::Size(129, 16);
 			this->label11->TabIndex = 30;
 			this->label11->Text = L"Date de Naissance :";
 			// 
 			// prenomClient
 			// 
-			this->prenomClient->Location = System::Drawing::Point(4, 89);
-			this->prenomClient->Margin = System::Windows::Forms::Padding(2);
+			this->prenomClient->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
+			this->prenomClient->Location = System::Drawing::Point(5, 110);
+			this->prenomClient->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->prenomClient->Name = L"prenomClient";
-			this->prenomClient->Size = System::Drawing::Size(152, 20);
+			this->prenomClient->Size = System::Drawing::Size(201, 22);
 			this->prenomClient->TabIndex = 29;
 			// 
 			// label10
 			// 
 			this->label10->AutoSize = true;
-			this->label10->Location = System::Drawing::Point(4, 73);
-			this->label10->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label10->Location = System::Drawing::Point(5, 90);
 			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(93, 13);
+			this->label10->Size = System::Drawing::Size(114, 16);
 			this->label10->TabIndex = 28;
 			this->label10->Text = L"Prénom du Client :";
 			// 
 			// label9
 			// 
 			this->label9->AutoSize = true;
-			this->label9->Location = System::Drawing::Point(4, 25);
-			this->label9->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label9->Location = System::Drawing::Point(5, 31);
 			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(79, 13);
+			this->label9->Size = System::Drawing::Size(96, 16);
 			this->label9->TabIndex = 27;
 			this->label9->Text = L"Nom du Client :";
 			// 
 			// nomClient
 			// 
-			this->nomClient->Location = System::Drawing::Point(4, 41);
-			this->nomClient->Margin = System::Windows::Forms::Padding(2);
+			this->nomClient->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
+			this->nomClient->Location = System::Drawing::Point(5, 50);
+			this->nomClient->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->nomClient->Name = L"nomClient";
-			this->nomClient->Size = System::Drawing::Size(152, 20);
+			this->nomClient->Size = System::Drawing::Size(201, 22);
 			this->nomClient->TabIndex = 0;
-			// 
-			// label18
-			// 
-			this->label18->AutoSize = true;
-			this->label18->Location = System::Drawing::Point(4, 145);
-			this->label18->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->label18->Name = L"label18";
-			this->label18->Size = System::Drawing::Size(78, 13);
-			this->label18->TabIndex = 25;
-			this->label18->Text = L"Nom du client :";
-			// 
-			// nomClient1
-			// 
-			this->nomClient1->Location = System::Drawing::Point(5, 161);
-			this->nomClient1->Name = L"nomClient1";
-			this->nomClient1->Size = System::Drawing::Size(126, 20);
-			this->nomClient1->TabIndex = 55;
-			// 
-			// label12
-			// 
-			this->label12->AutoSize = true;
-			this->label12->Location = System::Drawing::Point(4, 25);
-			this->label12->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(104, 13);
-			this->label12->TabIndex = 43;
-			this->label12->Text = L"Nom de ma société :";
-			// 
-			// nomSociete
-			// 
-			this->nomSociete->Location = System::Drawing::Point(5, 41);
-			this->nomSociete->Name = L"nomSociete";
-			this->nomSociete->Size = System::Drawing::Size(126, 20);
-			this->nomSociete->TabIndex = 43;
-			// 
-			// label17
-			// 
-			this->label17->AutoSize = true;
-			this->label17->Location = System::Drawing::Point(152, 107);
-			this->label17->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->label17->Name = L"label17";
-			this->label17->Size = System::Drawing::Size(102, 13);
-			this->label17->TabIndex = 52;
-			this->label17->Text = L"Numéro de service :";
-			// 
-			// numService
-			// 
-			this->numService->Location = System::Drawing::Point(154, 124);
-			this->numService->Name = L"numService";
-			this->numService->Size = System::Drawing::Size(102, 20);
-			this->numService->TabIndex = 53;
-			// 
-			// label16
-			// 
-			this->label16->AutoSize = true;
-			this->label16->Location = System::Drawing::Point(4, 107);
-			this->label16->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->label16->Name = L"label16";
-			this->label16->Size = System::Drawing::Size(103, 13);
-			this->label16->TabIndex = 50;
-			this->label16->Text = L"Adresse de société :";
-			// 
-			// adrSociete
-			// 
-			this->adrSociete->Location = System::Drawing::Point(5, 124);
-			this->adrSociete->Name = L"adrSociete";
-			this->adrSociete->Size = System::Drawing::Size(126, 20);
-			this->adrSociete->TabIndex = 51;
 			// 
 			// Commandes
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1090, 433);
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->ClientSize = System::Drawing::Size(1453, 533);
 			this->Controls->Add(this->groupBox4);
 			this->Controls->Add(this->groupBox3);
 			this->Controls->Add(this->groupBox2);
@@ -824,7 +897,9 @@ private: System::Windows::Forms::Label^ label12;
 			this->Controls->Add(this->modArticle);
 			this->Controls->Add(this->delCommande);
 			this->Controls->Add(this->creerCommande);
-			this->Margin = System::Windows::Forms::Padding(2);
+			this->DoubleBuffered = true;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"Commandes";
 			this->Text = L"Commandes";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewCommande))->EndInit();

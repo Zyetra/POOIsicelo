@@ -200,22 +200,28 @@ private: System::Windows::Forms::TextBox^ villeAdresse;
 			// 
 			// buttonRetour
 			// 
+			this->buttonRetour->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->buttonRetour->ForeColor = System::Drawing::SystemColors::HotTrack;
 			this->buttonRetour->Location = System::Drawing::Point(15, 250);
 			this->buttonRetour->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->buttonRetour->Name = L"buttonRetour";
-			this->buttonRetour->Size = System::Drawing::Size(101, 48);
+			this->buttonRetour->Size = System::Drawing::Size(189, 48);
 			this->buttonRetour->TabIndex = 0;
-			this->buttonRetour->Text = L"Retour";
+			this->buttonRetour->Text = L"Retour au menu";
 			this->buttonRetour->UseVisualStyleBackColor = true;
 			this->buttonRetour->Click += gcnew System::EventHandler(this, &GestionClient::buttonRetour_Click);
 			// 
 			// addClient
 			// 
 			this->addClient->AccessibleDescription = L"hello";
+			this->addClient->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->addClient->ForeColor = System::Drawing::SystemColors::HotTrack;
 			this->addClient->Location = System::Drawing::Point(16, 15);
 			this->addClient->Margin = System::Windows::Forms::Padding(4);
 			this->addClient->Name = L"addClient";
-			this->addClient->Size = System::Drawing::Size(147, 28);
+			this->addClient->Size = System::Drawing::Size(188, 28);
 			this->addClient->TabIndex = 1;
 			this->addClient->Text = L"Ajouter un Client";
 			this->addClient->UseVisualStyleBackColor = true;
@@ -223,10 +229,13 @@ private: System::Windows::Forms::TextBox^ villeAdresse;
 			// 
 			// delClient
 			// 
+			this->delClient->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->delClient->ForeColor = System::Drawing::SystemColors::HotTrack;
 			this->delClient->Location = System::Drawing::Point(16, 57);
 			this->delClient->Margin = System::Windows::Forms::Padding(4);
 			this->delClient->Name = L"delClient";
-			this->delClient->Size = System::Drawing::Size(147, 28);
+			this->delClient->Size = System::Drawing::Size(188, 28);
 			this->delClient->TabIndex = 2;
 			this->delClient->Text = L"Supprimer un Client";
 			this->delClient->UseVisualStyleBackColor = true;
@@ -234,10 +243,13 @@ private: System::Windows::Forms::TextBox^ villeAdresse;
 			// 
 			// modClient
 			// 
+			this->modClient->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->modClient->ForeColor = System::Drawing::SystemColors::HotTrack;
 			this->modClient->Location = System::Drawing::Point(16, 101);
 			this->modClient->Margin = System::Windows::Forms::Padding(4);
 			this->modClient->Name = L"modClient";
-			this->modClient->Size = System::Drawing::Size(147, 28);
+			this->modClient->Size = System::Drawing::Size(188, 28);
 			this->modClient->TabIndex = 3;
 			this->modClient->Text = L"Modifier un Client";
 			this->modClient->UseVisualStyleBackColor = true;
@@ -245,10 +257,13 @@ private: System::Windows::Forms::TextBox^ villeAdresse;
 			// 
 			// affClient
 			// 
+			this->affClient->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->affClient->ForeColor = System::Drawing::SystemColors::HotTrack;
 			this->affClient->Location = System::Drawing::Point(16, 147);
 			this->affClient->Margin = System::Windows::Forms::Padding(4);
 			this->affClient->Name = L"affClient";
-			this->affClient->Size = System::Drawing::Size(147, 28);
+			this->affClient->Size = System::Drawing::Size(188, 28);
 			this->affClient->TabIndex = 4;
 			this->affClient->Text = L"Afficher un Client";
 			this->affClient->UseVisualStyleBackColor = true;
@@ -276,6 +291,7 @@ private: System::Windows::Forms::TextBox^ villeAdresse;
 			// label8
 			// 
 			this->label8->AutoSize = true;
+			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
 			this->label8->Location = System::Drawing::Point(7, 198);
 			this->label8->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label8->Name = L"label8";
@@ -287,6 +303,7 @@ private: System::Windows::Forms::TextBox^ villeAdresse;
 			// label13
 			// 
 			this->label13->AutoSize = true;
+			this->label13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
 			this->label13->Location = System::Drawing::Point(7, 248);
 			this->label13->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label13->Name = L"label13";
@@ -296,6 +313,7 @@ private: System::Windows::Forms::TextBox^ villeAdresse;
 			// 
 			// numClient
 			// 
+			this->numClient->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
 			this->numClient->Location = System::Drawing::Point(87, 246);
 			this->numClient->Margin = System::Windows::Forms::Padding(4);
 			this->numClient->Name = L"numClient";
@@ -304,6 +322,7 @@ private: System::Windows::Forms::TextBox^ villeAdresse;
 			// 
 			// infoClient
 			// 
+			this->infoClient->BackColor = System::Drawing::Color::Transparent;
 			this->infoClient->Controls->Add(this->datePremierAchat);
 			this->infoClient->Controls->Add(this->dateNaissanceClient);
 			this->infoClient->Controls->Add(this->label14);
@@ -314,7 +333,9 @@ private: System::Windows::Forms::TextBox^ villeAdresse;
 			this->infoClient->Controls->Add(this->label8);
 			this->infoClient->Controls->Add(this->label13);
 			this->infoClient->Controls->Add(this->numClient);
-			this->infoClient->Location = System::Drawing::Point(280, 15);
+			this->infoClient->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->infoClient->Location = System::Drawing::Point(356, 15);
 			this->infoClient->Name = L"infoClient";
 			this->infoClient->Size = System::Drawing::Size(250, 274);
 			this->infoClient->TabIndex = 48;
@@ -324,6 +345,7 @@ private: System::Windows::Forms::TextBox^ villeAdresse;
 			// datePremierAchat
 			// 
 			this->datePremierAchat->CustomFormat = L"yyyy-MM-dd";
+			this->datePremierAchat->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
 			this->datePremierAchat->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
 			this->datePremierAchat->Location = System::Drawing::Point(7, 219);
 			this->datePremierAchat->Name = L"datePremierAchat";
@@ -333,6 +355,7 @@ private: System::Windows::Forms::TextBox^ villeAdresse;
 			// dateNaissanceClient
 			// 
 			this->dateNaissanceClient->CustomFormat = L"yyyy-MM-dd";
+			this->dateNaissanceClient->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
 			this->dateNaissanceClient->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
 			this->dateNaissanceClient->Location = System::Drawing::Point(7, 161);
 			this->dateNaissanceClient->Name = L"dateNaissanceClient";
@@ -343,6 +366,7 @@ private: System::Windows::Forms::TextBox^ villeAdresse;
 			// label14
 			// 
 			this->label14->AutoSize = true;
+			this->label14->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
 			this->label14->Location = System::Drawing::Point(7, 139);
 			this->label14->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label14->Name = L"label14";
@@ -353,6 +377,7 @@ private: System::Windows::Forms::TextBox^ villeAdresse;
 			// label15
 			// 
 			this->label15->AutoSize = true;
+			this->label15->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
 			this->label15->Location = System::Drawing::Point(7, 31);
 			this->label15->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label15->Name = L"label15";
@@ -362,6 +387,7 @@ private: System::Windows::Forms::TextBox^ villeAdresse;
 			// 
 			// nomClient
 			// 
+			this->nomClient->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
 			this->nomClient->Location = System::Drawing::Point(7, 49);
 			this->nomClient->Margin = System::Windows::Forms::Padding(4);
 			this->nomClient->Name = L"nomClient";
@@ -371,6 +397,7 @@ private: System::Windows::Forms::TextBox^ villeAdresse;
 			// label20
 			// 
 			this->label20->AutoSize = true;
+			this->label20->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
 			this->label20->Location = System::Drawing::Point(7, 85);
 			this->label20->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label20->Name = L"label20";
@@ -380,6 +407,7 @@ private: System::Windows::Forms::TextBox^ villeAdresse;
 			// 
 			// prenomClient
 			// 
+			this->prenomClient->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
 			this->prenomClient->Location = System::Drawing::Point(7, 105);
 			this->prenomClient->Margin = System::Windows::Forms::Padding(4);
 			this->prenomClient->Name = L"prenomClient";
@@ -388,6 +416,7 @@ private: System::Windows::Forms::TextBox^ villeAdresse;
 			// 
 			// adresseDomicile
 			// 
+			this->adresseDomicile->BackColor = System::Drawing::Color::Transparent;
 			this->adresseDomicile->Controls->Add(this->villeAdresse);
 			this->adresseDomicile->Controls->Add(this->codePostalDomicile);
 			this->adresseDomicile->Controls->Add(this->label9);
@@ -396,7 +425,9 @@ private: System::Windows::Forms::TextBox^ villeAdresse;
 			this->adresseDomicile->Controls->Add(this->label10);
 			this->adresseDomicile->Controls->Add(this->label11);
 			this->adresseDomicile->Controls->Add(this->rueAdresse);
-			this->adresseDomicile->Location = System::Drawing::Point(644, 15);
+			this->adresseDomicile->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->adresseDomicile->Location = System::Drawing::Point(747, 15);
 			this->adresseDomicile->Name = L"adresseDomicile";
 			this->adresseDomicile->Size = System::Drawing::Size(250, 274);
 			this->adresseDomicile->TabIndex = 49;
@@ -405,6 +436,7 @@ private: System::Windows::Forms::TextBox^ villeAdresse;
 			// 
 			// villeAdresse
 			// 
+			this->villeAdresse->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
 			this->villeAdresse->Location = System::Drawing::Point(7, 159);
 			this->villeAdresse->Margin = System::Windows::Forms::Padding(4);
 			this->villeAdresse->Name = L"villeAdresse";
@@ -413,6 +445,7 @@ private: System::Windows::Forms::TextBox^ villeAdresse;
 			// 
 			// codePostalDomicile
 			// 
+			this->codePostalDomicile->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
 			this->codePostalDomicile->Location = System::Drawing::Point(7, 221);
 			this->codePostalDomicile->Margin = System::Windows::Forms::Padding(4);
 			this->codePostalDomicile->Name = L"codePostalDomicile";
@@ -422,6 +455,8 @@ private: System::Windows::Forms::TextBox^ villeAdresse;
 			// label9
 			// 
 			this->label9->AutoSize = true;
+			this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->label9->Location = System::Drawing::Point(7, 31);
 			this->label9->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label9->Name = L"label9";
@@ -432,6 +467,7 @@ private: System::Windows::Forms::TextBox^ villeAdresse;
 			// label12
 			// 
 			this->label12->AutoSize = true;
+			this->label12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
 			this->label12->Location = System::Drawing::Point(7, 201);
 			this->label12->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label12->Name = L"label12";
@@ -441,6 +477,7 @@ private: System::Windows::Forms::TextBox^ villeAdresse;
 			// 
 			// numAdresse
 			// 
+			this->numAdresse->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
 			this->numAdresse->Location = System::Drawing::Point(7, 49);
 			this->numAdresse->Margin = System::Windows::Forms::Padding(4);
 			this->numAdresse->Name = L"numAdresse";
@@ -450,6 +487,7 @@ private: System::Windows::Forms::TextBox^ villeAdresse;
 			// label10
 			// 
 			this->label10->AutoSize = true;
+			this->label10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
 			this->label10->Location = System::Drawing::Point(7, 85);
 			this->label10->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label10->Name = L"label10";
@@ -460,6 +498,7 @@ private: System::Windows::Forms::TextBox^ villeAdresse;
 			// label11
 			// 
 			this->label11->AutoSize = true;
+			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
 			this->label11->Location = System::Drawing::Point(7, 139);
 			this->label11->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label11->Name = L"label11";
@@ -469,6 +508,7 @@ private: System::Windows::Forms::TextBox^ villeAdresse;
 			// 
 			// rueAdresse
 			// 
+			this->rueAdresse->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
 			this->rueAdresse->Location = System::Drawing::Point(7, 105);
 			this->rueAdresse->Margin = System::Windows::Forms::Padding(4);
 			this->rueAdresse->Name = L"rueAdresse";
@@ -477,10 +517,13 @@ private: System::Windows::Forms::TextBox^ villeAdresse;
 			// 
 			// affListeClient
 			// 
+			this->affListeClient->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->affListeClient->ForeColor = System::Drawing::SystemColors::HotTrack;
 			this->affListeClient->Location = System::Drawing::Point(16, 193);
 			this->affListeClient->Margin = System::Windows::Forms::Padding(4);
 			this->affListeClient->Name = L"affListeClient";
-			this->affListeClient->Size = System::Drawing::Size(147, 45);
+			this->affListeClient->Size = System::Drawing::Size(188, 45);
 			this->affListeClient->TabIndex = 52;
 			this->affListeClient->Text = L"Afficher la liste des Clients";
 			this->affListeClient->UseVisualStyleBackColor = true;
@@ -490,6 +533,8 @@ private: System::Windows::Forms::TextBox^ villeAdresse;
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(1147, 530);
 			this->Controls->Add(this->affListeClient);
 			this->Controls->Add(this->adresseDomicile);
@@ -501,6 +546,7 @@ private: System::Windows::Forms::TextBox^ villeAdresse;
 			this->Controls->Add(this->delClient);
 			this->Controls->Add(this->addClient);
 			this->Controls->Add(this->buttonRetour);
+			this->DoubleBuffered = true;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"GestionClient";

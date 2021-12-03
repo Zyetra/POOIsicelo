@@ -50,6 +50,8 @@ namespace POOIsicelo {
 
 	private: CLservices^ oSvc;
 	private: MAdresse^ Adresse1;
+	private: MPersonnel^ oMappPersonnel;
+	private: CLcad^ oCad;
 	private: System::Data::DataSet^ oDs;
 
 
@@ -130,6 +132,7 @@ namespace POOIsicelo {
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->prenomPersonnel = (gcnew System::Windows::Forms::TextBox());
 			this->adresseClient = (gcnew System::Windows::Forms::GroupBox());
+			this->villeAdresse1 = (gcnew System::Windows::Forms::TextBox());
 			this->codePostal1 = (gcnew System::Windows::Forms::TextBox());
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->label12 = (gcnew System::Windows::Forms::Label());
@@ -144,7 +147,6 @@ namespace POOIsicelo {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->dataGridViewPersonnel = (gcnew System::Windows::Forms::DataGridView());
 			this->affListePersonnel = (gcnew System::Windows::Forms::Button());
-			this->villeAdresse1 = (gcnew System::Windows::Forms::TextBox());
 			this->infoPersonnel->SuspendLayout();
 			this->adresseClient->SuspendLayout();
 			this->infoSuperieur->SuspendLayout();
@@ -154,21 +156,26 @@ namespace POOIsicelo {
 			// addPersonnel
 			// 
 			this->addPersonnel->AccessibleDescription = L"hello";
+			this->addPersonnel->BackColor = System::Drawing::Color::Transparent;
+			this->addPersonnel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold));
+			this->addPersonnel->ForeColor = System::Drawing::SystemColors::HotTrack;
 			this->addPersonnel->Location = System::Drawing::Point(16, 15);
 			this->addPersonnel->Margin = System::Windows::Forms::Padding(4);
 			this->addPersonnel->Name = L"addPersonnel";
-			this->addPersonnel->Size = System::Drawing::Size(177, 28);
+			this->addPersonnel->Size = System::Drawing::Size(207, 28);
 			this->addPersonnel->TabIndex = 2;
 			this->addPersonnel->Text = L"Ajouter un Personnel";
-			this->addPersonnel->UseVisualStyleBackColor = true;
+			this->addPersonnel->UseVisualStyleBackColor = false;
 			this->addPersonnel->Click += gcnew System::EventHandler(this, &GestionPersonnel::addClient_Click);
 			// 
 			// delPersonnel
 			// 
+			this->delPersonnel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold));
+			this->delPersonnel->ForeColor = System::Drawing::SystemColors::HotTrack;
 			this->delPersonnel->Location = System::Drawing::Point(16, 57);
 			this->delPersonnel->Margin = System::Windows::Forms::Padding(4);
 			this->delPersonnel->Name = L"delPersonnel";
-			this->delPersonnel->Size = System::Drawing::Size(177, 28);
+			this->delPersonnel->Size = System::Drawing::Size(207, 28);
 			this->delPersonnel->TabIndex = 3;
 			this->delPersonnel->Text = L"Supprimer un Personnel";
 			this->delPersonnel->UseVisualStyleBackColor = true;
@@ -176,10 +183,12 @@ namespace POOIsicelo {
 			// 
 			// modPersonnel
 			// 
+			this->modPersonnel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold));
+			this->modPersonnel->ForeColor = System::Drawing::SystemColors::HotTrack;
 			this->modPersonnel->Location = System::Drawing::Point(16, 101);
 			this->modPersonnel->Margin = System::Windows::Forms::Padding(4);
 			this->modPersonnel->Name = L"modPersonnel";
-			this->modPersonnel->Size = System::Drawing::Size(177, 28);
+			this->modPersonnel->Size = System::Drawing::Size(207, 28);
 			this->modPersonnel->TabIndex = 4;
 			this->modPersonnel->Text = L"Modifier un Personnel";
 			this->modPersonnel->UseVisualStyleBackColor = true;
@@ -187,10 +196,12 @@ namespace POOIsicelo {
 			// 
 			// affPersonnel
 			// 
+			this->affPersonnel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold));
+			this->affPersonnel->ForeColor = System::Drawing::SystemColors::HotTrack;
 			this->affPersonnel->Location = System::Drawing::Point(16, 147);
 			this->affPersonnel->Margin = System::Windows::Forms::Padding(4);
 			this->affPersonnel->Name = L"affPersonnel";
-			this->affPersonnel->Size = System::Drawing::Size(177, 28);
+			this->affPersonnel->Size = System::Drawing::Size(207, 28);
 			this->affPersonnel->TabIndex = 5;
 			this->affPersonnel->Text = L"Afficher un Personnel";
 			this->affPersonnel->UseVisualStyleBackColor = true;
@@ -198,12 +209,14 @@ namespace POOIsicelo {
 			// 
 			// buttonRetour
 			// 
+			this->buttonRetour->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold));
+			this->buttonRetour->ForeColor = System::Drawing::SystemColors::HotTrack;
 			this->buttonRetour->Location = System::Drawing::Point(16, 250);
 			this->buttonRetour->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->buttonRetour->Name = L"buttonRetour";
-			this->buttonRetour->Size = System::Drawing::Size(101, 48);
+			this->buttonRetour->Size = System::Drawing::Size(207, 48);
 			this->buttonRetour->TabIndex = 6;
-			this->buttonRetour->Text = L"Retour";
+			this->buttonRetour->Text = L"Retour au menu";
 			this->buttonRetour->UseVisualStyleBackColor = true;
 			this->buttonRetour->Click += gcnew System::EventHandler(this, &GestionPersonnel::buttonRetour_Click);
 			// 
@@ -218,9 +231,11 @@ namespace POOIsicelo {
 			this->infoPersonnel->Controls->Add(this->nomPersonnel);
 			this->infoPersonnel->Controls->Add(this->label6);
 			this->infoPersonnel->Controls->Add(this->prenomPersonnel);
-			this->infoPersonnel->Location = System::Drawing::Point(246, 15);
+			this->infoPersonnel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->infoPersonnel->Location = System::Drawing::Point(263, 15);
 			this->infoPersonnel->Name = L"infoPersonnel";
-			this->infoPersonnel->Size = System::Drawing::Size(185, 274);
+			this->infoPersonnel->Size = System::Drawing::Size(215, 274);
 			this->infoPersonnel->TabIndex = 7;
 			this->infoPersonnel->TabStop = false;
 			this->infoPersonnel->Text = L"Informations Personnel";
@@ -228,6 +243,7 @@ namespace POOIsicelo {
 			// dateEmbauche
 			// 
 			this->dateEmbauche->CustomFormat = L"yyyy-MM-dd";
+			this->dateEmbauche->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
 			this->dateEmbauche->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
 			this->dateEmbauche->Location = System::Drawing::Point(6, 158);
 			this->dateEmbauche->Name = L"dateEmbauche";
@@ -237,6 +253,7 @@ namespace POOIsicelo {
 			// label13
 			// 
 			this->label13->AutoSize = true;
+			this->label13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
 			this->label13->Location = System::Drawing::Point(7, 201);
 			this->label13->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label13->Name = L"label13";
@@ -246,15 +263,17 @@ namespace POOIsicelo {
 			// 
 			// idPersonnel
 			// 
+			this->idPersonnel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
 			this->idPersonnel->Location = System::Drawing::Point(7, 221);
 			this->idPersonnel->Margin = System::Windows::Forms::Padding(4);
 			this->idPersonnel->Name = L"idPersonnel";
-			this->idPersonnel->Size = System::Drawing::Size(86, 22);
+			this->idPersonnel->Size = System::Drawing::Size(171, 22);
 			this->idPersonnel->TabIndex = 55;
 			// 
 			// label7
 			// 
 			this->label7->AutoSize = true;
+			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
 			this->label7->Location = System::Drawing::Point(7, 139);
 			this->label7->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label7->Name = L"label7";
@@ -265,6 +284,7 @@ namespace POOIsicelo {
 			// label5
 			// 
 			this->label5->AutoSize = true;
+			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
 			this->label5->Location = System::Drawing::Point(7, 31);
 			this->label5->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label5->Name = L"label5";
@@ -274,6 +294,7 @@ namespace POOIsicelo {
 			// 
 			// nomPersonnel
 			// 
+			this->nomPersonnel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
 			this->nomPersonnel->Location = System::Drawing::Point(7, 49);
 			this->nomPersonnel->Margin = System::Windows::Forms::Padding(4);
 			this->nomPersonnel->Name = L"nomPersonnel";
@@ -283,6 +304,7 @@ namespace POOIsicelo {
 			// label6
 			// 
 			this->label6->AutoSize = true;
+			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
 			this->label6->Location = System::Drawing::Point(7, 85);
 			this->label6->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label6->Name = L"label6";
@@ -292,6 +314,7 @@ namespace POOIsicelo {
 			// 
 			// prenomPersonnel
 			// 
+			this->prenomPersonnel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
 			this->prenomPersonnel->Location = System::Drawing::Point(7, 105);
 			this->prenomPersonnel->Margin = System::Windows::Forms::Padding(4);
 			this->prenomPersonnel->Name = L"prenomPersonnel";
@@ -309,15 +332,27 @@ namespace POOIsicelo {
 			this->adresseClient->Controls->Add(this->label10);
 			this->adresseClient->Controls->Add(this->label11);
 			this->adresseClient->Controls->Add(this->rueAdresse1);
-			this->adresseClient->Location = System::Drawing::Point(505, 15);
+			this->adresseClient->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->adresseClient->Location = System::Drawing::Point(516, 15);
 			this->adresseClient->Name = L"adresseClient";
 			this->adresseClient->Size = System::Drawing::Size(185, 274);
 			this->adresseClient->TabIndex = 8;
 			this->adresseClient->TabStop = false;
 			this->adresseClient->Text = L"Adresse Domicile";
 			// 
+			// villeAdresse1
+			// 
+			this->villeAdresse1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
+			this->villeAdresse1->Location = System::Drawing::Point(7, 159);
+			this->villeAdresse1->Margin = System::Windows::Forms::Padding(4);
+			this->villeAdresse1->Name = L"villeAdresse1";
+			this->villeAdresse1->Size = System::Drawing::Size(132, 22);
+			this->villeAdresse1->TabIndex = 34;
+			// 
 			// codePostal1
 			// 
+			this->codePostal1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
 			this->codePostal1->Location = System::Drawing::Point(7, 221);
 			this->codePostal1->Margin = System::Windows::Forms::Padding(4);
 			this->codePostal1->Name = L"codePostal1";
@@ -327,6 +362,7 @@ namespace POOIsicelo {
 			// label9
 			// 
 			this->label9->AutoSize = true;
+			this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
 			this->label9->Location = System::Drawing::Point(7, 31);
 			this->label9->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label9->Name = L"label9";
@@ -337,6 +373,7 @@ namespace POOIsicelo {
 			// label12
 			// 
 			this->label12->AutoSize = true;
+			this->label12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
 			this->label12->Location = System::Drawing::Point(7, 201);
 			this->label12->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label12->Name = L"label12";
@@ -346,6 +383,7 @@ namespace POOIsicelo {
 			// 
 			// numAdresse1
 			// 
+			this->numAdresse1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
 			this->numAdresse1->Location = System::Drawing::Point(7, 49);
 			this->numAdresse1->Margin = System::Windows::Forms::Padding(4);
 			this->numAdresse1->Name = L"numAdresse1";
@@ -355,6 +393,7 @@ namespace POOIsicelo {
 			// label10
 			// 
 			this->label10->AutoSize = true;
+			this->label10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
 			this->label10->Location = System::Drawing::Point(7, 85);
 			this->label10->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label10->Name = L"label10";
@@ -365,6 +404,7 @@ namespace POOIsicelo {
 			// label11
 			// 
 			this->label11->AutoSize = true;
+			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
 			this->label11->Location = System::Drawing::Point(7, 139);
 			this->label11->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label11->Name = L"label11";
@@ -374,6 +414,7 @@ namespace POOIsicelo {
 			// 
 			// rueAdresse1
 			// 
+			this->rueAdresse1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
 			this->rueAdresse1->Location = System::Drawing::Point(7, 105);
 			this->rueAdresse1->Margin = System::Windows::Forms::Padding(4);
 			this->rueAdresse1->Name = L"rueAdresse1";
@@ -387,9 +428,11 @@ namespace POOIsicelo {
 			this->infoSuperieur->Controls->Add(this->nomSuperieur);
 			this->infoSuperieur->Controls->Add(this->prenomSuperieur);
 			this->infoSuperieur->Controls->Add(this->label2);
-			this->infoSuperieur->Location = System::Drawing::Point(761, 15);
+			this->infoSuperieur->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->infoSuperieur->Location = System::Drawing::Point(734, 15);
 			this->infoSuperieur->Name = L"infoSuperieur";
-			this->infoSuperieur->Size = System::Drawing::Size(185, 274);
+			this->infoSuperieur->Size = System::Drawing::Size(212, 274);
 			this->infoSuperieur->TabIndex = 9;
 			this->infoSuperieur->TabStop = false;
 			this->infoSuperieur->Text = L"Informations Supérieur";
@@ -397,6 +440,7 @@ namespace POOIsicelo {
 			// label1
 			// 
 			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
 			this->label1->Location = System::Drawing::Point(7, 31);
 			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
@@ -406,6 +450,7 @@ namespace POOIsicelo {
 			// 
 			// nomSuperieur
 			// 
+			this->nomSuperieur->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
 			this->nomSuperieur->Location = System::Drawing::Point(7, 49);
 			this->nomSuperieur->Margin = System::Windows::Forms::Padding(4);
 			this->nomSuperieur->Name = L"nomSuperieur";
@@ -414,6 +459,7 @@ namespace POOIsicelo {
 			// 
 			// prenomSuperieur
 			// 
+			this->prenomSuperieur->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
 			this->prenomSuperieur->Location = System::Drawing::Point(7, 105);
 			this->prenomSuperieur->Margin = System::Windows::Forms::Padding(4);
 			this->prenomSuperieur->Name = L"prenomSuperieur";
@@ -423,6 +469,7 @@ namespace POOIsicelo {
 			// label2
 			// 
 			this->label2->AutoSize = true;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F));
 			this->label2->Location = System::Drawing::Point(7, 85);
 			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label2->Name = L"label2";
@@ -442,22 +489,17 @@ namespace POOIsicelo {
 			// 
 			// affListePersonnel
 			// 
+			this->affListePersonnel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->affListePersonnel->ForeColor = System::Drawing::SystemColors::HotTrack;
 			this->affListePersonnel->Location = System::Drawing::Point(16, 193);
 			this->affListePersonnel->Margin = System::Windows::Forms::Padding(4);
 			this->affListePersonnel->Name = L"affListePersonnel";
-			this->affListePersonnel->Size = System::Drawing::Size(177, 45);
+			this->affListePersonnel->Size = System::Drawing::Size(207, 45);
 			this->affListePersonnel->TabIndex = 53;
 			this->affListePersonnel->Text = L"Afficher la liste du Personnel";
 			this->affListePersonnel->UseVisualStyleBackColor = true;
 			this->affListePersonnel->Click += gcnew System::EventHandler(this, &GestionPersonnel::affListePersonnel_Click);
-			// 
-			// villeAdresse1
-			// 
-			this->villeAdresse1->Location = System::Drawing::Point(7, 159);
-			this->villeAdresse1->Margin = System::Windows::Forms::Padding(4);
-			this->villeAdresse1->Name = L"villeAdresse1";
-			this->villeAdresse1->Size = System::Drawing::Size(132, 22);
-			this->villeAdresse1->TabIndex = 34;
 			// 
 			// GestionPersonnel
 			// 
@@ -480,7 +522,7 @@ namespace POOIsicelo {
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"GestionPersonnel";
-			this->Text = L"GestionPersonnel";
+			this->Text = L"Gestion du Personnel";
 			this->Load += gcnew System::EventHandler(this, &GestionPersonnel::GestionPersonnel_Load);
 			this->infoPersonnel->ResumeLayout(false);
 			this->infoPersonnel->PerformLayout();
@@ -525,6 +567,12 @@ private: System::Void affPersonnel_Click(System::Object^ sender, System::EventAr
 	this->oDs = this->oSvc->selectionnerPersonnel("Gestion_du_Personnel", this->nomPersonnel->Text, this->prenomPersonnel->Text, this->dateEmbauche->Text);
 	this->dataGridViewPersonnel->DataSource = this->oDs;
 	this->dataGridViewPersonnel->DataMember = "Gestion_du_Personnel";
+	//this->numAdresse1->AppendText(this->oCad->DataRead("SELECT numero FROM Gestion_du_Personnel INNER JOIN adresse ON Gestion_du_Personnel.IDadresse = adresse.IDadresse INNER JOIN ville ON adresse.IDville = ville.IDville WHERE Nom_Personnel = '" + this->nomPersonnel->Text + "' AND Prenom_Personnel = '" + this->prenomPersonnel->Text + "' AND Date_Embauche_Personnel = '" + this->dateEmbauche->Text + "'; "));
+	//this->rueAdresse1->AppendText(this->oCad->DataRead("SELECT rue FROM Gestion_du_Personnel INNER JOIN adresse ON Gestion_du_Personnel.IDadresse = adresse.IDadresse INNER JOIN ville ON adresse.IDville = ville.IDville WHERE Nom_Personnel = '" + this->nomPersonnel->Text + "' AND Prenom_Personnel = '" + this->prenomPersonnel->Text + "' AND Date_Embauche_Personnel = '" + this->dateEmbauche->Text + "'; "));
+	//this->villeAdresse1->AppendText(this->oCad->DataRead("SELECT nom_ville FROM Gestion_du_Personnel INNER JOIN adresse ON Gestion_du_Personnel.IDadresse = adresse.IDadresse INNER JOIN ville ON adresse.IDville = ville.IDville WHERE Nom_Personnel = '" + this->nomPersonnel->Text + "' AND Prenom_Personnel = '" + this->prenomPersonnel->Text + "' AND Date_Embauche_Personnel = '" + this->dateEmbauche->Text + "'; "));
+	//this->codePostal1->AppendText(this->oCad->DataRead("SELECT code_postal FROM Gestion_du_Personnel INNER JOIN adresse ON Gestion_du_Personnel.IDadresse = adresse.IDadresse INNER JOIN ville ON adresse.IDville = ville.IDville WHERE Nom_Personnel = '" + this->nomPersonnel->Text + "' AND Prenom_Personnel = '" + this->prenomPersonnel->Text + "' AND Date_Embauche_Personnel = '" + this->dateEmbauche->Text + "'; "));
+
+
 }
 private: System::Void delPersonnel_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->oSvc->supprimerPersonnel(this->nomPersonnel->Text, this->prenomPersonnel->Text, this->dateEmbauche->Text, this->idPersonnel->Text);
@@ -532,6 +580,12 @@ private: System::Void delPersonnel_Click(System::Object^ sender, System::EventAr
 	this->prenomPersonnel->ResetText();
 	this->nomPersonnel->ResetText();
 	this->dateEmbauche->ResetText();
+	this->nomSuperieur->ResetText();
+	this->prenomSuperieur->ResetText();
+	this->numAdresse1->ResetText();
+	this->rueAdresse1->ResetText();
+	this->villeAdresse1->ResetText();
+	this->codePostal1->ResetText();
 	this->idPersonnel->ResetText();
 
 }

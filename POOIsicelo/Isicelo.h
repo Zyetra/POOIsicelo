@@ -45,6 +45,10 @@ namespace POOIsicelo {
 	private: System::Windows::Forms::Button^ button4;
 	private: System::Windows::Forms::Button^ button5;
 	private: System::Windows::Forms::Button^ Stop;
+
+
+	private:
+
 	protected:
 
 	private:
@@ -70,7 +74,9 @@ namespace POOIsicelo {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(433, 105);
+			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold));
+			this->button1->ForeColor = System::Drawing::SystemColors::HotTrack;
+			this->button1->Location = System::Drawing::Point(423, 95);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(152, 47);
 			this->button1->TabIndex = 0;
@@ -80,17 +86,22 @@ namespace POOIsicelo {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(120, 105);
+			this->button2->BackColor = System::Drawing::Color::Transparent;
+			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold));
+			this->button2->ForeColor = System::Drawing::SystemColors::HotTrack;
+			this->button2->Location = System::Drawing::Point(121, 95);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(152, 47);
 			this->button2->TabIndex = 1;
 			this->button2->Text = L"Gestion Personnel";
-			this->button2->UseVisualStyleBackColor = true;
+			this->button2->UseVisualStyleBackColor = false;
 			this->button2->Click += gcnew System::EventHandler(this, &Form::button2_Click);
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(725, 105);
+			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold));
+			this->button3->ForeColor = System::Drawing::SystemColors::HotTrack;
+			this->button3->Location = System::Drawing::Point(725, 95);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(152, 47);
 			this->button3->TabIndex = 2;
@@ -100,7 +111,10 @@ namespace POOIsicelo {
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(267, 264);
+			this->button4->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
+			this->button4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold));
+			this->button4->ForeColor = System::Drawing::SystemColors::HotTrack;
+			this->button4->Location = System::Drawing::Point(272, 254);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(152, 47);
 			this->button4->TabIndex = 3;
@@ -110,7 +124,10 @@ namespace POOIsicelo {
 			// 
 			// button5
 			// 
-			this->button5->Location = System::Drawing::Point(586, 264);
+			this->button5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold));
+			this->button5->ForeColor = System::Drawing::SystemColors::HotTrack;
+			this->button5->ImageAlign = System::Drawing::ContentAlignment::TopCenter;
+			this->button5->Location = System::Drawing::Point(574, 254);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(152, 47);
 			this->button5->TabIndex = 4;
@@ -120,7 +137,9 @@ namespace POOIsicelo {
 			// 
 			// Stop
 			// 
-			this->Stop->Location = System::Drawing::Point(433, 397);
+			this->Stop->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold));
+			this->Stop->ForeColor = System::Drawing::SystemColors::HotTrack;
+			this->Stop->Location = System::Drawing::Point(423, 389);
 			this->Stop->Name = L"Stop";
 			this->Stop->Size = System::Drawing::Size(152, 47);
 			this->Stop->TabIndex = 5;
@@ -132,6 +151,7 @@ namespace POOIsicelo {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(1000, 500);
 			this->Controls->Add(this->Stop);
 			this->Controls->Add(this->button5);
@@ -139,8 +159,9 @@ namespace POOIsicelo {
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
+			this->DoubleBuffered = true;
 			this->Name = L"Form";
-			this->Text = L"MyForm";
+			this->Text = L"Easycelo Management";
 			this->ResumeLayout(false);
 
 		}
