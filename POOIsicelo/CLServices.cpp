@@ -2,6 +2,7 @@
 #include "CLCad.h"
 #include "CLCommande.h"
 #include "CLPersonne.h"
+#include "CLStats.h"
 #include <string>
 
 
@@ -13,7 +14,7 @@ CLservices::CLservices(void)
 	this->oMappClient = gcnew MClient();
 	this->oMappPersonnel = gcnew MPersonnel();
 	this->oMappArticle = gcnew MArticle();
-	//this->oMappStats = gcnew MStats();
+	this->oMappStats = gcnew MStats();
 }
 
 // COMMANDE
@@ -353,9 +354,33 @@ void CLservices::modifArticles(System::String^ NomArticle, System::String^ Taux_
 
 // STATISTIQUES
 
-/*System::Data::DataSet^ CLservices::selectionnerToutesLesDonnees(System::String^ dataTableName) {
+System::Data::DataSet^ CLservices::selectionnerToutesLesDonnees(System::String^ dataTableName) {
+
 	System::String^ sql;
+
 	sql = this->oMappStats->SelectAll();
 	return this->oCad->getRows(sql, dataTableName);
 }
-*/
+
+System::Data::DataSet^ CLservices::CalculCA(System::String^ mois, int annee) {
+	System::String^ sql;
+
+	this->oMappStats->setMois(mois);
+	this->oMappStats->setAnnee(annee);
+	sql = this->oMappStats->CalculCA(mois, annee);
+	return this->oCad->getRows(sql, "Gestion_des_commandes");
+}
+
+System::Data::DataSet^ CLservices::checkList(int index) {
+	System::String^ sql;
+
+	this->oMappStats->setIndex(index);
+	sql = this->oMappStats->checkList(index);
+	return this->oCad->getRows(sql, "Gestion_des_commandes");
+}
+System::Data::DataSet^ CLservices::Simuler(int TVA, int marge, int remise, int demarque) {
+	System::String^ sql;
+
+	sql = this->oMappStats->Simuler(TVA, marge, remise, demarque);
+	return this->oCad->getRows(sql, "Gestion_des_commandes");
+}

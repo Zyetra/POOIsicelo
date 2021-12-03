@@ -14,7 +14,7 @@ public:
 	MAdresse^ oMappAdresse;
 	MPersonnel^ oMappPersonnel;
 	MArticle^ oMappArticle;
-	//MStats^ oMappStats;
+	MStats^ oMappStats;
 
 	CLservices(void);
 	// COMMANDE
@@ -48,7 +48,11 @@ public:
 	System::Data::DataSet^ selectionnerUnArticles(System::String^, System::String^);
 
 	// STATISTIQUES
-	//System::Data::DataSet^ selectionnerToutesLesDonnees(System::String^);
+	System::Data::DataSet^ selectionnerToutesLesDonnees(System::String^);
+	System::Data::DataSet^ CalculCA(System::String^, int);
+	System::Data::DataSet^ checkList(int);
+	System::Data::DataSet^ Simuler(int, int, int, int);
+
 	//Article
 	System::Data::DataSet^ selectionnerToutLesArticles(System::String^ dataTableName);
 
