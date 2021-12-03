@@ -922,9 +922,15 @@ private: System::Void buttonRetour_Click(System::Object^ sender, System::EventAr
 	this->Close();
 }
 private: System::Void creerCommande_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->oSvc->ajouterUneCommande(this->dateEmission->Text, this->dateLivraison->Text,this->nomClient->Text, this->prenomClient->Text, this->datePaiement->Text, this->moyenPaiement->Text, this->dateNaissance->Text, float::Parse(this->montant1->Text) , System::Convert::ToInt16(this->numericUpDown1->Text));
-	this->nomSociete->AppendText(this->oCad->DataRead("SELECT Nom_Societe FROM Gestion_de_la_facturation WHERE ID_Emmision_Facture = '1'"));
-	
+	this->oSvc->ajouterUneCommande(this->dateEmission->Text, this->dateLivraison->Text, this->nomClient->Text, this->prenomClient->Text, this->datePaiement->Text, this->moyenPaiement->Text, this->dateNaissance->Text, float::Parse(this->montant1->Text), System::Convert::ToInt16(this->numericUpDown1->Text));
+	this->nomSociete->AppendText("Isicelo");
+	this->adrSociete->AppendText("23 rue d'Arras, Arras, 62000");
+	this->numService->AppendText("03 58 96 65 98");
+	this->nomClient1->AppendText(this->nomClient->Text);
+	this->codeClient->AppendText(this->Com1->setIDClient(this->oCad->DataReadID(this->Com1->SelectIDClient(this->nomClient->Text, this->prenomClient->Text, this->dateNaissance->Text))));
+	this->adresseLivraison->AppendText(this->oSvc->recupAdresse(this->nomClient->Text, this->prenomClient->Text, this->dateNaissance->Text));
+	this->adresseFacturation->AppendText(this->oSvc->recupAdresse(this->nomClient->Text, this->prenomClient->Text, this->dateNaissance->Text));
+
 
 	this->dateEmission->ResetText();
 	this->dateLivraison->ResetText();
@@ -939,9 +945,23 @@ private: System::Void creerCommande_Click(System::Object^ sender, System::EventA
 
 private: System::Void affCommande_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->dataGridViewCommande->Refresh();
-	this->oDs = this->oSvc->selectionnerToutesLesCommandes("Gestion_Commande");
+	this->oDs = this->oSvc->selectionnerToutesLesCommandes("Gestion_Commande", this->refCommande->Text);
 	this->dataGridViewCommande->DataSource = this->oDs;
 	this->dataGridViewCommande->DataMember = "Gestion_Commande";
+
+	this->nomClient->Clear();
+	this->nomClient->AppendText(this->oCad->DataRead("SELECT Nom_Client FROM Gestion_des_clients INNER JOIN Gestion_des_commandes ON(Gestion_des_commandes.ID_Numero_Client=Gestion_des_clients.ID_Numero_Client) WHERE Reference_Commande = '" + this->refCommande->Text + "' ;"));
+	this->prenomClient->Clear();
+	this->prenomClient->AppendText(this->oCad->DataRead("SELECT Prenom_Client FROM Gestion_des_clients INNER JOIN Gestion_des_commandes ON(Gestion_des_commandes.ID_Numero_Client=Gestion_des_clients.ID_Numero_Client) WHERE Reference_Commande = '" + this->refCommande->Text + "' ;"));
+	this->montant1->Clear();
+	//	this->montant1->AppendText(System::Convert::ToString(this->oCad->DataReadFloat("SELECT Montant_Total_HT FROM Gestion_des_commandes WHERE Reference_Commande = '" + this->refCommande->Text + "' ;")));  
+	this->nomSociete->AppendText("Isicelo");
+	this->adrSociete->AppendText("23 rue d'Arras, Arras, 62000");
+	this->numService->AppendText("03 58 96 65 98");
+	this->nomClient1->AppendText(this->oCad->DataRead("SELECT Nom_Client FROM Gestion_des_commandes INNER JOIN Gestion_des_clients ON(Gestion_des_commandes.ID_Numero_Client=Gestion_des_clients.ID_Numero_Client) WHERE Reference_Commande = '" + this->refCommande->Text + "'"));
+	this->codeClient->AppendText(this->Com1->setIDClient(this->oCad->DataReadID(this->Com1->SelectIDClient(this->nomClient->Text, this->prenomClient->Text, this->dateNaissance->Text))));
+	this->adresseLivraison->AppendText(this->oSvc->recupAdresse(this->nomClient->Text, this->prenomClient->Text, this->dateNaissance->Text));
+	this->adresseFacturation->AppendText(this->oSvc->recupAdresse(this->nomClient->Text, this->prenomClient->Text, this->dateNaissance->Text));
 }
 
 private: System::Void delCommande_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -949,9 +969,6 @@ private: System::Void delCommande_Click(System::Object^ sender, System::EventArg
 }
 
 private: System::Void modArticle_Click(System::Object^ sender, System::EventArgs^ e) {
-	//this->nomClient->AppendText(this->oCad->DataRead("SELECT Nom_Client FROM Gestion_des_commandes INNER JOIN Gestion_des_clients ON(Gestion_des_commandes.ID_Numero_Client=Gestion_des_clients.ID_Numero_Client) WHERE Reference_Commande = '" + this->refCommande + "'"));
-	//this->prenomClient->AppendText(this->oCad->DataRead("SELECT Prenom_Client FROM Gestion_des_commandes INNER JOIN Gestion_des_clients ON(Gestion_des_commandes.ID_Numero_Client=Gestion_des_clients.ID_Numero_Client) WHERE Reference_Commande = '" + this->refCommande + "'"));
-	//this->montant1->AppendText(this->oCad->DataRead("SELECT Montant_Total_HT FROM Gestion_des_commandes WHERE Reference_Commande = '" + this->refCommande + "'"));
 	this->oSvc->updateUneCommande(this->refCommande->Text,this->dateEmission->Text, this->dateLivraison->Text, this->moyenPaiement->Text, this->datePaiement->Text);
 }
 

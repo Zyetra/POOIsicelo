@@ -15,4 +15,5 @@ public:
 	System::Data::DataSet^ getRows(System::String^, System::String^);
 	void actionRows(System::String^);
 	System::String^ DataRead(System::String^);
+	int DataReadID(System::String^);
 };

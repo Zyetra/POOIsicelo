@@ -49,6 +49,10 @@ public:
 	System::String^ Delete(void);
 	System::String^ Update(void);
 	void setId(int);
+	System::String^ SelectIDClient(System::String^, System::String^, System::String^);
+	System::String^ setIDClient(int);
+	System::String^ recupRue(System::String^, System::String^, System::String^);
+	System::String^ recupNumero(System::String^, System::String^, System::String^);
 	void setRef(System::String^, System::String^, System::String^);
 	void desRef(System::String^ Ref);
 	void setDateE(System::String^);

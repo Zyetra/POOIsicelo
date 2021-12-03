@@ -35,10 +35,23 @@ System::String^ MCommande::SelectArticle(void) {
 	return "SELECT Designation_Article FROM Gestion_des_articles;";
 }
 
+System::String^ MCommande::SelectIDClient(System::String^ nomClient, System::String^ prenomClient, System::String^ dateNaissanceClient) {
+
+	return"SELECT ID_Numero_Client FROM Gestion_des_clients WHERE Nom_Client='" + nomClient + "' AND Prenom_Client='" + prenomClient +"' AND Date_Naissance_Client='" + dateNaissanceClient + "';";
+}
 System::String^ MCommande::Select(void)
 {
-	return "SELECT [reference_commande],Date_Emission_Commande,Date_Livraison_Prevue_Commande,Date_Paiement_Commande,Quantite_Total_Article_Commande,[montant_total_ht],[montant_total_ttc],[montant_total_tva],nom_personnel,prenom_personnel,nom_client,prenom_client,Designation_Article, Quantite_Article_Stock,[masque_commande],Moyen_de_Paiement FROM Gestion_des_commandes INNER JOIN Gestion_du_personnel ON(Gestion_du_personnel.ID_Personnel=Gestion_des_commandes.ID_Personnel)INNER JOIN Gestion_des_clients ON(Gestion_des_clients.ID_Numero_Client=Gestion_des_commandes.ID_Numero_Client)INNER JOIN Moyen_de_paiemment ON(Moyen_de_paiemment.ID_Moyen_de_Paiement=Gestion_des_commandes.ID_Moyen_de_Paiement) INNER JOIN Influer ON(Influer.ID_Commande=Gestion_des_commandes.ID_Commande) INNER JOIN Gestion_des_articles ON(Influer.ID_Article=Gestion_des_articles.ID_Article) WHERE masque_commande ='1';";
+	return "SELECT [reference_commande],Date_Emission_Commande,Date_Livraison_Prevue_Commande,Date_Paiement_Commande,Quantite_Total_Article_Commande,[montant_total_ht],[montant_total_ttc],[montant_total_tva],nom_personnel,prenom_personnel,nom_client,prenom_client,Designation_Article, Quantite_Article_Stock,[masque_commande],Moyen_de_Paiement FROM Gestion_des_commandes INNER JOIN Gestion_du_personnel ON(Gestion_du_personnel.ID_Personnel=Gestion_des_commandes.ID_Personnel)INNER JOIN Gestion_des_clients ON(Gestion_des_clients.ID_Numero_Client=Gestion_des_commandes.ID_Numero_Client)INNER JOIN Moyen_de_paiemment ON(Moyen_de_paiemment.ID_Moyen_de_Paiement=Gestion_des_commandes.ID_Moyen_de_Paiement) INNER JOIN Influer ON(Influer.ID_Commande=Gestion_des_commandes.ID_Commande) INNER JOIN Gestion_des_articles ON(Influer.ID_Article=Gestion_des_articles.ID_Article) WHERE Reference_Commande = '" + this->Reference + "' AND masque_commande = 1;";
 }
+
+System::String^ MCommande::recupRue(System::String^ nomClient, System::String^ prenomClient, System::String^ dateNaissanceClient) {
+	return "SELECT rue FROM adresse INNER JOIN Gestion_des_clients ON (adresse.IDadresse=Gestion_des_clients.IDadresse) WHERE Nom_Client='" + nomClient + "' AND Prenom_Client='" + prenomClient + "' AND Date_Naissance_Client='" + dateNaissanceClient + "' ;";
+}
+
+System::String^ MCommande::recupNumero(System::String^ nomClient, System::String^ prenomClient, System::String^ dateNaissanceClient) {
+	return "SELECT numero FROM adresse INNER JOIN Gestion_des_clients ON(adresse.IDadresse = Gestion_des_clients.IDadresse) WHERE Nom_Client = '" + nomClient + "' AND Prenom_Client = '" + prenomClient + "' AND Date_Naissance_Client = '" + dateNaissanceClient + "' ;";
+}
+
 
 System::String^ MCommande::Insert(void)
 {
@@ -64,6 +77,13 @@ void MCommande::setId(int IDCommande)
 {
 	this->IDcommande = IDCommande;
 }
+
+System::String^ MCommande::setIDClient(int IDClient) {
+	this->IDclient = IDClient;
+	return System::Convert::ToString(IDClient);
+
+}
+
 void MCommande::setRef(System::String^ Nom, System::String^ Prenom, System::String^ VilleL)
 
 {

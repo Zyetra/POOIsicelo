@@ -61,5 +61,27 @@ System::String^ CLcad::DataRead(System::String^ sSql) {
 		return VilleL;
 	}
 
+int CLcad::DataReadID(System::String^ sSql) {
+	this->sSql = sSql;
+	this->oCmd->CommandText = this->sSql;
+
+	SqlConnection^ connection = gcnew SqlConnection(sCnx);
+
+	SqlCommand^ command = gcnew SqlCommand(sSql, connection);
+	connection->Open();
+
+	SqlDataReader^ reader = command->ExecuteReader();
+	int ID;
+
+	array<Object^>^ row = gcnew array<Object^>(reader->FieldCount);
+	while (reader->Read())
+	{
+		ID = reader->GetInt32(0);
+	}
+	reader->Close();
+	connection->Close();
+	return ID;
+}
+
 
 

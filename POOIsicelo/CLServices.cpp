@@ -19,10 +19,11 @@ CLservices::CLservices(void)
 
 // COMMANDE
 
-System::Data::DataSet^ CLservices::selectionnerToutesLesCommandes(System::String^ dataTableName)
+System::Data::DataSet^ CLservices::selectionnerToutesLesCommandes(System::String^ dataTableName, System::String^ Ref)
 {
 	System::String^ sql;
 
+	this->oMappCommande->desRef(Ref);
 	sql = this->oMappCommande->Select();
 	return this->oCad->getRows(sql, dataTableName);
 }
@@ -45,6 +46,8 @@ void CLservices::ajouterUneCommande(System::String^ DateE, System::String^ DateL
 	System::String^ sql;
 
 	System::String^ VilleL = this->recupVille(Nom, Prenom, DateN);
+	int IDClient = this->setIDClient(Nom, Prenom, DateN);
+	this->oMappCommande->setIDClient(IDClient);
 	this->oMappCommande->setRef(Nom, Prenom, VilleL);
 	this->oMappCommande->setDateE(DateE);
 	this->oMappCommande->setDateL(DateL);
@@ -52,6 +55,32 @@ void CLservices::ajouterUneCommande(System::String^ DateE, System::String^ DateL
 	sql = this->oMappCommande->Insert();
 
 	this->oCad->actionRows(sql);
+}
+
+System::String^ CLservices::recupAdresse(System::String^ nomClient, System::String^ prenomClient, System::String^ dateNaissanceClient) {
+	System::String^ sql;
+	System::String^ rue;
+	System::String^ numero;
+	System::String^ Ville;
+
+	sql = this->oMappCommande->recupNumero(nomClient, prenomClient, dateNaissanceClient);
+	numero = this->oCad->DataRead(sql);
+
+	sql = this->oMappCommande->recupRue(nomClient, prenomClient, dateNaissanceClient);
+	rue = this->oCad->DataRead(sql);
+
+	Ville = this->recupVille(nomClient, prenomClient, dateNaissanceClient);
+
+	return numero + " " + rue + ", " + Ville;
+
+}
+
+
+int CLservices::setIDClient(System::String^ nomClient, System::String^ prenomClient, System::String^ dateNaissanceClient) {
+	System::String^ sql;
+
+	sql = this->oMappCommande->SelectIDClient(nomClient, prenomClient, dateNaissanceClient);
+	return this->oCad->DataReadID(sql);
 }
 
 void CLservices::deleteUneCommande(System::String^ Ref)

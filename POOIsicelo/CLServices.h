@@ -18,11 +18,13 @@ public:
 
 	CLservices(void);
 	// COMMANDE
-	System::Data::DataSet^ selectionnerToutesLesCommandes(System::String^);
+	System::Data::DataSet^ selectionnerToutesLesCommandes(System::String^, System::String^);
 	System::String^ recupVille(System::String^, System::String^, System::String^);
+	System::String^ recupAdresse(System::String^, System::String^, System::String^);
 	void ajouterUneCommande(System::String^,System::String^ ,System::String^, System::String^, System::String^, System::String^, System::String^, float, short);
 	void deleteUneCommande(System::String^);
 	void updateUneCommande(System::String^, System::String^, System::String^, System::String^, System::String^);
+	int setIDClient(System::String^, System::String^, System::String^);
 	System::String^ ajouterArticleCommande(System::String^, short);
 	System::String^ recupIDArticle(System::String^);
 	// CLIENT
