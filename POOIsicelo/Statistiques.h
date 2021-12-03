@@ -122,7 +122,7 @@ namespace POOIsicelo {
 				static_cast<System::Byte>(0)));
 			this->SelectAll->ForeColor = System::Drawing::SystemColors::HotTrack;
 			this->SelectAll->Location = System::Drawing::Point(738, 388);
-			this->SelectAll->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->SelectAll->Margin = System::Windows::Forms::Padding(4);
 			this->SelectAll->Name = L"SelectAll";
 			this->SelectAll->Size = System::Drawing::Size(172, 43);
 			this->SelectAll->TabIndex = 0;
@@ -135,7 +135,7 @@ namespace POOIsicelo {
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView1->Location = System::Drawing::Point(16, 244);
-			this->dataGridView1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->dataGridView1->Margin = System::Windows::Forms::Padding(4);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->Size = System::Drawing::Size(894, 137);
@@ -149,7 +149,7 @@ namespace POOIsicelo {
 					L"Juin", L"Juillet", L"Août", L"Septembre", L"Octobre", L"Novembre", L"Décembre"
 			});
 			this->comboBoxMois->Location = System::Drawing::Point(215, 15);
-			this->comboBoxMois->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->comboBoxMois->Margin = System::Windows::Forms::Padding(4);
 			this->comboBoxMois->Name = L"comboBoxMois";
 			this->comboBoxMois->Size = System::Drawing::Size(105, 24);
 			this->comboBoxMois->TabIndex = 2;
@@ -192,7 +192,7 @@ namespace POOIsicelo {
 			this->CalculCAButton->FlatAppearance->BorderSize = 0;
 			this->CalculCAButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->CalculCAButton->Location = System::Drawing::Point(497, 7);
-			this->CalculCAButton->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->CalculCAButton->Margin = System::Windows::Forms::Padding(4);
 			this->CalculCAButton->Name = L"CalculCAButton";
 			this->CalculCAButton->Size = System::Drawing::Size(43, 43);
 			this->CalculCAButton->TabIndex = 6;
@@ -204,7 +204,7 @@ namespace POOIsicelo {
 			// textBoxAnnee
 			// 
 			this->textBoxAnnee->Location = System::Drawing::Point(416, 15);
-			this->textBoxAnnee->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBoxAnnee->Margin = System::Windows::Forms::Padding(4);
 			this->textBoxAnnee->Name = L"textBoxAnnee";
 			this->textBoxAnnee->Size = System::Drawing::Size(73, 22);
 			this->textBoxAnnee->TabIndex = 7;
@@ -219,7 +219,7 @@ namespace POOIsicelo {
 					L"Afficher le montant total des achats pour un client", L"Afficher les 10 articles les moins vendus", L"Afficher les 10 articles les plus vendus"
 			});
 			this->checkedListBox1->Location = System::Drawing::Point(16, 58);
-			this->checkedListBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->checkedListBox1->Margin = System::Windows::Forms::Padding(4);
 			this->checkedListBox1->Name = L"checkedListBox1";
 			this->checkedListBox1->Size = System::Drawing::Size(451, 123);
 			this->checkedListBox1->TabIndex = 8;
@@ -233,7 +233,7 @@ namespace POOIsicelo {
 			this->searchButton->FlatAppearance->BorderSize = 0;
 			this->searchButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->searchButton->Location = System::Drawing::Point(497, 58);
-			this->searchButton->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->searchButton->Margin = System::Windows::Forms::Padding(4);
 			this->searchButton->Name = L"searchButton";
 			this->searchButton->Size = System::Drawing::Size(43, 43);
 			this->searchButton->TabIndex = 9;
@@ -269,7 +269,7 @@ namespace POOIsicelo {
 			// textBoxTVA
 			// 
 			this->textBoxTVA->Location = System::Drawing::Point(816, 54);
-			this->textBoxTVA->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBoxTVA->Margin = System::Windows::Forms::Padding(4);
 			this->textBoxTVA->Name = L"textBoxTVA";
 			this->textBoxTVA->Size = System::Drawing::Size(76, 22);
 			this->textBoxTVA->TabIndex = 12;
@@ -310,7 +310,7 @@ namespace POOIsicelo {
 			// textBoxMarge
 			// 
 			this->textBoxMarge->Location = System::Drawing::Point(816, 91);
-			this->textBoxMarge->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBoxMarge->Margin = System::Windows::Forms::Padding(4);
 			this->textBoxMarge->Name = L"textBoxMarge";
 			this->textBoxMarge->Size = System::Drawing::Size(76, 22);
 			this->textBoxMarge->TabIndex = 16;
@@ -318,7 +318,7 @@ namespace POOIsicelo {
 			// textBoxRemise
 			// 
 			this->textBoxRemise->Location = System::Drawing::Point(816, 128);
-			this->textBoxRemise->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBoxRemise->Margin = System::Windows::Forms::Padding(4);
 			this->textBoxRemise->Name = L"textBoxRemise";
 			this->textBoxRemise->Size = System::Drawing::Size(76, 22);
 			this->textBoxRemise->TabIndex = 17;
@@ -326,7 +326,7 @@ namespace POOIsicelo {
 			// textBoxDemarque
 			// 
 			this->textBoxDemarque->Location = System::Drawing::Point(816, 165);
-			this->textBoxDemarque->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBoxDemarque->Margin = System::Windows::Forms::Padding(4);
 			this->textBoxDemarque->Name = L"textBoxDemarque";
 			this->textBoxDemarque->Size = System::Drawing::Size(76, 22);
 			this->textBoxDemarque->TabIndex = 18;
@@ -340,8 +340,8 @@ namespace POOIsicelo {
 			this->Simuler->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->Simuler->FlatAppearance->BorderSize = 0;
 			this->Simuler->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->Simuler->Location = System::Drawing::Point(832, 197);
-			this->Simuler->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Simuler->Location = System::Drawing::Point(833, 195);
+			this->Simuler->Margin = System::Windows::Forms::Padding(4);
 			this->Simuler->Name = L"Simuler";
 			this->Simuler->Size = System::Drawing::Size(43, 43);
 			this->Simuler->TabIndex = 19;
@@ -366,7 +366,7 @@ namespace POOIsicelo {
 				static_cast<System::Byte>(0)));
 			this->retourMenu->ForeColor = System::Drawing::SystemColors::HotTrack;
 			this->retourMenu->Location = System::Drawing::Point(416, 389);
-			this->retourMenu->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->retourMenu->Margin = System::Windows::Forms::Padding(4);
 			this->retourMenu->Name = L"retourMenu";
 			this->retourMenu->Size = System::Drawing::Size(138, 42);
 			this->retourMenu->TabIndex = 21;
@@ -406,7 +406,7 @@ namespace POOIsicelo {
 			this->Controls->Add(this->SelectAll);
 			this->DoubleBuffered = true;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
-			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"Statistiques";
 			this->Text = L"Statistiques";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
